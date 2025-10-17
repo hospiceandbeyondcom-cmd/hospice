@@ -10,8 +10,8 @@ export default function ServicesPage() {
       {/* ✅ Header */}
       <Header />
 
-      {/* ✅ Hero Section with Video */}
-      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden mt-[70px]">
+      {/* ✅ Hero Section with Video — removed mt-[70px] */}
+      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           loop

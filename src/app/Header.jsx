@@ -1,29 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white/95 shadow-lg backdrop-blur-md"
-          : "bg-white/80 backdrop-blur-sm"
-      }`}
-    >
+    // 🧭 Header is now static — not sticky or fixed
+    <header className="w-full bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 md:py-4">
-        {/* ✅ Logo Only */}
+        {/* ✅ Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
@@ -109,9 +96,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ✅ Mobile Menu Dropdown */}
+      {/* ✅ Mobile Dropdown */}
       <div
-        className={`md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 transition-all duration-500 overflow-hidden ${
+        className={`md:hidden bg-white border-t border-gray-200 transition-all duration-500 overflow-hidden ${
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

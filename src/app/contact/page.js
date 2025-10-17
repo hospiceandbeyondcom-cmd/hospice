@@ -10,8 +10,8 @@ export default function ContactPage() {
       {/* ✅ Header */}
       <Header />
 
-      {/* ✅ Hero Section */}
-      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden mt-[70px]">
+      {/* ✅ Hero Section — removed mt-[70px] to eliminate top gap */}
+      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <Image
           src="/contacthero.png"
           alt="Contact Hero"
