@@ -23,7 +23,7 @@ export default function ContactPage() {
             Contact Hospice and Beyond
           </h1>
           <p className="text-lg md:text-xl max-w-2xl leading-relaxed">
-            We're here to listen, support, and guide you every step of the way.
+            We&apos;re here to listen, support, and guide you every step of the way.
           </p>
         </div>
       </section>
