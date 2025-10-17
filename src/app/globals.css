@@ -18,6 +18,25 @@
     --foreground: #ededed;
   }
 }
+/* Slow, elegant rotation for spiral */
+@keyframes spin-slower {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-slower {
+  animation: spin-slower 46s linear infinite;
+}
+
+/* Optional: gentle gold pulse for subtle accents if needed */
+@keyframes goldPulse {
+  0%,100% { opacity: 0.35; filter: drop-shadow(0 0 0 rgba(255,215,0,0.0)); }
+  50% { opacity: 0.7; filter: drop-shadow(0 0 18px rgba(255,215,0,0.35)); }
+}
+.animate-goldPulse {
+  animation: goldPulse 7s ease-in-out infinite;
+}
+
+
 
 body {
   background: var(--background);
