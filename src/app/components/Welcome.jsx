@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function ValuesSection() {
+export default function Welcome() {
   const fadeUp = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
@@ -13,10 +13,49 @@ export default function ValuesSection() {
   return (
     <section className="relative bg-white py-24 sm:py-28 text-[#03271E] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
+        {/* ===== ABOUT US NARRATIVE ===== */}
         <motion.div
           {...fadeUp}
-          className="text-center mb-16"
+          className="grid md:grid-cols-2 gap-12 items-center mb-24"
         >
+          {/* Text Section */}
+          <div>
+            <h2 className="text-4xl font-bold text-[#03271E] mb-6">
+              About Hospice and Beyond
+            </h2>
+            <p className="text-gray-700 mb-5 leading-relaxed">
+              Hospice and Beyond Palliative Care is founded on a simple but
+              sacred belief — that every person deserves dignity, comfort, and
+              peace through every stage of life. We are a compassionate team of
+              professionals who walk hand in hand with patients and their loved
+              ones, creating a space where healing, presence, and hope are
+              honored.
+            </p>
+            <p className="text-gray-700 mb-5 leading-relaxed">
+              We bring care directly to where it’s most meaningful — the home.
+              Our focus extends beyond medical support to emotional and
+              spiritual well-being, helping families find calm even in
+              difficult transitions.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              At Hospice and Beyond, every heartbeat, every moment, and every
+              story matters.
+            </p>
+          </div>
+
+          {/* Image Section */}
+          <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/about3.png"
+              alt="About Hospice and Beyond"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </motion.div>
+
+        {/* ===== MISSION / VISION / VALUES ===== */}
+        <motion.div {...fadeUp} className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#03271E] mb-3">
             Guided by Compassion, Peace, and Dignity
           </h2>
@@ -26,7 +65,7 @@ export default function ValuesSection() {
           </p>
         </motion.div>
 
-        {/* HORIZONTAL CARDS */}
+        {/* Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Mission */}
           <motion.div
