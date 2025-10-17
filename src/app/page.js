@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "./Header"; // ✅ updated path
+import Header from "./Header";
 import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
 import Services from "./components/Services";
@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
 
       {/* MAIN CONTENT */}
-      <main className="min-h-screen bg-[#03271E] text-white font-sans overflow-hidden pt-[90px]">
+      <main className="min-h-screen bg-[#03271E] text-white font-sans overflow-hidden m-0 p-0">
         <Hero />
         <Welcome />
         <Services />

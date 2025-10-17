@@ -10,8 +10,8 @@ export default function AboutPage() {
       {/* ✅ Header */}
       <Header />
 
-      {/* ✅ Hero Section */}
-      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden mt-[70px]">
+      {/* ✅ Hero Section — removed mt-[70px] */}
+      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <Image
           src="/heroabout.png"
           alt="Hospice and Beyond Hero"
@@ -216,3 +216,4 @@ export default function AboutPage() {
     </main>
   );
 }
+
