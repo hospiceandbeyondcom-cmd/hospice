@@ -1,3 +1,7 @@
+/* ✅ Google Font must come first */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ✅ Tailwind import comes next */
 @import "tailwindcss";
 
 :root {
@@ -8,8 +12,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Montserrat', sans-serif;
+  --font-mono: 'Montserrat', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +22,7 @@
     --foreground: #ededed;
   }
 }
+
 /* Slow, elegant rotation for spiral */
 @keyframes spin-slower {
   from { transform: rotate(0deg); }
@@ -36,10 +41,8 @@
   animation: goldPulse 7s ease-in-out infinite;
 }
 
-
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
