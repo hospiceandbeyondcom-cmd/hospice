@@ -1,107 +1,112 @@
 "use client";
+
+// ====================================================================
+// 1. External Imports (React/Next.js/Third-party)
+// ====================================================================
+import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.4 },
-  transition: { duration: 0.9, ease: "easeOut" },
-};
+// ====================================================================
+// 2. Constants & Data
+// ====================================================================
 
-const floatY = {
-  initial: { y: 0, rotate: 0 },
-  animate: {
-    y: [-6, 6, -6],
-    rotate: [-1, 1, -1],
-    transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-  },
-};
+// --- Colors (Must be defined for Tailwind CSS styling) ---
+const PRIMARY_TEAL = "#006D66";
+const ACCENT_GOLD = "#D4881A";
 
-export default function Services() {
-  const services = [
-    {
-      title: "Hospice Care",
-      desc: "Compassionate end-of-life care centered on comfort, peace, and dignity — surrounded by love, family, and professional support.",
-      img: "/hospice.png",
-    },
-    {
-      title: "Palliative Care",
-      desc: "Holistic support for those living with serious illness — relieving symptoms, reducing stress, and improving quality of life at every stage.",
-      img: "/palliative.png",
-    },
-    {
-      title: "Faith & Spiritual Care",
-      desc: "We honor every faith tradition and provide spiritual guidance that nurtures hope, strength, and peace of mind.",
-      img: "/faith.png",
-    },
-    {
-      title: "Family Support",
-      desc: "We walk beside families — offering counseling, education, and compassionate guidance every step of the journey.",
-      img: "/family.png",
-    },
-  ];
+// --- Service Data (Extracted from the original Page component) ---
+const services = [
+  { title: "Major Depressive Disorder", desc: "Find light and renewed purpose with expert, compassionate care.", image: "/depression.jpg", link: "/depression" },
+  { title: "Substance Abuse", desc: "Offering a path to lasting recovery and a stable, healthy life.", image: "/substance.jpg", link: "/substance-abuse" },
+  { title: "Borderline Personality Disorder", desc: "Building stability, emotional regulation, and meaningful connections.", image: "/borderline.jpg", link: "/borderline-personality" },
+  { title: "PTSD", desc: "Guiding you beyond trauma with compassionate care.", image: "/section1ptsd.png", link: "/ptsd" },
+  { title: "Schizophrenia", desc: "Supporting clarity, stability, and personal growth.", image: "/section1schizophrenia.png", link: "/schizophrenia" },
+  { title: "Anxiety Disorders", desc: "Providing tools to quiet your mind and find calm.", image: "/section1anxiety.png", link: "/anxiety-disorder" },
+  { title: "Bipolar Disorder", desc: "Creating balance through expert treatment plans.", image: "/section1bipolar.png", link: "/bipolar-disorder" },
+  { title: "OCD", desc: "Offering strategies for balance and peace of mind.", image: "/section1ocd.png", link: "/ocd" },
+  { title: "ADHD", desc: "Helping you focus, manage challenges, and thrive.", image: "/section1adhd.png", link: "/adhd" },
+];
 
+// ====================================================================
+// 3. Sub-Components
+// ====================================================================
+
+/**
+ * Card component for individual services.
+ * Requires: Link (from next/link), PRIMARY_TEAL, ACCENT_GOLD
+ */
+const ServiceCard = ({ title, desc, image, link }) => {
   return (
-    <section id="services" className="relative py-24 sm:py-28 bg-[#03271E]">
-      <div className="mx-auto max-w-6xl px-6">
-        <motion.h2
-          {...fadeUp}
-          className="text-center text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#FFD700] to-[#FFF2AE] bg-clip-text text-transparent"
+    <Link href={link} className="block group">
+      <div className="relative h-64 overflow-hidden rounded-[2rem] shadow-xl transition-transform duration-700 ease-in-out transform group-hover:scale-[1.03] group-hover:rotate-1">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-75"
+        />
+        <div
+          className={`absolute inset-0 bg-[${PRIMARY_TEAL}] opacity-0 group-hover:opacity-85 transition-opacity duration-500 flex items-center justify-center p-6 text-center`}
         >
-          Our Care Services
-        </motion.h2>
+          <p className="text-white text-xl font-light transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+            {desc}
+          </p>
+        </div>
+      </div>
+      <div
+        className={`mt-6 p-2 text-center border-2 border-transparent transition-all duration-300 rounded-xl group-hover:border-[${ACCENT_GOLD}]`}
+      >
+        <h3
+          className={`font-serif text-2xl sm:text-3xl font-bold text-[${PRIMARY_TEAL}] group-hover:text-[${ACCENT_GOLD}] transition duration-300 leading-snug`}
+        >
+          {title}
+        </h3>
+        <span className="text-base font-light text-gray-500 italic mt-1 inline-block">
+          Click to learn more
+        </span>
+      </div>
+    </Link>
+  );
+};
 
-        <div className="mt-14 space-y-28">
-          {services.map((item, i) => (
-            <div
-              key={i}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-14 items-center ${
-                i % 2 !== 0 ? "md:flex-row-reverse md:[&>div:first-child]:order-2" : ""
-              }`}
-            >
-              {/* Image */}
-              <motion.div
-                className="relative"
-                variants={floatY}
-                initial="initial"
-                animate="animate"
-              >
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  width={780}
-                  height={520}
-                  className="rounded-2xl shadow-2xl ring-1 ring-white/10 object-cover"
-                />
-                <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-[#FFD70033] blur-xl" />
-              </motion.div>
 
-              {/* Text */}
-              <div>
-                <motion.h3
-                  {...fadeUp}
-                  className="text-2xl sm:text-3xl font-semibold text-white"
-                >
-                  {item.title}
-                </motion.h3>
-                <motion.p
-                  {...fadeUp}
-                  transition={{ delay: 0.1 }}
-                  className="mt-4 text-[#E6F2EC]/90 leading-relaxed"
-                >
-                  {item.desc}
-                </motion.p>
-                <motion.div
-                  {...fadeUp}
-                  transition={{ delay: 0.15 }}
-                  className="mt-6 h-[3px] w-28 bg-gradient-to-r from-[#FFD700] to-[#E6B800] rounded-full"
-                />
-              </div>
-            </div>
+// ====================================================================
+// 4. Main Component (Services Section)
+// ====================================================================
+
+/**
+ * Component for the "What We Offer (Services)" Section.
+ * Includes all necessary imports and data for standalone use.
+ */
+export const MoladavServicesSection = () => {
+  return (
+    <section className={`py-16 md:py-24 px-6 md:px-12 bg-white`}>
+      <div className="container mx-auto text-center">
+        {/* Title and Subtitle */}
+        <h2 className={`font-serif text-4xl md:text-6xl font-extrabold text-[${PRIMARY_TEAL}] text-center mb-10 relative before:absolute before:content-[''] before:w-24 before:h-1.5 before:bg-gradient-to-r before:from-transparent before:via-[${ACCENT_GOLD}] before:to-transparent before:-bottom-4 before:left-1/2 before:-translate-x-1/2 before:rounded-full`}>
+          Support designed for your unique <span className={`text-[${ACCENT_GOLD}]`}>needs.</span>
+        </h2>
+        <p className="text-xl mb-16 text-gray-700 max-w-3xl mx-auto font-light leading-relaxed">
+          We specialize in providing expert, compassionate care for a wide
+          range of mental health conditions. Our approach is always tailored
+          to your personal journey.
+        </p>
+        
+        {/* Service Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {services.map((s, index) => (
+            <ServiceCard
+              key={index}
+              title={s.title}
+              desc={s.desc}
+              image={s.image}
+              link={s.link}
+            />
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
+
+// Default export for typical usage
+export default MoladavServicesSection;

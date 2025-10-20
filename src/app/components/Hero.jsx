@@ -1,218 +1,89 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Users, ArrowRightCircle } from "lucide-react";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Mail, Phone } from "lucide-react";
 
 export default function Hero() {
-  const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
-  const [index, setIndex] = useState(0);
-
-  // ===== Detect Mobile =====
-  useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < 768);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-
-  const slides = [
-    {
-      id: "slide-1",
-      type: "video",
-      src: "/hero.mp4",
-      heading: "Honoring Every Life, Every Moment",
-      cta1: "Explore Our Services",
-      cta2: "Meet the Team",
-      href1: "/services",
-      href2: "/our-team",
-    },
-  ];
-
-  // ===== Desktop Hero =====
-  if (!isMobile) {
-    return (
-      <section
-        className="
-          relative flex flex-col md:flex-row
-          h-[70vh] overflow-hidden
-          m-0 p-0
-        "
-      >
-        {/* ===== LEFT SIDE: VIDEO ===== */}
-        <div className="relative w-full md:w-1/2 h-full">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/hero.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        {/* ===== RIGHT SIDE: TEXT ===== */}
-        <div
-          className="
-            flex flex-col justify-center
-            w-full md:w-1/2 h-full
-            px-10 lg:px-16
-            bg-[#F9FAFB]
-          "
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="
-              text-[2.8rem] sm:text-[3rem] md:text-[3.2rem]
-              font-bold leading-[1.1] tracking-tight text-[#047857]
-            "
-          >
-            Honoring Every Life, Every Moment
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 1 }}
-            className="
-              mt-5 sm:mt-6 text-base sm:text-lg
-              text-gray-700 leading-relaxed max-w-lg
-            "
-          >
-            Compassionate care that brings peace, dignity, and light to families —
-            right in the comfort of their homes.
-          </motion.p>
-
-          {/* ===== Buttons ===== */}
-          <div className="mt-8 flex flex-row items-center gap-5">
-            {/* Explore Our Services */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.96 }}
-              onClick={() => router.push(slides[index]?.href1)}
-              className="
-                flex items-center gap-2
-                px-7 py-2
-                rounded-full font-semibold text-white
-                bg-[#8b6c50]
-                shadow-[0_0_12px_rgba(139,108,80,0.3)]
-                hover:shadow-[0_0_20px_rgba(139,108,80,0.4)]
-                transition
-              "
-            >
-              <ArrowRightCircle size={18} /> {slides[index]?.cta1}
-            </motion.button>
-
-            {/* Meet the Team */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.96 }}
-              onClick={() => router.push(slides[index]?.href2)}
-              className="
-                flex items-center gap-2
-                px-7 py-2
-                rounded-full font-semibold text-[#8b6c50]
-                border-2 border-[#8b6c50]
-                hover:bg-[#8b6c50] hover:text-white
-                transition
-              "
-            >
-              <Users size={18} /> {slides[index]?.cta2}
-            </motion.button>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // ===== Mobile Hero =====
   return (
-    <>
-      {/* ==== VIDEO SECTION ==== */}
-      <section className="md:hidden relative w-full aspect-video overflow-hidden">
-        <AnimatePresence initial={false} mode="wait">
-          <motion.div
-            key={slides[index]?.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
-            className="absolute inset-0"
+    <section className="relative bg-white overflow-hidden">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+        {/* Left Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl text-center md:text-left"
+          style={{
+            maxWidth: "620px", // ✅ slightly wider container to prevent wrapping
+          }}
+        >
+          {/* Heading */}
+          <h1
+            className="text-5xl md:text-6xl font-extrabold text-[#003D39] leading-[1.1] tracking-tight"
+            style={{
+              wordSpacing: "0.03em",
+              letterSpacing: "-0.02em",
+              whiteSpace: "normal",
+            }}
           >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              src={slides[index]?.src}
+            Bring comfort and peace to every life
+          </h1>
+
+          {/* Subtext */}
+          <p className="mt-6 text-lg text-gray-700 leading-relaxed">
+            Experience hospice care designed for dignity<br className="hidden md:block" />
+            and comfort through every moment.
+          </p>
+
+          {/* Primary Button */}
+          <div className="mt-10">
+            <motion.a
+              href="/services"
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#006D66] hover:bg-[#004E49] text-white font-semibold px-8 py-4 rounded-md shadow-md text-center inline-block transition-all"
+            >
+              Explore our services
+            </motion.a>
+          </div>
+
+          {/* Get in Touch Section */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center sm:items-start justify-center md:justify-start gap-4 text-gray-700">
+            <div className="flex items-center gap-2">
+              <Phone className="w-5 h-5 text-[#006D66]" />
+              <span className="text-sm sm:text-base font-medium">
+                Get in touch with us
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="w-5 h-5 text-[#006D66]" />
+              <a
+                href="mailto:info@hospiceandbeyond.com"
+                className="text-sm sm:text-base font-medium hover:text-[#003D39] transition-colors"
+              >
+                Send Message
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mt-12 md:mt-0 md:w-1/2 flex justify-center"
+        >
+          <div className="relative w-[90%] md:w-[480px] h-[340px] md:h-[420px]">
+            <Image
+              src="/hero.png"
+              alt="Hospice and Beyond care"
+              fill
+              className="object-cover rounded-2xl shadow-md"
             />
-          </motion.div>
-        </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-      </section>
-
-      {/* ==== TEXT & BUTTONS BELOW VIDEO ==== */}
-      <section className="bg-white text-center py-10 px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl font-bold text-[#047857] leading-snug mb-3"
-        >
-          Honoring Every Life, Every Moment
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-gray-700 mb-6 text-base leading-relaxed"
-        >
-          Compassionate care that brings peace, dignity, and light to families —
-          right in the comfort of their homes.
-        </motion.p>
-
-        {/* ==== BUTTONS ==== */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          {/* Explore Our Services */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-            onClick={() => router.push(slides[index]?.href1)}
-            className="
-              flex items-center justify-center gap-2
-              px-8 py-2.5 rounded-full
-              font-semibold text-white
-              bg-[#8b6c50]
-              shadow-md hover:shadow-lg transition
-            "
-          >
-            <ArrowRightCircle size={18} /> {slides[index]?.cta1}
-          </motion.button>
-
-          {/* Meet the Team */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-            onClick={() => router.push(slides[index]?.href2)}
-            className="
-              flex items-center justify-center gap-2
-              px-8 py-2.5 rounded-full
-              font-semibold text-[#8b6c50]
-              border-2 border-[#8b6c50]
-              hover:bg-[#8b6c50] hover:text-white
-              transition
-            "
-          >
-            <Users size={18} /> {slides[index]?.cta2}
-          </motion.button>
-        </div>
-      </section>
-    </>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }
