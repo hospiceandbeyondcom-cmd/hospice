@@ -3,8 +3,8 @@
 // ====================================================================
 // 1. External Imports (React/Next.js/Third-party)
 // ====================================================================
-import Link from "next/link";
 import { motion } from "framer-motion";
+// NOTE: Removed 'import Link from "next/link";'
 
 // ====================================================================
 // 2. Constants & Data
@@ -14,37 +14,32 @@ import { motion } from "framer-motion";
 const PRIMARY_TEAL = "#006D66";
 const ACCENT_GOLD = "#D4881A";
 
-// --- Service Data (Updated) ---
+// --- Service Data (Updated - Removed 'link' property) ---
 const services = [
   {
     title: "Hospice Care",
     desc: "Personalized, comfort-focused medical and emotional support for individuals facing advanced or terminal illness — delivered wherever the patient calls home. Our care focuses on dignity, peace, and the human connection that matters most.",
     image: "/hospice.png",
-    link: "/hospice-care",
   },
   {
     title: "Palliative Care",
     desc: "Comprehensive care that manages pain, symptoms, and emotional needs for patients at any stage of serious illness — supporting both healing and quality of life with compassion and respect.",
     image: "/palliative.png",
-    link: "/palliative-care",
   },
   {
     title: "Faith & Spiritual Care",
     desc: "Respectful, non-denominational guidance and comfort for patients and families seeking peace, meaning, or strength through spiritual connection. We help each person find serenity and faith during life’s most meaningful moments.",
     image: "/faith.png",
-    link: "/faith-spiritual-care",
   },
   {
     title: "Family Support",
     desc: "Assistance with care planning, counseling, and access to community resources to help patients and caregivers navigate emotional, financial, and practical challenges — ensuring families never walk alone in the journey of care.",
     image: "/family.png",
-    link: "/family-support",
   },
   {
     title: "24/7 Compassionate Assistance",
     desc: "Our team is available around the clock to provide guidance, emotional support, and medical expertise — whenever and wherever you need us most.",
     image: "/services2.png",
-    link: "/contact",
   },
 ];
 
@@ -54,18 +49,21 @@ const services = [
 
 /**
  * Card component for individual services.
- * Requires: Link (from next/link), PRIMARY_TEAL, ACCENT_GOLD
+ * Now a static div, not a link.
  */
-const ServiceCard = ({ title, image, link }) => {
+// NOTE: Removed 'link' from props
+const ServiceCard = ({ title, image }) => {
   return (
-    <Link href={link} className="block group">
+    // Replaced <Link> with a static <div> element
+    <div className="block group cursor-default">
       <div className="relative h-64 overflow-hidden rounded-[2rem] shadow-xl transition-transform duration-700 ease-in-out transform group-hover:scale-[1.03] group-hover:rotate-1">
         <img
           src={image}
           alt={title}
           className="w-full h-full object-cover"
         />
-        {/* Removed hover overlay description */}
+        {/* Added a subtle overlay for polish, as it's not a link */}
+        <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/20 duration-300" />
       </div>
       <div
         className={`mt-6 p-2 text-center border-2 border-transparent transition-all duration-300 rounded-xl group-hover:border-[${ACCENT_GOLD}]`}
@@ -75,9 +73,12 @@ const ServiceCard = ({ title, image, link }) => {
         >
           {title}
         </h3>
-        {/* Removed the "Click to learn more" line */}
+        {/* You might want to add the description here since the card isn't clickable */}
+        {services.find(s => s.title === title)?.desc && (
+             <p className="mt-2 text-sm text-gray-600 max-w-xs mx-auto">{services.find(s => s.title === title).desc}</p>
+        )}
       </div>
-    </Link>
+    </div>
   );
 };
 
@@ -112,7 +113,7 @@ export const MoladavServicesSection = () => {
               key={index}
               title={s.title}
               image={s.image}
-              link={s.link}
+              // NOTE: Removed link prop
             />
           ))}
         </div>
