@@ -38,10 +38,10 @@ const SecondSection = () => {
 
             <div className="space-y-6 text-lg text-gray-700">
               <p>
-                Hospice and Beyond Palliative Care is founded on a simple but sacred belief — that every person deserves dignity, comfort, and peace** through every stage of life. We are a compassionate team of professionals who walk hand in hand with patients and their loved ones, creating a space where healing, presence, and hope are honored.
+                Hospice and Beyond Palliative Care is founded on a simple but sacred belief — that every person deserves dignity, comfort, and peace through every stage of life. We are a compassionate team of professionals who walk hand in hand with patients and their loved ones, creating a space where healing, presence, and hope are honored.
               </p>
               <p>
-                We bring care directly to where it’s most meaningful — **the home**. Our focus extends beyond medical support to **emotional and spiritual well-being**, helping families find calm even in difficult transitions.
+                We bring care directly to where it’s most meaningful — the home. Our focus extends beyond medical support to emotional and spiritual well-being, helping families find calm even in difficult transitions.
               </p>
               <p>
                 At Hospice and Beyond, every heartbeat, every moment, and every story matters.

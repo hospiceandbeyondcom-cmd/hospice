@@ -163,7 +163,7 @@ export default function HowItWorksSection() {
         {/* === Button === */}
         <div className="flex justify-center mt-16">
           <Link
-            href="/book-consultation"
+            href="/contact"
             className="relative inline-block text-white font-bold py-4 px-10 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.07]"
             style={{
               backgroundColor: PRIMARY_TEAL,
