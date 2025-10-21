@@ -12,28 +12,24 @@ export default function Welcome() {
     transition: { duration: 0.9, ease: "easeOut" },
   };
 
-  const brochureLink = "/path/to/your/brochure.pdf"; // TODO: Update this to your actual brochure file path
+  // Point directly to the file inside your public folder
+  const brochureLink = "/pages.pdf";
 
   return (
     <section className="relative bg-white py-24 sm:py-28 text-[#03271E] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/*
-        |--------------------------------------------------
-        | Beautiful Brochure Download Section (FIRST)
-        | This is now the main content component.
-        |--------------------------------------------------
-        */}
+        {/* === Brochure Download Section === */}
         <motion.div
           {...fadeUp}
-          className="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_15px_60px_rgba(0,0,0,0.08)] mb-24" // Added bottom margin for separation
+          className="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_15px_60px_rgba(0,0,0,0.08)] mb-24"
         >
           <div className="grid md:grid-cols-2 gap-10 items-center">
             
-            {/* Image Section (Left Column - Desktop) */}
+            {/* Left Image Section */}
             <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-2xl overflow-hidden shadow-2xl shadow-green-200/50">
               <Image
-                src="/book.png" // Your requested image path
+                src="/book.png"
                 alt="Download Our Detailed Hospice Brochure"
                 fill
                 className="object-cover object-center"
@@ -41,7 +37,7 @@ export default function Welcome() {
               />
             </div>
 
-            {/* Text & Button Section (Right Column - Desktop) */}
+            {/* Right Text + Download Button */}
             <div className="flex flex-col justify-center py-4">
               <h2 className="text-4xl font-extrabold text-[#03271E] mb-4 leading-tight">
                 Deepen Your Understanding
@@ -58,24 +54,20 @@ export default function Welcome() {
               
               <a
                 href={brochureLink}
-                download
+                download="pages.pdf"
                 className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 border border-transparent text-lg font-bold rounded-full shadow-lg text-white bg-[#047857] hover:bg-[#035b43] transition duration-300 transform hover:scale-[1.02]"
               >
                 <Download size={24} className="mr-3" />
                 Download Brochure
               </a>
               <p className="mt-4 text-sm text-gray-500 text-center sm:text-left">
-                (PDF, 1.2MB - Click to start the download)
+                (PDF, 1.2MB – Click to start the download)
               </p>
             </div>
           </div>
         </motion.div>
         
-        {/*
-        |--------------------------------------------------
-        | Contact/Final Call to Action Section (LAST - Acts as a beautiful conclusion)
-        |--------------------------------------------------
-        */}
+        {/* === Final CTA Section === */}
         <section
           id="contact"
           className="relative py-12 sm:py-16 bg-white text-center"
@@ -111,7 +103,6 @@ export default function Welcome() {
             </motion.div>
           </div>
         </section>
-        
       </div>
     </section>
   );
