@@ -8,24 +8,11 @@ const BACKGROUND_MID = "#f3f4f6";
 const PRIMARY_TEAL = "#006D66";
 const ACCENT_GOLD = "#D4881A";
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
 export default function ExperienceSection() {
   return (
     <motion.section
       className="py-16 md:py-24 px-6 md:px-12 relative overflow-hidden"
       style={{ backgroundColor: BACKGROUND_MID }}
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
     >
       {/* === Animated Gradient Background === */}
       <motion.div
