@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { FaCalendarAlt, FaFileMedical, FaHeart } from "react-icons/fa";
 
 // === Premium Color Palette ===
-const DEEP_GREEN = "#006D66"; // ✅ changed background color
-const PRIMARY_TEAL = "#006D66";
-const ACCENT_ORANGE = "#E68A1F"; // ✅ unified orange color
+const DEEP_GREEN = "#FFFFFF"; // background stays white
+const PRIMARY_TEAL = "#006D66"; // ✅ green replaces gold everywhere
+const ACCENT_ORANGE = "#006D66"; // ✅ all accents now green
 
 // === Animation Variants ===
 const sectionVariants = {
@@ -19,23 +19,23 @@ const sectionVariants = {
   },
 };
 
-// === Step Data ===
+// === Step Data (same text) ===
 const gettingStartedSteps = [
   {
-    title: "1. Schedule Your Consultation",
-    desc: "Easily book a private virtual or in-person session at a time that works for you.",
+    title: "Listening",
+    desc: "It starts with listening — to fears, to hopes, to the simple truths that define what truly matters most.",
     iconName: "FaCalendarAlt",
     color: PRIMARY_TEAL,
   },
   {
-    title: "2. Personalized Assessment",
-    desc: "We conduct a thorough review of your history and goals to tailor a treatment plan.",
+    title: "Guiding",
+    desc: "We guide each family through care transitions, offering wisdom, clarity, and support that feels personal and steady.",
     iconName: "FaFileMedical",
-    color: ACCENT_ORANGE,
+    color: PRIMARY_TEAL,
   },
   {
-    title: "3. Begin Your Healing Journey",
-    desc: "Start your sessions with a dedicated specialist and begin seeing real progress.",
+    title: "Honoring",
+    desc: "We honor life — every story, every smile, every goodbye — with compassion that continues beyond the moment.",
     iconName: "FaHeart",
     color: PRIMARY_TEAL,
   },
@@ -55,7 +55,7 @@ export default function HowItWorksSection() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      style={{ backgroundColor: DEEP_GREEN }} // ✅ background color changed here
+      style={{ backgroundColor: DEEP_GREEN }}
     >
       {/* === Section Content === */}
       <div className="container mx-auto relative z-10">
@@ -67,32 +67,31 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="/mysection5.png"
-              alt="Getting care should be simple"
+              src="/hospicesteps.png" // ✅ new image
+              alt="Our Care Journey"
               className="w-full h-full object-cover relative z-10 rounded-[2rem]"
             />
           </motion.div>
 
           {/* Text Content */}
-          <div className="md:w-1/2 text-left text-white">
+          <div className="md:w-1/2 text-left text-[#03271E]">
             <h2 className="font-serif text-4xl md:text-6xl font-extrabold mb-6 leading-snug">
-              Getting care should be{" "}
-              <span style={{ color: ACCENT_ORANGE }}>simple.</span>
+              Our Care Journey
             </h2>
-            <p className="text-xl mb-8 leading-relaxed text-gray-200 font-light">
-              We’ve designed every part of the journey to feel supportive,
-              elegant, and human — so healing feels natural and empowering.
+            <p className="text-xl mb-8 leading-relaxed text-gray-700 font-light">
+              Every journey we walk with our patients and families is guided by one
+              purpose — to bring light, peace, and dignity to every moment.
             </p>
           </div>
         </div>
 
-        {/* === Timeline (Visible on all devices) === */}
+        {/* === Timeline === */}
         <div className="relative flex flex-col items-center">
           {/* Vertical Line */}
           <div
             className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-[2px]"
             style={{
-              background: `linear-gradient(to bottom, ${PRIMARY_TEAL}, ${ACCENT_ORANGE}, ${PRIMARY_TEAL})`,
+              background: `linear-gradient(to bottom, ${PRIMARY_TEAL}, ${PRIMARY_TEAL}, ${PRIMARY_TEAL})`,
             }}
           ></div>
 
@@ -148,7 +147,7 @@ export default function HowItWorksSection() {
             href="/book-consultation"
             className="relative inline-block text-white font-bold py-4 px-10 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.07]"
             style={{
-              backgroundColor: ACCENT_ORANGE,
+              backgroundColor: PRIMARY_TEAL,
             }}
           >
             Start Now
