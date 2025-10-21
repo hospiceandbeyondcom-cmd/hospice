@@ -15,7 +15,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl text-center md:text-left"
           style={{
-            maxWidth: "620px", // ✅ slightly wider container to prevent wrapping
+            maxWidth: "620px",
           }}
         >
           {/* Heading */}
@@ -25,14 +25,19 @@ export default function Hero() {
               wordSpacing: "0.03em",
               letterSpacing: "-0.02em",
               whiteSpace: "normal",
+              fontFamily: "Montserrat, sans-serif",
             }}
           >
             Bring comfort and peace to every life
           </h1>
 
           {/* Subtext */}
-          <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-            Experience hospice care designed for dignity<br className="hidden md:block" />
+          <p
+            className="mt-6 text-lg text-gray-700 leading-relaxed"
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+          >
+            Experience hospice care designed for dignity
+            <br className="hidden md:block" />
             and comfort through every moment.
           </p>
 
@@ -42,6 +47,7 @@ export default function Hero() {
               href="/services"
               whileHover={{ scale: 1.05 }}
               className="bg-[#006D66] hover:bg-[#004E49] text-white font-semibold px-8 py-4 rounded-md shadow-md text-center inline-block transition-all"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               Explore our services
             </motion.a>
@@ -51,7 +57,10 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row items-center sm:items-start justify-center md:justify-start gap-4 text-gray-700">
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-[#006D66]" />
-              <span className="text-sm sm:text-base font-medium">
+              <span
+                className="text-sm sm:text-base font-medium"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
                 Get in touch with us
               </span>
             </div>
@@ -60,6 +69,7 @@ export default function Hero() {
               <a
                 href="mailto:info@hospiceandbeyond.com"
                 className="text-sm sm:text-base font-medium hover:text-[#003D39] transition-colors"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 Send Message
               </a>
@@ -72,14 +82,24 @@ export default function Hero() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mt-12 md:mt-0 md:w-1/2 flex justify-center"
+          className="mt-12 md:mt-0 md:w-1/2 flex justify-center w-full"
         >
-          <div className="relative w-[90%] md:w-[480px] h-[340px] md:h-[420px]">
+          <div
+            className="relative w-[95%] sm:w-[420px] md:w-[480px]"
+            style={{
+              aspectRatio: "4 / 3", // ✅ Keeps a fixed proportion across devices
+              minHeight: "300px", // ✅ Guarantees visible height on mobile
+              borderRadius: "16px",
+              overflow: "hidden",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+            }}
+          >
             <Image
               src="/hero.png"
               alt="Hospice and Beyond care"
               fill
-              className="object-cover rounded-2xl shadow-md"
+              className="object-cover"
+              priority
             />
           </div>
         </motion.div>

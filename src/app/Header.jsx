@@ -15,7 +15,7 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="Hospice and Beyond Logo"
-            width={182}
+            width={250}
             height={182}
             className="object-contain"
           />

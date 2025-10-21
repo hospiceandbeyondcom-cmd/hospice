@@ -1,8 +1,15 @@
 "use client";
 
+// ============================================================================
+// 1. IMPORTS
+// ============================================================================
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaCalendarAlt, FaFileMedical, FaHeart } from "react-icons/fa";
+
+// ============================================================================
+// 2. CONSTANTS (Colors, Animation Variants, Data)
+// ============================================================================
 
 // === Premium Color Palette ===
 const DEEP_GREEN = "#FFFFFF"; // background stays white
@@ -41,11 +48,16 @@ const gettingStartedSteps = [
   },
 ];
 
+// === Icon Map for dynamic lookup ===
 const IconMap = {
   FaCalendarAlt: FaCalendarAlt,
   FaFileMedical: FaFileMedical,
   FaHeart: FaHeart,
 };
+
+// ============================================================================
+// 3. COMPONENT DEFINITION
+// ============================================================================
 
 export default function HowItWorksSection() {
   return (
@@ -57,8 +69,9 @@ export default function HowItWorksSection() {
       viewport={{ once: true, amount: 0.3 }}
       style={{ backgroundColor: DEEP_GREEN }}
     >
-      {/* === Section Content === */}
+      {/* === Section Content Container === */}
       <div className="container mx-auto relative z-10">
+        {/* Header/Image Block */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-14 mb-16">
           {/* Image */}
           <motion.div
@@ -85,7 +98,9 @@ export default function HowItWorksSection() {
           </div>
         </div>
 
-        {/* === Timeline === */}
+        {/* --- */}
+
+        {/* === Timeline / Steps === */}
         <div className="relative flex flex-col items-center">
           {/* Vertical Line */}
           <div
@@ -96,7 +111,9 @@ export default function HowItWorksSection() {
           ></div>
 
           {gettingStartedSteps.map((step, i) => {
+            // Dynamically get the icon component
             const IconComponent = IconMap[step.iconName];
+            
             return (
               <motion.div
                 key={i}
@@ -108,7 +125,7 @@ export default function HowItWorksSection() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
               >
-                {/* Icon */}
+                {/* Icon Circle */}
                 <div
                   className="z-10 p-4 rounded-full border-4 bg-white/90 shadow-2xl mb-4 md:mb-0"
                   style={{ borderColor: step.color }}
@@ -121,18 +138,18 @@ export default function HowItWorksSection() {
                   </div>
                 </div>
 
-                {/* Card */}
+                {/* Card Content */}
                 <div
                   className={`w-full md:w-5/12 p-8 rounded-2xl shadow-lg bg-white/10 backdrop-blur-md transition duration-300 hover:shadow-2xl text-center md:text-left`}
                   style={{
                     borderLeft: `5px solid ${step.color}`,
-                    color: "white",
+                    color: "black", // Changed to black
                   }}
                 >
                   <h3 className="font-bold text-2xl mb-2 leading-snug">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-gray-200 leading-relaxed">
+                  <p className="text-lg text-gray-700 leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -140,6 +157,8 @@ export default function HowItWorksSection() {
             );
           })}
         </div>
+
+        {/* --- */}
 
         {/* === Button === */}
         <div className="flex justify-center mt-16">
