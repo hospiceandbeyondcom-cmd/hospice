@@ -1,5 +1,5 @@
-// SecondSection.jsx
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SecondSection = () => {
   return (
@@ -12,40 +12,30 @@ const SecondSection = () => {
         {/* Main grid layout for image and text content */}
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           
-          {/* 1. Image Column (Right side in the design, so it comes second in the JSX for order-2/lg:order-1) */}
+          {/* 1. Image Column */}
           <div className="relative mb-12 lg:mb-0 lg:order-2">
-            
-            {/* The image is wrapped in a container to mimic the rounded-rectangle style */}
             <div className="rounded-3xl shadow-xl overflow-hidden aspect-w-16 aspect-h-9 md:aspect-w-4 md:aspect-h-3">
-              {/* The 'about1.png' image is assumed to be in your 'public' folder.
-                Next.js 'Image' component requires 'width', 'height', and 'alt' props.
-                The 'layout="responsive"' and 'objectFit="cover"' ensure it fills the container.
-              */}
               <Image
-                src="/about1.png" // Path to your image in the public folder
+                src="/about1.png"
                 alt="A compassionate team member providing care"
-                width={700} // Set appropriate base width
-                height={500} // Set appropriate base height
+                width={700}
+                height={500}
                 layout="responsive"
                 objectFit="cover"
                 className="transform hover:scale-105 transition duration-500 ease-in-out"
               />
             </div>
-            
-            {/* Optional: Add a subtle green accent behind the image for more visual depth, similar to the original */}
             <div className="hidden lg:block absolute inset-0 -top-8 -right-8 w-full h-full bg-green-500 rounded-3xl -z-10 opacity-10"></div>
           </div>
           
-          {/* 2. Text Content Column (Left side in the design, order-1/lg:order-1) */}
+          {/* 2. Text Content Column */}
           <div className="lg:order-1 lg:pr-12">
             
-            {/* The large, multi-colored heading */}
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
               <span className="block text-gray-800">A simple but</span>
               <span className="block text-emerald-600">sacred belief</span>
             </h2>
 
-            {/* Content Paragraphs */}
             <div className="space-y-6 text-lg text-gray-700">
               <p>
                 Hospice and Beyond Palliative Care is founded on a simple but sacred belief — that every person deserves dignity, comfort, and peace** through every stage of life. We are a compassionate team of professionals who walk hand in hand with patients and their loved ones, creating a space where healing, presence, and hope are honored.
@@ -58,14 +48,15 @@ const SecondSection = () => {
               </p>
             </div>
             
-            {/* The 'Our Mission' style button. You can change the 'href' and text. */}
+            {/* CORRECTED BUTTON CODE */}
             <div className="mt-10">
-              <a 
-                href="/mission" 
+              <Link 
+                href="/about" // The link destination is set to /about
+                // ClassNames are moved directly here
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-emerald-600 hover:bg-emerald-700 transition duration-300"
               >
                 Learn More About Our Care
-              </a>
+              </Link>
             </div>
           </div>
 
