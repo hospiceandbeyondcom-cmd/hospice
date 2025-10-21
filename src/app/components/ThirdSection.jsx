@@ -6,7 +6,7 @@ import { FaFeatherAlt, FaChild, FaTrophy } from "react-icons/fa"; // icons updat
 // === Color Constants ===
 const BACKGROUND_MID = "#f3f4f6";
 const PRIMARY_TEAL = "#006D66";
-const ACCENT_GOLD = "#D4881A";
+const ACCENT_GOLD = "#7d5f42";
 
 export default function ExperienceSection() {
   return (
