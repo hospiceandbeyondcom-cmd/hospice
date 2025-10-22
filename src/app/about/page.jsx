@@ -84,7 +84,7 @@ export default function AboutPage() {
         <section className="grid md:grid-cols-2 items-center gap-10 max-w-7xl mx-auto pb-20">
           <div className="relative h-[300px] sm:h-[400px] w-full rounded-xl shadow-lg overflow-hidden">
             <Image
-              src="/about1.png"
+              src="/mission.png"
               alt="Mission Image"
               fill
               className="object-cover"

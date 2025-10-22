@@ -1,5 +1,5 @@
 // This component requires an updated tailwind.config.js file to support the 'pulse-slow' animation.
-// See the instructions following the code block.
+// See the instructions following the code block below.
 
 "use client";
 
@@ -8,8 +8,7 @@
 // ============================================================================
 import Link from "next/link";
 import { motion } from "framer-motion";
-// Updated Icons for Listening (VolumeUp) and Guiding (MapSigns)
-import { FaVolumeUp, FaMapSigns, FaHeart } from "react-icons/fa";
+import { FaVolumeUp, FaMapSigns, FaHeart } from "react-icons/fa"; // Icons for Listening, Guiding, and Honoring
 
 // ============================================================================
 // 2. CONSTANTS
@@ -20,42 +19,32 @@ const BACKGROUND_WHITE = "#FFFFFF"; // Main section background is white
 const PRIMARY_TEAL = "#006D66"; // Primary brand color
 const ACCENT_BROWN = "#7d5f42"; // Secondary brand color for cards/highlights
 
-// --- Animation Variants ---
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
-// --- Step Data (using both brand colors for visual depth) ---
+// --- Step Data ---
 const gettingStartedSteps = [
   {
     title: "Listening",
     desc: "It starts with listening — to fears, to hopes, to the simple truths that define what truly matters most.",
-    iconName: "FaVolumeUp", // Changed from FaCalendarAlt to FaVolumeUp (Audio/Listening)
+    iconName: "FaVolumeUp",
     primaryColor: PRIMARY_TEAL,
     cardColor: ACCENT_BROWN,
   },
   {
     title: "Guiding",
     desc: "We guide each family through care transitions, offering wisdom, clarity, and support that feels personal and steady.",
-    iconName: "FaMapSigns", // Changed from FaFileMedical to FaMapSigns (Road/Direction)
+    iconName: "FaMapSigns",
     primaryColor: PRIMARY_TEAL,
     cardColor: ACCENT_BROWN,
   },
   {
     title: "Honoring",
     desc: "We honor life — every story, every smile, every goodbye — with compassion that continues beyond the moment.",
-    iconName: "FaHeart", // Kept FaHeart
+    iconName: "FaHeart",
     primaryColor: PRIMARY_TEAL,
     cardColor: ACCENT_BROWN,
   },
 ];
 
-// --- Icon Map for dynamic lookup (Updated to match data) ---
+// --- Icon Map for dynamic lookup ---
 const IconMap = {
   FaVolumeUp: FaVolumeUp,
   FaMapSigns: FaMapSigns,
@@ -68,17 +57,13 @@ const IconMap = {
 
 export default function HowItWorksSection() {
   return (
-    <motion.section
+    <section
       className="relative py-20 md:py-28 px-6 md:px-12 overflow-hidden"
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
       style={{ backgroundColor: BACKGROUND_WHITE }}
     >
       {/* === Section Content Container === */}
       <div className="container mx-auto relative z-10">
-
+        
         {/* --- Header/Image Block --- */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-14 mb-16">
           
@@ -119,19 +104,28 @@ export default function HowItWorksSection() {
           ></div>
 
           {gettingStartedSteps.map((step, i) => {
-            // Dynamically get the icon component
             const IconComponent = IconMap[step.iconName];
             
+            // ✅ This logic explicitly puts the middle step (i=1) on the right.
+            const shouldFaceRight = i === 1; 
+            
+            // Placement classes for the step container
+            const cardPlacementClasses = shouldFaceRight 
+              ? "md:flex-row-reverse md:justify-end" // Forces content to the right of the line
+              : "md:flex-row md:justify-start";     // Forces content to the left of the line
+
+            // Text alignment and margin classes for the card content
+            const textAndMarginClasses = shouldFaceRight
+              ? "md:text-right md:mr-12" // Right text/margin for right-side card
+              : "md:text-left md:ml-12";  // Left text/margin for left-side card
+              
+            // Style for the color border on the card
+            const borderStyle = shouldFaceRight ? 'borderRight' : 'borderLeft';
+            
             return (
-              <motion.div
+              <div
                 key={i}
-                className={`flex flex-col items-center w-full my-10 relative ${
-                  i % 2 === 0 ? "md:flex-row md:justify-start" : "md:flex-row-reverse md:justify-end"
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
+                className={`flex flex-col items-center w-full my-10 relative ${cardPlacementClasses}`}
               >
                 
                 {/* Icon Circle */}
@@ -149,13 +143,11 @@ export default function HowItWorksSection() {
 
                 {/* Card Content */}
                 <div
-                  className={`w-full md:w-5/12 p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl text-center text-white ${
-                    i % 2 === 0 ? "md:text-left md:ml-12" : "md:text-right md:mr-12"
-                  }`}
+                  className={`w-full md:w-5/12 p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl text-center text-white ${textAndMarginClasses}`}
                   style={{
                     backgroundColor: step.cardColor,
-                    // Dynamic border side based on placement
-                    [i % 2 === 0 ? 'borderLeft' : 'borderRight']: `5px solid ${step.primaryColor}`,
+                    // Apply dynamic border side
+                    [borderStyle]: `5px solid ${step.primaryColor}`,
                   }}
                 >
                   <h3 className="font-bold text-2xl mb-2 leading-snug">
@@ -165,7 +157,7 @@ export default function HowItWorksSection() {
                     {step.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
@@ -183,6 +175,6 @@ export default function HowItWorksSection() {
           </Link>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
