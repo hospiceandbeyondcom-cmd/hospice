@@ -164,7 +164,7 @@ export default function AboutPage() {
                 Integrity: We operate with honesty and transparency.
               </li>
               <li className="font-semibold text-[#03271E]">
-                Family: We view patients and their loved ones as one circle of
+                Family: We view our patients and their loved ones as one circle of
                 care.
               </li>
               <li className="font-semibold text-[#03271E]">

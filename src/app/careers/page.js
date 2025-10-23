@@ -175,7 +175,7 @@ export default function Career() {
               difference. <br />
               Please send your message of interest to{" "}
               <span className="font-medium text-[#7D5F42]">
-                hr@hospiceandbn.com
+                hr@hospiceandbeyond.com
               </span>
               .
             </p>
@@ -203,7 +203,7 @@ export default function Career() {
               We’re honored by your interest in serving with compassion. <br />
               Please send your resume or CV to{" "}
               <span className="font-medium text-[#7D5F42]">
-                hr@hospiceandbn.com
+                hr@hospiceandbeyond.com
               </span>
               .
             </p>
