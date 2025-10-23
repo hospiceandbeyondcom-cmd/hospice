@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Phone, Mail, Facebook, Twitter, Instagram, Linkedin, MapPin } from "lucide-react";
+import { Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"; // Removed MapPin
 
 export default function Footer() {
   return (
@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* 2 & 3. Quick Links and Service Areas (HORIZONTAL on Mobile, Cols 2 & 3 on Desktop) */}
           {/* This container ensures horizontal layout on mobile (grid-cols-2) and uses md:col-span-2 to 
-             occupy slots 2 and 3 in the main 5-column grid on desktop. */}
+              occupy slots 2 and 3 in the main 5-column grid on desktop. */}
           <div className="grid grid-cols-2 gap-12 md:col-span-2">
             
             {/* Quick Links (Col 2) */}
@@ -58,19 +58,19 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2 text-gray-600">
                 <li className="flex items-center gap-2">
-                  <MapPin size={16} className="text-[#006D66]" />
+                  {/* Removed <MapPin size={16} className="text-[#006D66]" /> */}
                   <span>Austin, Texas</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <MapPin size={16} className="text-[#006D66]" />
+                  {/* Removed <MapPin size={16} className="text-[#006D66]" /> */}
                   <span>Denton</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <MapPin size={16} className="text-[#006D66]" />
+                  {/* Removed <MapPin size={16} className="text-[#006D66]" /> */}
                   <span>Allen, Texas</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <MapPin size={16} className="text-[#006D66]" />
+                  {/* Removed <MapPin size={16} className="text-[#006D66]" /> */}
                   <span>Dallas, Texas</span>
                 </li>
               </ul>
