@@ -1,20 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, Facebook, Twitter, Instagram, Youtube } from "lucide-react"; // Removed 'Music'
-
-// New component for the official TikTok logo
-// This assumes you have the logo saved at /tiktok-icon.svg
-const TikTokIcon = ({ size = 20 }) => (
-    <Image
-        src="/tiktok.png" 
-        alt="TikTok Icon"
-        width={size}
-        height={size}
-        // You might need to adjust classes based on the colors in your SVG/PNG
-        className="w-5 h-5 object-contain" 
-    />
-);
+import { Phone, Mail, Facebook, Twitter, Instagram, Youtube, Music } from "lucide-react";
 
 export default function Footer() {
     // Define the social media links
@@ -40,10 +27,9 @@ export default function Footer() {
             label: "YouTube",
         },
         {
-            icon: TikTokIcon, // <-- Use the custom component here
+            icon: Music, // Used as the icon for TikTok
             href: "https://www.tiktok.com/@hospiceandbeyond",
             label: "TikTok",
-            isImage: true, // Custom flag to help with styling below
         },
     ];
 
@@ -173,12 +159,7 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label={link.label}
-                                // Conditional styling to remove hover effects and border for the image logo
-                                className={`p-2 rounded-full transition ${
-                                    link.isImage 
-                                        ? "border-transparent" // No border for the image logo
-                                        : "border border-[#006D66]/30 hover:bg-[#006D66] hover:text-white"
-                                }`}
+                                className="p-2 rounded-full border border-[#006D66]/30 hover:bg-[#006D66] hover:text-white transition"
                             >
                                 <link.icon size={20} />
                             </a>
