@@ -13,16 +13,24 @@ export default function AboutPage() {
     <main className="bg-white text-gray-800 font-sans leading-relaxed antialiased">
       <Header />
 
-      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden shadow-xl">
-        <Image
-          src="/heroabout.png"
-          alt="Hospice and Beyond Hero"
-          fill
-          priority
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 100vw"
-        />
-        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white px-6 py-10">
+      {/* ===== Hero Section (fixed to show full head) ===== */}
+      <section className="relative h-[75vh] md:h-[85vh] w-full flex items-center justify-center overflow-hidden shadow-xl">
+        <div className="relative w-full h-full">
+          <Image
+            src="/heroabout.png"
+            alt="Hospice and Beyond Hero"
+            fill
+            priority
+            className="object-cover object-top" // keeps head visible
+            sizes="(max-width: 768px) 100vw, 100vw"
+          />
+        </div>
+
+        {/* Subtle gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+
+        {/* Hero Text */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 py-10 z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg max-w-4xl">
             Hospice and Beyond Palliative Care
           </h1>
@@ -32,6 +40,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ===== Welcome Section ===== */}
       <section className="grid md:grid-cols-2 items-center gap-10 px-6 md:px-12 py-24 max-w-7xl xl:max-w-8xl mx-auto border-b border-gray-100">
         <div className="relative h-[350px] sm:h-[450px] w-full rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-500">
           <Image
@@ -80,6 +89,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ===== Mission Section ===== */}
       <div className="bg-[#F9FAF9] py-20 px-6 md:px-12">
         <section className="grid md:grid-cols-2 items-center gap-10 max-w-7xl mx-auto pb-20">
           <div className="relative h-[300px] sm:h-[400px] w-full rounded-xl shadow-lg overflow-hidden">
@@ -129,6 +139,7 @@ export default function AboutPage() {
         </section>
       </div>
 
+      {/* ===== Foundation Section ===== */}
       <section className="py-24 px-6 md:px-12 bg-white">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#03271E] mb-12">
           Our Foundation of Care
@@ -141,29 +152,23 @@ export default function AboutPage() {
                 Our Core Values
               </h3>
             </div>
-            <p className="text-gray-700 mb-4 text-lg">
-              Our work is guided by five foundational values:
-            </p>
             <ul className="space-y-2 pl-5 list-disc text-gray-700">
               <li className="font-semibold text-[#03271E]">
                 Compassion: We lead with empathy, recognizing the sacredness of
                 every life.
               </li>
               <li className="font-semibold text-[#03271E]">
-                Dignity: We ensure respect and autonomy for the patient at all
-                times.
+                Dignity: We ensure respect and autonomy for every patient.
               </li>
               <li className="font-semibold text-[#03271E]">
-                Integrity: We operate with honesty and transparency in every
-                action.
+                Integrity: We operate with honesty and transparency.
               </li>
               <li className="font-semibold text-[#03271E]">
-                Family: We view the patient and their loved ones as a single unit
-                of care.
+                Family: We view patients and their loved ones as one circle of
+                care.
               </li>
               <li className="font-semibold text-[#03271E]">
-                Hope: We foster emotional and spiritual peace, not just medical
-                comfort.
+                Hope: We foster emotional and spiritual peace, not just comfort.
               </li>
             </ul>
           </div>
@@ -181,87 +186,24 @@ export default function AboutPage() {
               </h3>
             </div>
             <p className="text-gray-700 text-base leading-relaxed">
-              This service is wholeheartedly dedicated to the families and
-              caregivers who bring light to every moment. We honor your courage,
-              love, and the sacred trust you place in us. May our support
-              comfort, guide, and empower you as we walk beside you in this
-              journey of care. We are committed to supporting you both before
-              and after the loss.
+              This service is dedicated to families and caregivers who bring
+              light to every moment. We honor your courage and the sacred trust
+              you place in us. May our support comfort and empower you as we
+              walk beside you through this journey of care.
             </p>
             <div className="mt-6 flex items-center text-[#03271E]">
-              <Heart className="mr-2 text-red-500" fill="currentColor" size={20} />
+              <Heart
+                className="mr-2 text-red-500"
+                fill="currentColor"
+                size={20}
+              />
               <span className="font-semibold">Caring for the Caregiver</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 bg-[#F9FAF9] border-t border-gray-200">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#03271E] mb-12 text-center">
-            Understanding Hospice Care
-          </h2>
-
-          <div className="bg-white p-8 sm:p-10 rounded-xl shadow-lg border-l-4 border-[#047857]">
-            <p className="text-gray-700 mb-4 text-lg italic font-medium">
-              Hospice care is about quality, not quantity, of life. It is
-              compassionate support for people with life-limiting illness who
-              choose comfort and peace rather than aggressive treatments. Our
-              care focuses on pain relief, symptom management, emotional balance,
-              and spiritual wellness — helping each person live fully,
-              surrounded by love.
-            </p>
-          </div>
-
-          <div className="mt-12 space-y-10">
-            <div>
-              <h3 className="text-2xl font-semibold text-[#03271E] flex items-center mb-4">
-                <Shield className="text-[#047857] mr-3" size={24} />
-                Our Approach vs. Traditional Palliative Care
-              </h3>
-              <p className="text-gray-700 text-base leading-relaxed">
-                While palliative care may begin at any stage of illness, hospice
-                care begins when curative treatment is no longer effective and
-                comfort becomes the primary focus. At Hospice and Beyond, this
-                shift is embraced as a time for reflection, connection, and
-                peace. Our dedicated team of physician, nurse, social worker,
-                chaplain, and specialists works together to design a personalized
-                care plan honoring your unique story and wishes.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-semibold text-[#03271E] flex items-center mb-4">
-                <Handshake className="text-[#047857] mr-3" size={24} />
-                Family Care is the Heart of Hospice
-              </h3>
-              <p className="text-gray-700 text-base leading-relaxed">
-                Families are the cornerstone of care. We provide teaching,
-                emotional support, and practical tools so loved ones can feel
-                confident and capable in their role. If caregiving isn’t
-                possible, our social worker assists with arranging safe,
-                affordable alternatives, always reviewing resources before any
-                out-of-pocket expense is incurred.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-semibold text-[#03271E] flex items-center mb-4">
-                <Star className="text-[#FFD700] mr-3" size={24} fill={ACCENT_COLOR} />
-                Where We Serve You
-              </h3>
-              <p className="text-gray-700 text-base leading-relaxed">
-                Hospice and Beyond Palliative Care brings services to where you
-                call home — your residence, assisted living community, or nursing
-                facility. If symptoms cannot be managed at home, we coordinate
-                short-term inpatient care or respite options to ensure continuous
-                safety and comfort.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* ===== Closing Section ===== */}
       <section className="bg-[#03271E] text-white py-16 px-6 md:px-12 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
