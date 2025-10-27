@@ -68,7 +68,7 @@ export default function Footer() {
                                 <li><a href="/contact" className="hover:text-[#006D66] transition">Contact</a></li>
                                 <li>
                                     <a
-                                        href="https://blog.hospiceandbeyond.com"
+                                        href="https://hospiceandbeyond.com/blog"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="hover:text-[#006D66] transition"
