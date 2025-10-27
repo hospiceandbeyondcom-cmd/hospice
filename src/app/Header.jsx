@@ -1,317 +1,350 @@
 "use client";
-import React, { useState, useRef } from "react";
+import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-// =============================
-// DESKTOP DROPDOWN LINK
-// =============================
-const DropdownLink = ({ title, children }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const hoverTimer = useRef(null);
-
-  const handleMouseEnter = () => {
-    clearTimeout(hoverTimer.current);
-    setDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    hoverTimer.current = setTimeout(() => setDropdownOpen(false), 80);
-  };
-
-  return (
-    <div
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="flex items-center cursor-pointer text-[#03271E] font-medium hover:text-[#047857] transition">
-        {title}
-        <svg
-          className={`ml-1 h-4 w-4 transform transition-transform ${
-            dropdownOpen ? "rotate-180" : "rotate-0"
-          }`}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </div>
-
-      {/* Dropdown Menu */}
-      <div
-        className={`absolute z-50 top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-md shadow-lg py-1 transition-all duration-150 ease-out will-change-transform ${
-          dropdownOpen
-            ? "visible opacity-100 translate-y-0"
-            : "invisible opacity-0 translate-y-2"
-        }`}
-      >
-        {children}
-      </div>
-    </div>
-  );
-};
-
-// =============================
-// DESKTOP DROPDOWN ITEM
-// =============================
-const DropdownItem = ({ href, children }) => (
-  <Link
-    href={href}
-    className="block px-4 py-2 text-sm text-[#03271E] hover:bg-gray-100 hover:text-[#047857] transition"
-  >
-    {children}
-  </Link>
-);
-
-// =============================
-// MOBILE DROPDOWN (Accordion)
-// =============================
-const MobileDropdown = ({ title, children, closeMenu }) => {
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-
-  return (
-    <div className="flex flex-col">
-      <div
-        className="flex items-center justify-between text-[#03271E] font-medium hover:text-[#047857] transition cursor-pointer py-1"
-        onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-      >
-        <span>{title}</span>
-        <svg
-          className={`ml-1 h-5 w-5 transform transition-transform ${
-            mobileDropdownOpen ? "rotate-180" : "rotate-0"
-          }`}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </div>
-
-      <div
-        className={`transition-all duration-300 overflow-hidden pl-4 ${
-          mobileDropdownOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
-        }`}
-      >
-        {React.Children.map(children, (child) =>
-          React.cloneElement(child, {
-            className:
-              "block text-[#03271E] font-normal hover:text-[#047857] transition py-1",
-            onClick: closeMenu,
-          })
-        )}
-      </div>
-    </div>
-  );
-};
-
-// =============================
-// MAIN HEADER COMPONENT
-// =============================
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [faqOpen, setFaqOpen] = useState(false);
 
-  const closeMobileMenu = () => setMenuOpen(false);
+  const closeAll = () => {
+    setAboutOpen(false);
+    setServicesOpen(false);
+    setFaqOpen(false);
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    if (menuOpen) closeAll();
+  };
 
   return (
-    <header className="w-full bg-white shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 md:py-4">
-        {/* ✅ Logo */}
-        <Link href="/" className="flex items-center">
+    <header className="w-full bg-white shadow-lg">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 md:py-4">
+        {/* === LOGO === */}
+        <Link
+          href="/"
+          className="flex items-center rounded-lg focus:outline-none focus:ring-2 focus:ring-[#047857]/50"
+        >
           <Image
             src="/logo.png"
             alt="Hospice and Beyond Logo"
-            width={250}
-            height={182}
-            className="object-contain"
+            width={200}
+            height={60}
+            className="object-contain rounded-lg"
           />
         </Link>
 
-        {/* ✅ Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10">
+        {/* === DESKTOP MENU === */}
+        <nav className="hidden md:flex items-center space-x-8 text-[#03271E] font-medium">
           <Link
             href="/"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition"
+            className="hover:text-[#047857] transition-colors rounded-lg p-1"
           >
             Home
           </Link>
 
-          {/* About Dropdown */}
-          <DropdownLink title="About">
-            <DropdownItem href="/about">About Us</DropdownItem>
-            <DropdownItem href="/team">Our Team</DropdownItem>
-          </DropdownLink>
+          {/* === ABOUT DROPDOWN === */}
+          <div
+            className="relative group"
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
+          >
+            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors p-1">
+              <span>About</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  aboutOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+            {aboutOpen && (
+              <div className="absolute left-0 top-8 bg-white shadow-xl rounded-xl py-2 w-40 border border-gray-100 z-50 overflow-hidden transform transition-all duration-200">
+                <Link
+                  href="/about"
+                  className="block px-4 py-2 text-sm hover:bg-[#047857] hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/team"
+                  className="block px-4 py-2 text-sm hover:bg-[#047857] hover:text-white transition-colors"
+                >
+                  Our Team
+                </Link>
+              </div>
+            )}
+          </div>
 
-          {/* Services Dropdown */}
-          <DropdownLink title="Services">
-            <DropdownItem href="/services">Hospice Care</DropdownItem>
-            <DropdownItem href="/palliative-care">Palliative Care</DropdownItem>
-            <DropdownItem href="/bereavement">Bereavement</DropdownItem>
-            <DropdownItem href="/social-services">Social Services</DropdownItem>
-            <DropdownItem href="/physician">Physician</DropdownItem>
-            <DropdownItem href="/nursing">Nursing Care</DropdownItem>
-            <DropdownItem href="/durable-medical-equipment">
-              Durable Medical Equipment
-            </DropdownItem>
-            <DropdownItem href="/therapy">Therapy Services</DropdownItem>
-          </DropdownLink>
+          {/* === SERVICES DROPDOWN === */}
+          <div
+            className="relative group"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors p-1">
+              <span>Services</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  servicesOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+            {servicesOpen && (
+              <div className="absolute left-0 top-8 bg-white shadow-xl rounded-xl py-2 w-56 border border-gray-100 z-50 transform transition-all duration-200">
+                {[
+                  { title: "Hospice Care", href: "/services" },
+                  { title: "Palliative Care", href: "/palliative-care" },
+                  { title: "Bereavement", href: "/bereavement" },
+                  { title: "Social Services", href: "/social-services" },
+                  { title: "Physician", href: "/physician" },
+                  { title: "Nursing Care", href: "/nursing" },
+                  {
+                    title: "Durable Medical Equipment",
+                    href: "/durable-medical-equipment",
+                  },
+                  { title: "Therapy Services", href: "/therapy" },
+                ].map((service) => (
+                  <Link
+                    key={service.title}
+                    href={service.href}
+                    className="block px-4 py-2 text-sm hover:bg-[#047857] hover:text-white transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
-          {/* Myth & FAQ */}
-          <DropdownLink title="Myth and FAQ">
-            <DropdownItem href="/myth">Myth</DropdownItem>
-            <DropdownItem href="/faq">FAQ</DropdownItem>
-          </DropdownLink>
+          {/* === MYTH & FAQ DROPDOWN === */}
+          <div
+            className="relative group"
+            onMouseEnter={() => setFaqOpen(true)}
+            onMouseLeave={() => setFaqOpen(false)}
+          >
+            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors p-1">
+              <span>Myth & FAQ</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  faqOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+            {faqOpen && (
+              <div className="absolute left-0 top-8 bg-white shadow-xl rounded-xl py-2 w-40 border border-gray-100 z-50 transform transition-all duration-200">
+                <Link
+                  href="/myth"
+                  className="block px-4 py-2 text-sm hover:bg-[#047857] hover:text-white transition-colors"
+                >
+                  Myth
+                </Link>
+                <Link
+                  href="/faq"
+                  className="block px-4 py-2 text-sm hover:bg-[#047857] hover:text-white transition-colors"
+                >
+                  FAQ
+                </Link>
+              </div>
+            )}
+          </div>
 
-          {/* Careers */}
           <Link
             href="/careers"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition"
+            className="hover:text-[#047857] transition-colors p-1"
           >
             Careers
           </Link>
 
-          {/* Contact */}
           <Link
             href="/contact"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition"
+            className="hover:text-[#047857] transition-colors p-1"
           >
             Contact
           </Link>
 
-          {/* Blog */}
           <Link
             href="/blog"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition"
+            className="hover:text-[#047857] transition-colors p-1"
           >
             Blog
           </Link>
 
-          {/* Donate */}
           <Link
             href="/donate-to-us"
-            className="bg-[#047857] text-white px-4 py-2 rounded-lg font-medium transition duration-150 ease-in-out hover:bg-[#03271E] shadow-md"
+            className="ml-3 bg-[#047857] hover:bg-[#03271E] text-white font-semibold px-4 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-[1.05]"
           >
             Donate to Us
           </Link>
         </nav>
 
-        {/* ✅ Mobile Menu Icon */}
-        <div
-          className="md:hidden text-[#03271E] cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
+        {/* === MOBILE MENU BUTTON === */}
+        <button
+          className="md:hidden text-[#03271E] p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#047857]"
+          onClick={toggleMenu}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          {menuOpen ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-7 h-7"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-7 h-7"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          )}
-        </div>
+          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
 
-      {/* ✅ Mobile Menu */}
+      {/* === MOBILE MENU === */}
       <div
-        className={`md:hidden bg-white border-t border-gray-200 transition-all duration-500 overflow-hidden ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="flex flex-col space-y-4 px-6 py-6">
+        <div className="flex flex-col px-4 sm:px-6 py-4 space-y-2 text-[#03271E] font-medium border-t border-gray-200">
           <Link
             href="/"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition py-1"
-            onClick={closeMobileMenu}
+            onClick={closeAll}
+            className="block py-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg px-2"
           >
             Home
           </Link>
 
-          <MobileDropdown title="About" closeMenu={closeMobileMenu}>
-            <Link href="/about">About Us</Link>
-            <Link href="/team">Our Team</Link>
-          </MobileDropdown>
+          {/* ABOUT (MOBILE) */}
+          <div>
+            <button
+              onClick={() => setAboutOpen(!aboutOpen)}
+              className="flex justify-between w-full py-2 px-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg"
+            >
+              About
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-200 ${
+                  aboutOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+            {aboutOpen && (
+              <div className="pl-6 mt-1 space-y-1 text-sm bg-gray-50 rounded-lg py-1">
+                <Link
+                  href="/about"
+                  onClick={closeAll}
+                  className="block py-2 hover:text-[#047857] px-2"
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/team"
+                  onClick={closeAll}
+                  className="block py-2 hover:text-[#047857] px-2"
+                >
+                  Our Team
+                </Link>
+              </div>
+            )}
+          </div>
 
-          <MobileDropdown title="Services" closeMenu={closeMobileMenu}>
-            <Link href="/services">Hospice Care</Link>
-            <Link href="/palliative-care">Palliative Care</Link>
-            <Link href="/bereavement">Bereavement</Link>
-            <Link href="/social-services">Social Services</Link>
-            <Link href="/physician">Physician</Link>
-            <Link href="/nursing">Nursing Care</Link>
-            <Link href="/durable-medical-equipment">Durable Medical Equipment</Link>
-            <Link href="/therapy">Therapy Services</Link>
-          </MobileDropdown>
+          {/* SERVICES (MOBILE) */}
+          <div>
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex justify-between w-full py-2 px-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg"
+            >
+              Services
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-200 ${
+                  servicesOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+            {servicesOpen && (
+              <div className="pl-6 mt-1 space-y-1 text-sm bg-gray-50 rounded-lg py-1">
+                {[
+                  { title: "Hospice Care", href: "/services" },
+                  { title: "Palliative Care", href: "/palliative-care" },
+                  { title: "Bereavement", href: "/bereavement" },
+                  { title: "Social Services", href: "/social-services" },
+                  { title: "Physician", href: "/physician" },
+                  { title: "Nursing Care", href: "/nursing" },
+                  {
+                    title: "Durable Medical Equipment",
+                    href: "/durable-medical-equipment",
+                  },
+                  { title: "Therapy Services", href: "/therapy" },
+                ].map((service) => (
+                  <Link
+                    key={service.title}
+                    href={service.href}
+                    onClick={closeAll}
+                    className="block py-2 hover:text-[#047857] px-2"
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
-          <MobileDropdown title="Myth and FAQ" closeMenu={closeMobileMenu}>
-            <Link href="/myth">Myth</Link>
-            <Link href="/faq">FAQ</Link>
-          </MobileDropdown>
+          {/* MYTH & FAQ (MOBILE) */}
+          <div>
+            <button
+              onClick={() => setFaqOpen(!faqOpen)}
+              className="flex justify-between w-full py-2 px-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg"
+            >
+              Myth & FAQ
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-200 ${
+                  faqOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+            {faqOpen && (
+              <div className="pl-6 mt-1 space-y-1 text-sm bg-gray-50 rounded-lg py-1">
+                <Link
+                  href="/myth"
+                  onClick={closeAll}
+                  className="block py-2 hover:text-[#047857] px-2"
+                >
+                  Myth
+                </Link>
+                <Link
+                  href="/faq"
+                  onClick={closeAll}
+                  className="block py-2 hover:text-[#047857] px-2"
+                >
+                  FAQ
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link
             href="/careers"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition py-1"
-            onClick={closeMobileMenu}
+            onClick={closeAll}
+            className="block py-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg px-2"
           >
             Careers
           </Link>
-
           <Link
             href="/contact"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition py-1"
-            onClick={closeMobileMenu}
+            onClick={closeAll}
+            className="block py-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg px-2"
           >
             Contact
           </Link>
-
           <Link
             href="/blog"
-            className="text-[#03271E] font-medium hover:text-[#047857] transition py-1"
-            onClick={closeMobileMenu}
+            onClick={closeAll}
+            className="block py-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg px-2"
           >
             Blog
           </Link>
 
           <Link
             href="/donate-to-us"
-            className="text-center bg-[#047857] text-white px-4 py-2 rounded-lg font-medium transition duration-150 ease-in-out hover:bg-[#03271E] shadow-md block"
-            onClick={closeMobileMenu}
+            onClick={closeAll}
+            className="mt-4 block bg-[#047857] hover:bg-[#03271E] text-white font-semibold px-5 py-3 rounded-full shadow-md text-center transition-all duration-300"
           >
             Donate to Us
           </Link>
-        </nav>
+        </div>
       </div>
     </header>
   );
