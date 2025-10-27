@@ -86,7 +86,7 @@ export default function Welcome() {
               className="mt-4 text-xl text-gray-700 max-w-2xl mx-auto"
             >
               Our compassionate team is ready to support you with comfort, care, and
-              understanding — every step of the way.
+              understanding every step of the way.
             </motion.p>
 
             <motion.div

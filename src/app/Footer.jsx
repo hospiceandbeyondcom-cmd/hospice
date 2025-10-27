@@ -48,7 +48,7 @@ export default function Footer() {
                             </h3>
                         </div>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                            A legacy of compassion — honoring every life, every moment.
+                            A legacy of compassion honoring every life, every moment.
                             We bring comfort, dignity, and peace to every family we serve.
                         </p>
                     </div>

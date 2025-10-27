@@ -23,7 +23,7 @@ const ACCENT_BROWN = "#7d5f42"; // Secondary brand color for cards/highlights
 const gettingStartedSteps = [
   {
     title: "Listening",
-    desc: "It starts with listening — to fears, to hopes, to the simple truths that define what truly matters most.",
+    desc: "It starts with listening to fears, to hopes, to the simple truths that define what truly matters most.",
     iconName: "FaVolumeUp",
     primaryColor: PRIMARY_TEAL,
     cardColor: ACCENT_BROWN,
@@ -37,7 +37,7 @@ const gettingStartedSteps = [
   },
   {
     title: "Honoring",
-    desc: "We honor life — every story, every smile, every goodbye — with compassion that continues beyond the moment.",
+    desc: "We honor life every story, every smile, every goodbye with compassion that continues beyond the moment.",
     iconName: "FaHeart",
     primaryColor: PRIMARY_TEAL,
     cardColor: ACCENT_BROWN,
