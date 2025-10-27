@@ -149,7 +149,7 @@ export default function Team() {
               alt="Hospice and Beyond Extended Family of Care"
               width={800}
               height={600}
-              className="object-contain w-full h-auto"
+              className="object-contain w-[95%] sm:w-[90%] md:w-full h-auto max-w-[650px]"
             />
           </motion.div>
         </div>

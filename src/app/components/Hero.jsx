@@ -1,21 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 
-// === Color Palette ===
-const PRIMARY_TEAL = "#006D66";      // Core brand teal
-const PRIMARY_DARK = "#003D39";      // Deep base tone
-const ACCENT_ROSEGOLD = "#7D5F42";   // Elegant rose-gold brown
+const PRIMARY_TEAL = "#006D66";
+const PRIMARY_DARK = "#003D39";
+const ACCENT_ROSEGOLD = "#7D5F42";
 
 export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
   };
 
   const itemVariants = {
@@ -54,10 +49,7 @@ export default function Hero() {
             <motion.h1
               variants={itemVariants}
               className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight"
-              style={{
-                color: PRIMARY_DARK,
-                fontFamily: "Poppins, sans-serif",
-              }}
+              style={{ color: PRIMARY_DARK, fontFamily: "Poppins, sans-serif" }}
             >
               Bring Comfort and Peace to Every Life
             </motion.h1>
@@ -112,7 +104,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* === RIGHT IMAGE === */}
+          {/* === RIGHT VIDEO === */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -129,14 +121,14 @@ export default function Hero() {
                 boxShadow: `0 20px 45px -12px rgba(0,0,0,0.15), 0 0 0 3px ${ACCENT_ROSEGOLD}30`,
               }}
             >
-              <Image
-                src="/hero.png"
-                alt="Hospice and Beyond Care"
-                fill
-                className="object-cover"
-                priority
+              <video
+                src="/palliative.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="object-cover w-full h-full"
               />
-              {/* Elegant gradient overlay */}
               <div
                 className="absolute inset-0"
                 style={{
