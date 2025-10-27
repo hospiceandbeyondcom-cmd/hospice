@@ -36,40 +36,40 @@ export default function SocialService() {
 
   const services = [
     {
-      title: "Emotional & Family Counseling",
+      title: "Emotional and Family Counseling",
       image: "/social1.png",
       description:
         "Our licensed social workers provide compassionate counseling for patients and families coping with illness, grief, and life transitions. We help you process emotions, find strength, and navigate complex decisions together.",
     },
     {
-      title: "Resource & Benefits Assistance",
+      title: "Resource and Benefits Assistance",
       image: "/social2.png",
       description:
-        "We connect families to community resources, financial aid programs, and support services. From insurance guidance to government benefits, our goal is to ease your financial and emotional stress.",
+        "We connect families to community resources, financial aid programs, and support services. From insurance guidance to government benefits, our goal is to ease your financial and emotional stress based on your eligibility.",
     },
     {
-      title: "Care Coordination & Advocacy",
+      title: "Care Coordination and Advocacy",
       image: "/social3.png",
       description:
-        "Our social workers act as advocates and coordinators, ensuring every patient receives seamless care across physicians, nurses, and community organizations — so nothing is overlooked and every need is met.",
+        "Our social workers act as advocates and coordinators, ensuring every patient receives seamless care across physicians, nurses, and community organizations so nothing is overlooked and every need is met.",
     },
     {
-      title: "Crisis Intervention & Support",
+      title: "Crisis Intervention and Support",
       image: "/social4.png",
       description:
         "During moments of crisis, our team provides immediate emotional support, crisis planning, and compassionate guidance to stabilize families and help them feel supported through difficult times.",
     },
     {
-      title: "End-of-Life Planning & Guidance",
+      title: "End of Life Planning and Guidance",
       image: "/social5.png",
       description:
-        "We walk with families through sensitive end-of-life discussions, offering emotional presence and practical help with advance directives, memorial wishes, and family communication.",
+        "We walk with families through sensitive end of life discussions, offering emotional presence and practical help with advance directives, memorial wishes, and family communication.",
     },
     {
-      title: "Community & Bereavement Resources",
+      title: "Community and Bereavement Resources",
       image: "/social6.png",
       description:
-        "Beyond immediate care, we connect families to ongoing support groups, faith-based organizations, and bereavement networks — helping loved ones find healing in community after loss.",
+        "Beyond immediate care, we connect families to ongoing support groups, faith based organizations, and bereavement networks, helping loved ones find healing in community after loss.",
     },
   ];
 
@@ -188,7 +188,7 @@ export default function SocialService() {
             </h2>
             <p className="text-base sm:text-lg text-white mb-8 leading-relaxed">
               Our Social Services team helps you access care, comfort, and
-              community resources — ensuring no family walks this journey alone.
+              community resources, ensuring no family walks this journey alone.
             </p>
             <a
               href="/contact"

@@ -31,17 +31,17 @@ export default function FAQ() {
     {
       question: "Who qualifies for hospice care?",
       answer:
-        "Any individual with a life expectancy of six months or less, as certified by a physician, may be eligible for hospice. Eligibility can be extended through recertification if the condition continues to warrant comfort-focused care.",
+        "Any individual with a life expectancy of six months or less, as certified by a physician, may be eligible for hospice. Eligibility can be extended through recertification if the condition continues to warrant comfort focused care.",
     },
     {
       question: "Does choosing hospice mean we are giving up hope?",
       answer:
-        "Not at all. Hospice is about redefining hope — from curing the illness to finding peace, comfort, and meaning in every remaining moment. Many families discover that hospice brings more time, less stress, and greater emotional connection.",
+        "Not at all. Hospice is about redefining hope from curing the illness to finding peace, comfort, and meaning in every remaining moment. Many families discover that hospice brings more time, less stress, and greater emotional connection.",
     },
     {
       question: "What is the difference between hospice and palliative care?",
       answer:
-        "Palliative care can begin at any stage of a serious illness, alongside curative treatments. Hospice begins when treatment goals shift fully to comfort care for a person with a life-limiting diagnosis.",
+        "Palliative care can begin at any stage of a serious illness, alongside curative treatments. Hospice begins when treatment goals shift fully to comfort care for a person with a life limiting diagnosis.",
     },
     {
       question: "Who pays for hospice care?",
@@ -51,7 +51,7 @@ export default function FAQ() {
     {
       question: "Can hospice care be provided at home?",
       answer:
-        "Yes. The majority of hospice care takes place wherever the patient resides — home, nursing facility, assisted living, or group home. Our team brings all necessary care, medications, and supplies directly to you.",
+        "Yes. The majority of hospice care takes place wherever the patient resides, home, nursing facility, assisted living, or group home. Our team brings all necessary care, medications, and supplies directly to you.",
     },
     {
       question: "Can I keep my personal doctor while under hospice?",
@@ -61,26 +61,25 @@ export default function FAQ() {
     {
       question: "What happens if symptoms become difficult to manage at home?",
       answer:
-        "If pain or distress cannot be safely managed at home, we can arrange short-term inpatient or continuous home care. Our team remains closely involved to ensure comfort and safety until you can return home.",
+        "If pain or distress cannot be safely managed at home, we can arrange short term inpatient or continuous home care. Our team remains closely involved to ensure comfort and safety until you can return home.",
     },
     {
       question: "What support is available for family members and caregivers?",
       answer:
-        "Families are the heart of hospice. We provide caregiver education, 24/7 on-call nursing guidance, social work support, chaplain visits, and grief counseling — all designed to help families feel confident, supported, and never alone.",
+        "Families are the heart of hospice. We provide caregiver education, 24/7 on call nursing guidance, social work support, chaplain visits, and grief counseling, all designed to help families feel confident, supported, and never alone.",
     },
     {
       question: "How long does hospice care last?",
       answer:
-        "Hospice care continues for as long as it is medically necessary and beneficial. Many patients receive hospice for months. If the condition improves, patients may be discharged — and they can re-enroll at any time if needed.",
+        "Hospice care continues for as long as it is medically necessary and beneficial. Many patients receive hospice for months. If the condition improves, patients may be discharged, and they can re enroll at any time if needed.",
     },
   ];
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
-      {/* ===== Header ===== */}
       <Header />
 
-      {/* ===== Hero Section (Starts from Top) ===== */}
+      {/* ===== Hero Section ===== */}
       <section className="relative w-full h-[70vh] md:h-[85vh] flex items-center justify-center overflow-hidden mt-0 pt-0">
         <video
           ref={videoRef}
@@ -100,7 +99,6 @@ export default function FAQ() {
 
         <div className="absolute inset-0 bg-black/0"></div>
 
-        {/* Hero Text */}
         <div className="relative z-10 text-center px-6 md:px-12">
           <h1 className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg">
             Frequently Asked Questions

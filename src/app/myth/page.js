@@ -8,7 +8,6 @@ export default function MITE() {
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
-    // Start playback after mount to prevent blocking render
     const video = videoRef.current;
     if (video) {
       const playVideo = async () => {
@@ -24,29 +23,28 @@ export default function MITE() {
   }, []);
 
   const myths = [
-    { myth: "Hospice means giving up hope.", truth: "Hospice focuses on quality of life — not giving up. Patients and families often discover deeper connection, peace, and even improved comfort through hospice care." },
+    { myth: "Hospice means giving up hope.", truth: "Hospice focuses on quality of life, not giving up. Patients and families often discover deeper connection, peace, and even improved comfort through hospice care." },
     { myth: "Hospice is only for people who have just a few days left.", truth: "Hospice can begin as soon as a doctor certifies a life expectancy of six months or less. Early admission provides more time for comfort, support, and meaningful moments." },
-    { myth: "Hospice is a place you go to.", truth: "Hospice is a service, not a location. It brings care to you — at home, in a nursing facility, or wherever you live." },
-    { myth: "Choosing hospice means the doctor has given up.", truth: "Hospice care includes physicians who work closely with your doctor to ensure comfort and dignity — it’s a shift in focus, not abandonment of care." },
+    { myth: "Hospice is a place you go to.", truth: "Hospice is a service, not a location. It brings care to you, at home, in a nursing facility, or wherever you live." },
+    { myth: "Choosing hospice means the doctor has given up.", truth: "Hospice care includes physicians who work closely with your doctor to ensure comfort and dignity. It is a shift in focus, not abandonment of care." },
     { myth: "Hospice care makes people die sooner.", truth: "Studies show that patients receiving hospice often live longer due to better symptom control and reduced stress." },
-    { myth: "Only cancer patients can receive hospice.", truth: "Hospice serves people with many life-limiting illnesses — including heart disease, dementia, COPD, kidney failure, and stroke." },
+    { myth: "Only cancer patients can receive hospice.", truth: "Hospice serves people with many life limiting illnesses including heart disease, dementia, COPD, kidney failure, and stroke." },
     { myth: "Hospice takes away all medications.", truth: "Hospice provides medications for comfort and symptom relief. Pain, nausea, and anxiety are carefully managed with prescribed treatments." },
     { myth: "You can’t see your regular doctor while on hospice.", truth: "You may keep your own doctor, who can collaborate with the hospice medical team to honor your care plan and wishes." },
     { myth: "Families lose control when hospice takes over.", truth: "Families remain at the heart of all decisions. Hospice empowers patients and loved ones to choose what matters most." },
-    { myth: "Hospice is too expensive.", truth: "Hospice is covered 100% by Medicare, Medicaid, and most private insurance plans — including medications, equipment, and visits." },
+    { myth: "Hospice is too expensive.", truth: "Hospice is covered 100% by Medicare, Medicaid, and most private insurance plans, including medications, equipment, and visits." },
     { myth: "Hospice means no medical care.", truth: "Hospice provides 24/7 medical support from nurses, doctors, and aides focused on comfort, dignity, and peace." },
     { myth: "You have to stop all treatments to receive hospice.", truth: "You can still receive treatments that manage symptoms or improve comfort, even under hospice care." },
     { myth: "Hospice ends when the patient dies.", truth: "Hospice continues supporting families through bereavement care and grief counseling for at least 13 months after loss." },
-    { myth: "Hospice is only for older adults.", truth: "Hospice supports anyone, regardless of age — including younger adults and children — focusing on compassion and dignity." },
+    { myth: "Hospice is only for older adults.", truth: "Hospice supports anyone, regardless of age, including younger adults and children, focusing on compassion and dignity." },
     { myth: "Once you start hospice, you can’t change your mind.", truth: "You may choose to stop hospice care anytime and resume curative treatment if you wish. You can also rejoin hospice later if needed." },
   ];
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
-      {/* ===== Header ===== */}
       <Header />
 
-      {/* ===== Hero Section (Optimized Video) ===== */}
+      {/* ===== Hero Section ===== */}
       <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         <video
           ref={videoRef}
@@ -64,13 +62,12 @@ export default function MITE() {
           <source src="/myth.mp4" type="video/mp4" />
         </video>
 
-        {/* Hero text */}
         <div className="relative z-10 text-center px-6 md:px-12">
           <h1 className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg">
-            Myths & Truths About Hospice Care
+            Myths and Truths About Hospice Care
           </h1>
           <p className="text-white text-lg md:text-xl mt-3 drop-shadow-md max-w-2xl mx-auto">
-            Clearing misconceptions — revealing the truth about compassion,
+            Clearing misconceptions, revealing the truth about compassion,
             comfort, and dignity in hospice care.
           </p>
         </div>
@@ -133,7 +130,6 @@ export default function MITE() {
         </a>
       </section>
 
-      {/* ===== Footer ===== */}
       <Footer />
     </div>
   );

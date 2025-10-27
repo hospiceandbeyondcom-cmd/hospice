@@ -50,7 +50,7 @@ export default function Donate() {
 
         <div className="relative z-10 text-center text-white px-6 md:px-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-            Donate to Hospice & Beyond
+            Donate to Hospice and Beyond
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
             Every act of generosity helps us bring comfort, dignity, and care to
@@ -83,17 +83,16 @@ export default function Donate() {
               Your Gift Creates Comfort
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              When you donate to Hospice & Beyond, you help us continue our
+              When you donate to Hospice and Beyond, you help us continue our
               mission of providing compassionate care, emotional support, and
               peace to families in need. Every contribution directly supports
               patient comfort, family assistance, and community programs.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Whether it’s medical equipment, home visits, or grief support,
+              Whether it is medical equipment, home visits, or grief support,
               your kindness makes a lasting difference.
             </p>
 
-            {/* Subtle Slow Pulse Button */}
             <style jsx>{`
               @keyframes slowPulse {
                 0% {
@@ -142,9 +141,9 @@ export default function Donate() {
               Donation System in Progress
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              We’re currently upgrading our online donation system to make giving
+              We are currently upgrading our online donation system to make giving
               easier and more secure. <br />
-              Please check back soon — your support means the world to us and
+              Please check back soon, your support means the world to us and
               makes every moment of care possible.
             </p>
             <button

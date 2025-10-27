@@ -11,12 +11,12 @@ export default function Career() {
     {
       title: "Registered Nurse (RN)",
       details:
-        "We’re seeking compassionate nurses with at least one year of experience and an active Texas Board of Nursing (T-BON) license. Our RNs are at the heart of every patient’s comfort plan—delivering care, teaching families, and guiding with empathy.",
+        "We are seeking compassionate nurses with at least one year of experience and an active Texas Board of Nursing (T BON) license. Our RNs are at the heart of every patient’s comfort plan, delivering care, teaching families, and guiding with empathy.",
     },
     {
       title: "Certified Caregiver / Home Health Aide",
       details:
-        "If you have at least one year of experience providing personal care and a genuine love for helping others, we’d love to meet you. Join a team where every act of kindness creates comfort and dignity.",
+        "If you have at least one year of experience providing personal care and a genuine love for helping others, we would love to meet you. Join a team where every act of kindness creates comfort and dignity.",
     },
     {
       title: "Chaplain / Spiritual Counselor",
@@ -26,7 +26,7 @@ export default function Career() {
     {
       title: "Social Worker (MSW / BSW)",
       details:
-        "Support patients and families with counseling, resources, and advocacy. We’re looking for social workers with strong hearts, listening ears, and at least one year of hospice or healthcare experience.",
+        "Support patients and families with counseling, resources, and advocacy. We are looking for social workers with strong hearts, listening ears, and at least one year of hospice or healthcare experience.",
     },
     {
       title: "Physical Therapist",
@@ -64,13 +64,12 @@ export default function Career() {
           <source src="/career.mp4" type="video/mp4" />
         </video>
 
-        {/* remove black overlay */}
         <div className="relative z-10 text-center px-6 md:px-12 text-white drop-shadow-lg">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Join the Hospice & Beyond Family
+            Join the Hospice and Beyond Family
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Whether you’re a nurse, therapist, or volunteer — your compassion
+            Whether you are a nurse, therapist, or volunteer, your compassion
             can bring peace, dignity, and hope to someone’s life today.
           </p>
         </div>
@@ -86,8 +85,8 @@ export default function Career() {
         </h2>
         <p className="text-gray-700 max-w-3xl mx-auto mb-8 text-lg leading-relaxed">
           Do you love reading, playing music, knitting, or simply being there
-          for someone in need? Whether you’re a student, retiree, or just a
-          compassionate neighbor — your time can make a world of difference.
+          for someone in need? Whether you are a student, retiree, or just a
+          compassionate neighbor, your time can make a world of difference.
         </p>
 
         <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
@@ -160,7 +159,7 @@ export default function Career() {
         </div>
       </section>
 
-      {/* ===== Volunteer Modal (blur background) ===== */}
+      {/* ===== Volunteer Modal ===== */}
       {showVolunteerModal && (
         <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-white/10 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-fadeIn">
@@ -189,7 +188,7 @@ export default function Career() {
         </div>
       )}
 
-      {/* ===== Job Modal (blur background) ===== */}
+      {/* ===== Job Modal ===== */}
       {showJobModal && (
         <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-white/10 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-fadeIn">
@@ -200,7 +199,7 @@ export default function Career() {
               Thank You for Wanting to Join Our Team!
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              We’re honored by your interest in serving with compassion. <br />
+              We are honored by your interest in serving with compassion. <br />
               Please send your resume or CV to{" "}
               <span className="font-medium text-[#7D5F42]">
                 hr@hospiceandbeyond.com

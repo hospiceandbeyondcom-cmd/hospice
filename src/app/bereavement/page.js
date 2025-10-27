@@ -25,7 +25,7 @@ export default function BereavementCare() {
 
   const services = [
     {
-      title: "Emotional Healing & Counseling",
+      title: "Emotional Healing and Counseling",
       image: "/bereavement1.png",
       description:
         "Our grief counselors provide a safe, understanding space where individuals and families can express emotions freely. Through guided sessions, we help you process loss, rediscover peace, and find strength in healing.",
@@ -37,19 +37,19 @@ export default function BereavementCare() {
         "Families often grieve in different ways. Our support programs foster communication and connection through family therapy, ensuring no one carries the weight of loss alone.",
     },
     {
-      title: "Memorial & Remembrance Planning",
+      title: "Memorial and Remembrance Planning",
       image: "/bereavement3.png",
       description:
-        "We help families design personalized remembrance events and moments that celebrate the life of a loved one — offering space for reflection, gratitude, and closure.",
+        "We help families design personalized remembrance events and moments that celebrate the life of a loved one, offering space for reflection, gratitude, and closure.",
     },
     {
-      title: "Spiritual & Faith-Based Guidance",
+      title: "Spiritual and Faith Based Guidance",
       image: "/bereavement4.png",
       description:
-        "Our chaplains and spiritual advisors offer faith-centered comfort for those seeking meaning and hope after loss — respecting all beliefs and traditions with deep compassion.",
+        "Our chaplains and spiritual advisors offer faith centered comfort for those seeking meaning and hope after loss, respecting all beliefs and traditions with deep compassion.",
     },
     {
-      title: "Community Resources & Workshops",
+      title: "Community Resources and Workshops",
       image: "/bereavement5.png",
       description:
         "We connect you with grief workshops, support groups, and community resources to help you rebuild life with resilience and a sense of belonging after loss.",
@@ -81,10 +81,10 @@ export default function BereavementCare() {
         {/* Hero Text */}
         <div className="relative z-10 text-center px-6 md:px-12">
           <h1 className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg">
-            Bereavement & Healing Care
+            Bereavement and Healing Care
           </h1>
           <p className="text-white text-lg md:text-xl mt-3 drop-shadow-md max-w-2xl mx-auto">
-            Walking with you through grief — helping hearts heal and hope return.
+            Walking with you through grief, helping hearts heal and hope return.
           </p>
         </div>
       </section>
@@ -130,11 +130,11 @@ export default function BereavementCare() {
         }}
       >
         <h3 className="text-white text-2xl md:text-3xl font-semibold mb-4">
-          Healing Is a Journey — We Walk With You
+          Healing Is a Journey We Walk With You
         </h3>
         <p className="text-white mb-6 text-lg max-w-2xl mx-auto">
           Our bereavement team offers comfort, understanding, and strength as
-          you navigate loss. Together, we’ll find light in the moments that
+          you navigate loss. Together, we will find light in the moments that
           matter most.
         </p>
         <a

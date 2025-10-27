@@ -25,37 +25,37 @@ export default function PalliativeCare() {
 
   const services = [
     {
-      title: "Pain & Symptom Management",
+      title: "Pain and Symptom Management",
       image: "/palliative1.png",
       description:
         "Our palliative team provides expert medical care focused on relieving pain, managing symptoms, and improving comfort at every stage of illness. Through personalized plans, we help patients experience better days with dignity and relief.",
     },
     {
-      title: "Emotional & Spiritual Support",
+      title: "Emotional and Spiritual Support",
       image: "/palliative2.png",
       description:
-        "Illness affects more than the body — it touches the mind and spirit. Our counselors and chaplains walk alongside patients and families, offering comfort, prayer, and a listening ear through every season of care.",
+        "Illness affects more than the body, it touches the mind and spirit. Our counselors and chaplains walk alongside patients and families, offering comfort, prayer, and a listening ear through every season of care.",
     },
     {
-      title: "Family & Caregiver Guidance",
+      title: "Family and Caregiver Guidance",
       image: "/palliative3.png",
       description:
         "We empower families with education, support, and tools to provide compassionate care. From medication understanding to emotional resilience, our team ensures caregivers never feel alone or unprepared.",
     },
     {
-      title: "Home-Based Medical Support",
+      title: "Home Based Medical Support",
       image: "/palliative4.png",
       description:
-        "Palliative care meets you where you are — in your home, assisted living, or hospital. We coordinate visits, medications, and equipment so that comfort and convenience remain central to every patient’s experience.",
+        "Palliative care meets you where you are, in your home, assisted living, or hospital. We coordinate visits, medications, and equipment so that comfort and convenience remain central to every patient’s experience.",
     },
     {
       title: "Advance Care Planning",
       image: "/palliative5.png",
       description:
-        "Our professionals help patients and families make informed decisions about treatment options, future care preferences, and goals — ensuring every voice is heard, honored, and respected.",
+        "Our professionals help patients and families make informed decisions about treatment options, future care preferences, and goals, ensuring every voice is heard, honored, and respected.",
     },
     {
-      title: "Rehabilitation & Quality of Life",
+      title: "Rehabilitation and Quality of Life",
       image: "/palliative6.png",
       description:
         "Physical and occupational therapists support mobility, independence, and daily wellbeing. Even in serious illness, our goal is simple: to help every person live fully and meaningfully.",
@@ -65,33 +65,33 @@ export default function PalliativeCare() {
   const stages = [
     {
       number: "01",
-      title: "Creating Awareness & Understanding",
+      title: "Creating Awareness and Understanding",
       description:
-        "The first stage focuses on helping patients and families understand what palliative care truly means — not as end-of-life care alone, but as comfort-centered support that enhances quality of life.",
+        "The first stage focuses on helping patients and families understand what palliative care truly means, not as end of life care alone, but as comfort centered support that enhances quality of life.",
     },
     {
       number: "02",
-      title: "Assessment & Care Planning",
+      title: "Assessment and Care Planning",
       description:
         "Our team works with patients and families to assess medical, emotional, and spiritual needs. Together, we develop a personalized care plan that aligns with your values, preferences, and goals.",
     },
     {
       number: "03",
-      title: "Symptom Control & Active Care",
+      title: "Symptom Control and Active Care",
       description:
         "At this stage, care centers on relieving pain and managing symptoms such as fatigue, anxiety, and breathlessness. Medical and therapeutic teams coordinate to maintain comfort and stability.",
     },
     {
       number: "04",
-      title: "Emotional, Social & Spiritual Support",
+      title: "Emotional, Social and Spiritual Support",
       description:
-        "Beyond medical treatment, palliative care strengthens emotional wellbeing and provides counseling, social work, and spiritual guidance — helping families navigate each step with compassion and peace.",
+        "Beyond medical treatment, palliative care strengthens emotional wellbeing and provides counseling, social work, and spiritual guidance, helping families navigate each step with compassion and peace.",
     },
     {
       number: "05",
-      title: "Transition & Bereavement Care",
+      title: "Transition and Bereavement Care",
       description:
-        "When the patient’s journey transitions, our team continues to support families through grief counseling, memorial support, and follow-up care — ensuring no one faces loss alone.",
+        "When the patient’s journey transitions, our team continues to support families through grief counseling, memorial support, and follow up care, ensuring no one faces loss alone.",
     },
   ];
 
@@ -114,7 +114,7 @@ export default function PalliativeCare() {
             transition: "transform 1s ease-out",
           }}
         >
-          <source src="/palliative.mp4" type="video/mp4" />
+          <source src="/carer.mp4" type="video/mp4" />
         </video>
 
         {/* Hero Text */}
@@ -123,7 +123,7 @@ export default function PalliativeCare() {
             Palliative Care Services
           </h1>
           <p className="text-white text-lg md:text-xl mt-3 drop-shadow-md max-w-2xl mx-auto">
-            Providing expert care, emotional support, and dignity — every step
+            Providing expert care, emotional support, and dignity, every step
             of the way.
           </p>
         </div>
@@ -216,7 +216,7 @@ export default function PalliativeCare() {
         </h3>
         <p className="text-white mb-6 text-lg max-w-2xl mx-auto">
           Our Palliative Care team is here to support your comfort, guide your
-          family, and help you live fully — one day at a time.
+          family, and help you live fully, one day at a time.
         </p>
         <a
           href="/contact"

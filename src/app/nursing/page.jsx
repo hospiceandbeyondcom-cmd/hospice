@@ -36,25 +36,25 @@ export default function NursingCare() {
 
   const services = [
     {
-      title: "24-Hour Skilled Nursing Support",
+      title: "Skilled Nursing Visits and Support",
       image: "/nursing1.png",
       description:
-        "Our dedicated nurses provide around-the-clock clinical care — including vital sign monitoring, medication administration, and comfort management — ensuring that every patient receives consistent, high-quality support.",
+        "Our dedicated nurses provide skilled visits two to three times weekly with access to phone support when needed. We monitor vital signs, manage medications, and ensure comfort through consistent follow up and compassionate attention. This service focuses on steady care and professional guidance rather than staying full time in your home.",
     },
     {
       title: "Personalized Care Plans",
       image: "/nursing2.png",
       description:
-        "Each patient’s plan is customized based on individual needs, diagnosis, and preferences. From daily routines to advanced medical interventions, our nurses deliver care that reflects compassion and professionalism.",
+        "Each patient’s plan is customized based on individual needs, diagnosis, and preferences. From daily routines to medical coordination, our nurses deliver care that reflects compassion and professionalism.",
     },
     {
-      title: "Wound & Symptom Management",
+      title: "Wound and Symptom Management",
       image: "/nursing3.png",
       description:
-        "Expert wound care and symptom control reduce pain and prevent complications. Our nurses focus on healing, dignity, and comfort — empowering patients to live with confidence and ease.",
+        "Expert wound care and symptom control help reduce pain and prevent complications. Our nurses focus on healing, dignity, and comfort while empowering patients to live with confidence and peace.",
     },
     {
-      title: "Education for Patients & Families",
+      title: "Education for Patients and Families",
       image: "/nursing4.png",
       description:
         "We believe knowledge brings peace of mind. Our nursing staff teaches families how to manage medications, recognize changes, and respond confidently to evolving care needs.",
@@ -63,13 +63,13 @@ export default function NursingCare() {
       title: "Coordination with Physicians",
       image: "/nursing5.png",
       description:
-        "Our nurses work hand-in-hand with your physician to update treatment plans, track progress, and ensure that every clinical decision supports the patient’s comfort and recovery goals.",
+        "Our nurses work hand in hand with your physician to update treatment plans, track progress, and ensure that every clinical decision supports the patient’s comfort and recovery goals.",
     },
     {
-      title: "Home & Hospice Care Visits",
+      title: "Home and Hospice Care Visits",
       image: "/nursing6.png",
       description:
-        "From home visits to hospice environments, our nurses bring expert care directly to you — creating an atmosphere of warmth, safety, and personalized attention wherever you are.",
+        "Through home and hospice visits, our nurses bring expert care directly to you, creating an atmosphere of warmth, safety, and personal attention wherever you are.",
     },
   ];
 
@@ -188,8 +188,8 @@ export default function NursingCare() {
             </h2>
             <p className="text-base sm:text-lg text-white mb-8 leading-relaxed">
               Our nursing team stands beside you with clinical skill and
-              heartfelt compassion — ensuring every patient experiences comfort,
-              peace, and personalized attention.
+              heartfelt compassion, ensuring every patient experiences comfort,
+              peace, and personal attention.
             </p>
             <a
               href="/contact"

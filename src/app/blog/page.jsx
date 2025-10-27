@@ -11,12 +11,12 @@ export default function Blog() {
     {
       title: "Hospice Care Insights",
       image: "/blog2.png",
-      text: "Gentle reflections and guidance on end-of-life care — stories that remind us that compassion never fades.",
+      text: "Gentle reflections and guidance on end of life care, stories that remind us that compassion never fades.",
     },
     {
       title: "Palliative Care Perspectives",
       image: "/blog3.png",
-      text: "Daily thoughts and resources to help families, patients, and caregivers navigate comfort-centered living.",
+      text: "Daily thoughts and resources to help families, patients, and caregivers navigate comfort centered living.",
     },
   ];
 
@@ -32,17 +32,15 @@ export default function Blog() {
             alt="Hospice and Beyond Blog"
             fill
             priority
-            className="object-cover object-top" // keeps head fully visible
+            className="object-cover object-top"
           />
         </div>
 
-        {/* Subtle overlay for text clarity */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#00000055] via-[#00000022] to-transparent"></div>
 
-        {/* Hero Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 md:px-12 z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-            Hospice & Beyond Blog
+            Hospice and Beyond Blog
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
             Reflections, guidance, and heartfelt stories on care, compassion, and
@@ -64,7 +62,7 @@ export default function Blog() {
           Explore Our Blog
         </h2>
         <p className="text-gray-700 max-w-3xl mx-auto mb-12 text-lg leading-relaxed">
-          We release new posts daily — each one written with warmth, clarity, and
+          We release new posts daily, each one written with warmth, clarity, and
           purpose. Our blog shares insights from hospice and palliative care
           professionals, helping you stay connected to the heart of compassionate
           care.
@@ -114,7 +112,7 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* ===== Modal (refined blur + tone) ===== */}
+      {/* ===== Modal ===== */}
       {activeModal && (
         <div className="fixed inset-0 flex items-center justify-center backdrop-blur-[2px] bg-white/30 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-fadeIn border border-[#E6E6E6]">
@@ -131,7 +129,7 @@ export default function Blog() {
             <p className="text-gray-700 mb-6 leading-relaxed">
               Our writers are currently preparing thoughtful, compassionate
               articles designed to bring light, learning, and comfort. <br />
-              Each post will be published soon — crafted with care to help you
+              Each post will be published soon, crafted with care to help you
               connect deeply with what matters most.
             </p>
             <button

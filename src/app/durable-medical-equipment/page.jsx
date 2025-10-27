@@ -39,37 +39,37 @@ export default function DurableEquipment() {
       title: "Reliable Home Medical Equipment",
       image: "/equipment1.png",
       description:
-        "We provide hospital-grade medical equipment that ensures safety, comfort, and convenience at home — helping patients maintain independence and dignity during care.",
+        "We provide hospital grade medical equipment that ensures safety, comfort, and convenience at home, helping patients maintain independence and dignity during care.",
     },
     {
-      title: "Mobility & Support Aids",
+      title: "Mobility and Support Aids",
       image: "/equipment2.png",
       description:
         "From wheelchairs and walkers to bedside rails and patient lifts, we supply reliable mobility aids that reduce strain for patients and caregivers while improving daily comfort.",
     },
     {
-      title: "Respiratory & Oxygen Therapy",
+      title: "Respiratory and Oxygen Therapy",
       image: "/equipment3.png",
       description:
-        "Our respiratory support tools include oxygen concentrators, nebulizers, and ventilator accessories — all maintained and serviced regularly for optimal performance and safety.",
+        "Our respiratory support tools include oxygen concentrators, nebulizers, and ventilator accessories, all maintained and serviced regularly for optimal performance and safety.",
     },
     {
-      title: "Pressure Relief & Comfort Systems",
+      title: "Pressure Relief and Comfort Systems",
       image: "/equipment4.png",
       description:
-        "We offer pressure-relief mattresses, positioning devices, and specialized cushions that prevent skin breakdown and promote relaxation for long-term patients.",
+        "We offer pressure relief mattresses, positioning devices, and specialized cushions that prevent skin breakdown and promote relaxation for long term patients.",
     },
     {
-      title: "Monitoring & Safety Devices",
+      title: "Monitoring and Safety Devices",
       image: "/equipment5.png",
       description:
         "Our monitors, alert systems, and vital sign devices help families and nurses track health indicators and respond quickly to changes in patient condition.",
     },
     {
-      title: "Delivery, Setup & Maintenance",
+      title: "Delivery, Setup and Maintenance",
       image: "/equipment6.png",
       description:
-        "Our logistics team handles equipment delivery, in-home setup, and training. We ensure everything is functioning properly — and replace items promptly when needed.",
+        "Our logistics team handles equipment delivery, in home setup, and training. We ensure everything is functioning properly and replace items promptly when needed.",
     },
   ];
 
@@ -113,7 +113,7 @@ export default function DurableEquipment() {
               transition={{ delay: 0.3 }}
               className="mt-6 text-lg md:text-xl text-white leading-relaxed drop-shadow-md"
             >
-              Providing dependable, hospital-grade equipment for comfort, safety, and care at home.
+              Providing dependable hospital grade equipment for comfort, safety, and care at home.
             </motion.p>
           </div>
         </section>
@@ -187,7 +187,7 @@ export default function DurableEquipment() {
             </h2>
             <p className="text-base sm:text-lg text-white mb-8 leading-relaxed">
               From delivery to maintenance, we ensure every piece of equipment supports patient
-              comfort, safety, and peace of mind — every single day.
+              comfort, safety, and peace of mind every single day.
             </p>
             <a
               href="/contact"

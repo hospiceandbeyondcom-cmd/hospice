@@ -42,16 +42,16 @@ export default function PhysicianService() {
         "Our physicians conduct thorough evaluations to understand your overall health, medical history, and current symptoms. This helps us create a complete picture of your needs and guide every decision with clarity and precision.",
     },
     {
-      title: "Pain & Symptom Control",
+      title: "Pain and Symptom Control",
       image: "/physician2.png",
       description:
-        "Expert management of pain, nausea, shortness of breath, and other discomforts using evidence-based treatments. Our goal is to bring relief while preserving dignity, independence, and comfort.",
+        "Expert management of pain, nausea, shortness of breath, and other discomforts using evidence based treatments. Our goal is to bring relief while preserving dignity, independence, and comfort.",
     },
     {
       title: "Interdisciplinary Collaboration",
       image: "/physician3.png",
       description:
-        "Our doctors work closely with nurses, therapists, and social workers to ensure every aspect of care — physical, emotional, and spiritual — is aligned and integrated for the best possible outcome.",
+        "Our doctors work closely with nurses, therapists, and social workers to ensure every aspect of care, physical, emotional, and spiritual, is aligned and integrated for the best possible outcome.",
     },
     {
       title: "Medication Management",
@@ -60,16 +60,10 @@ export default function PhysicianService() {
         "We prescribe, monitor, and adjust medications with careful attention to side effects and interactions, ensuring every treatment supports your comfort and quality of life.",
     },
     {
-      title: "Family Consultation & Education",
-      image: "/physician5.png",
-      description:
-        "Our physicians provide clear communication and family education to help loved ones understand care options, progress, and realistic expectations with compassion and transparency.",
-    },
-    {
       title: "Continuity of Care",
       image: "/physician6.png",
       description:
-        "We coordinate care seamlessly across home, hospital, and hospice settings — ensuring you always have a trusted medical partner by your side, no matter where your journey leads.",
+        "We coordinate care seamlessly across home, hospital, and hospice settings, ensuring you always have a trusted medical partner by your side, no matter where your journey leads.",
     },
   ];
 
@@ -187,7 +181,7 @@ export default function PhysicianService() {
               Skilled Hands, Compassionate Hearts
             </h2>
             <p className="text-base sm:text-lg text-white mb-8 leading-relaxed">
-              Our physician team combines medical expertise with deep empathy —
+              Our physician team combines medical expertise with deep empathy,
               ensuring that every patient receives care rooted in respect,
               comfort, and excellence.
             </p>

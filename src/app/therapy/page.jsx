@@ -34,19 +34,19 @@ export default function TherapyService() {
       title: "Physiotherapy",
       image: "/therapy2.png",
       description:
-        "Our physiotherapists help patients maintain strength, balance, and mobility through gentle exercise, positioning, and movement training. Each program is customized to relieve pain, improve circulation, and promote ease of motion — enabling patients to enjoy better comfort and independence day to day.",
+        "Our physiotherapists help patients maintain strength, balance, and mobility through gentle exercise, positioning, and movement training. Each program is customized to relieve pain, improve circulation, and promote ease of motion, enabling patients to enjoy better comfort and independence day to day.",
     },
     {
       title: "Occupational Therapy",
       image: "/therapy3.png",
       description:
-        "Our occupational therapy team focuses on helping patients perform everyday activities with confidence and safety. We assess living environments, recommend adaptive tools, and teach energy-conservation techniques that make daily routines easier and more comfortable for patients and caregivers alike.",
+        "Our occupational therapy team focuses on helping patients perform everyday activities with confidence and safety. We assess living environments, recommend adaptive tools, and teach energy conservation techniques that make daily routines easier and more comfortable for patients and caregivers alike.",
     },
     {
       title: "Speech Therapy",
       image: "/therapy4.png",
       description:
-        "Speech-language pathologists assist patients experiencing communication or swallowing challenges. Using gentle, evidence-based techniques, our team improves speech clarity, enhances swallowing safety, and supports meaningful interaction with family and caregivers.",
+        "Speech language pathologists assist patients experiencing communication or swallowing challenges. Using gentle, evidence based techniques, our team improves speech clarity, enhances swallowing safety, and supports meaningful interaction with family and caregivers.",
     },
   ];
 
@@ -78,7 +78,7 @@ export default function TherapyService() {
             Therapy Services
           </h1>
           <p className="text-white text-lg md:text-xl mt-3 drop-shadow-md max-w-2xl mx-auto">
-            Restorative therapies that combine clinical care and compassion — to
+            Restorative therapies that combine clinical care and compassion to
             improve comfort, function, and connection.
           </p>
         </div>
@@ -129,7 +129,7 @@ export default function TherapyService() {
         </h3>
         <p className="text-white mb-6 text-lg max-w-2xl mx-auto">
           Through pharmacy, physiotherapy, occupational, and speech therapy, we
-          help patients experience comfort, dignity, and confidence — every step
+          help patients experience comfort, dignity, and confidence every step
           of the way.
         </p>
         <a
