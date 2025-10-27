@@ -1,21 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Component for a link that supports a dropdown menu (Desktop)
+// =============================
+// DESKTOP DROPDOWN LINK
+// =============================
 const DropdownLink = ({ title, children }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const hoverTimer = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(hoverTimer.current);
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimer.current = setTimeout(() => setDropdownOpen(false), 80);
+  };
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => setDropdownOpen(true)}
-      onMouseLeave={() => setDropdownOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="flex items-center cursor-pointer text-[#03271E] font-medium hover:text-[#047857] transition">
         {title}
-        {/* Dropdown Arrow Icon */}
         <svg
           className={`ml-1 h-4 w-4 transform transition-transform ${
             dropdownOpen ? "rotate-180" : "rotate-0"
@@ -31,9 +42,10 @@ const DropdownLink = ({ title, children }) => {
           />
         </svg>
       </div>
-      {/* Dropdown Content */}
+
+      {/* Dropdown Menu */}
       <div
-        className={`absolute z-10 top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-md shadow-lg py-1 transition-all duration-200 ease-out ${
+        className={`absolute z-50 top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-md shadow-lg py-1 transition-all duration-150 ease-out will-change-transform ${
           dropdownOpen
             ? "visible opacity-100 translate-y-0"
             : "invisible opacity-0 translate-y-2"
@@ -45,7 +57,9 @@ const DropdownLink = ({ title, children }) => {
   );
 };
 
-// Component for a standard dropdown item link (Desktop)
+// =============================
+// DESKTOP DROPDOWN ITEM
+// =============================
 const DropdownItem = ({ href, children }) => (
   <Link
     href={href}
@@ -55,7 +69,9 @@ const DropdownItem = ({ href, children }) => (
   </Link>
 );
 
-// Component for a Mobile Dropdown Menu Item (accordion-like)
+// =============================
+// MOBILE DROPDOWN (Accordion)
+// =============================
 const MobileDropdown = ({ title, children, closeMenu }) => {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
@@ -81,12 +97,12 @@ const MobileDropdown = ({ title, children, closeMenu }) => {
           />
         </svg>
       </div>
+
       <div
         className={`transition-all duration-300 overflow-hidden pl-4 ${
-          mobileDropdownOpen ? "max-h-48 opacity-100 mt-2" : "max-h-0 opacity-0"
+          mobileDropdownOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
         }`}
       >
-        {/* Map children to add `onClick={closeMenu}` for mobile - This is where the React import was necessary */}
         {React.Children.map(children, (child) =>
           React.cloneElement(child, {
             className:
@@ -99,13 +115,15 @@ const MobileDropdown = ({ title, children, closeMenu }) => {
   );
 };
 
+// =============================
+// MAIN HEADER COMPONENT
+// =============================
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMobileMenu = () => setMenuOpen(false);
 
   return (
-    // 🧭 Header is now static — not sticky or fixed
     <header className="w-full bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 md:py-4">
         {/* ✅ Logo */}
@@ -128,27 +146,33 @@ export default function Header() {
             Home
           </Link>
 
-          {/* 🚀 About Dropdown (Desktop) */}
+          {/* About Dropdown */}
           <DropdownLink title="About">
             <DropdownItem href="/about">About Us</DropdownItem>
             <DropdownItem href="/team">Our Team</DropdownItem>
           </DropdownLink>
 
-          {/* 🚀 Services Dropdown (Desktop) */}
+          {/* Services Dropdown */}
           <DropdownLink title="Services">
             <DropdownItem href="/services">Hospice Care</DropdownItem>
-            <DropdownItem href="/palliative-care">
-              Palliative Care
+            <DropdownItem href="/palliative-care">Palliative Care</DropdownItem>
+            <DropdownItem href="/bereavement">Bereavement</DropdownItem>
+            <DropdownItem href="/social-services">Social Services</DropdownItem>
+            <DropdownItem href="/physician">Physician</DropdownItem>
+            <DropdownItem href="/nursing">Nursing Care</DropdownItem>
+            <DropdownItem href="/durable-medical-equipment">
+              Durable Medical Equipment
             </DropdownItem>
+            <DropdownItem href="/therapy">Therapy Services</DropdownItem>
           </DropdownLink>
 
-          {/* 🚀 Myth and FAQ Dropdown (Desktop) */}
+          {/* Myth & FAQ */}
           <DropdownLink title="Myth and FAQ">
             <DropdownItem href="/myth">Myth</DropdownItem>
             <DropdownItem href="/faq">FAQ</DropdownItem>
           </DropdownLink>
 
-          {/* 🚀 Careers Link (Desktop) */}
+          {/* Careers */}
           <Link
             href="/careers"
             className="text-[#03271E] font-medium hover:text-[#047857] transition"
@@ -156,6 +180,7 @@ export default function Header() {
             Careers
           </Link>
 
+          {/* Contact */}
           <Link
             href="/contact"
             className="text-[#03271E] font-medium hover:text-[#047857] transition"
@@ -163,7 +188,7 @@ export default function Header() {
             Contact
           </Link>
 
-          {/* 🚀 Blog Link (Desktop) */}
+          {/* Blog */}
           <Link
             href="/blog"
             className="text-[#03271E] font-medium hover:text-[#047857] transition"
@@ -171,7 +196,7 @@ export default function Header() {
             Blog
           </Link>
 
-          {/* 🚀 Donate to Us Link (Desktop) - MODIFIED TO BUTTON STYLE */}
+          {/* Donate */}
           <Link
             href="/donate-to-us"
             className="bg-[#047857] text-white px-4 py-2 rounded-lg font-medium transition duration-150 ease-in-out hover:bg-[#03271E] shadow-md"
@@ -219,7 +244,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ✅ Mobile Dropdown */}
+      {/* ✅ Mobile Menu */}
       <div
         className={`md:hidden bg-white border-t border-gray-200 transition-all duration-500 overflow-hidden ${
           menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
@@ -234,25 +259,27 @@ export default function Header() {
             Home
           </Link>
 
-          {/* 🚀 About Dropdown (Mobile) */}
           <MobileDropdown title="About" closeMenu={closeMobileMenu}>
             <Link href="/about">About Us</Link>
             <Link href="/team">Our Team</Link>
           </MobileDropdown>
 
-          {/* 🚀 Services Dropdown (Mobile) */}
           <MobileDropdown title="Services" closeMenu={closeMobileMenu}>
             <Link href="/services">Hospice Care</Link>
             <Link href="/palliative-care">Palliative Care</Link>
+            <Link href="/bereavement">Bereavement</Link>
+            <Link href="/social-services">Social Services</Link>
+            <Link href="/physician">Physician</Link>
+            <Link href="/nursing">Nursing Care</Link>
+            <Link href="/durable-medical-equipment">Durable Medical Equipment</Link>
+            <Link href="/therapy">Therapy Services</Link>
           </MobileDropdown>
 
-          {/* 🚀 Myth and FAQ Dropdown (Mobile) */}
           <MobileDropdown title="Myth and FAQ" closeMenu={closeMobileMenu}>
             <Link href="/myth">Myth</Link>
             <Link href="/faq">FAQ</Link>
           </MobileDropdown>
 
-          {/* 🚀 Careers Link (Mobile) */}
           <Link
             href="/careers"
             className="text-[#03271E] font-medium hover:text-[#047857] transition py-1"
@@ -269,7 +296,6 @@ export default function Header() {
             Contact
           </Link>
 
-          {/* 🚀 Blog Link (Mobile) */}
           <Link
             href="/blog"
             className="text-[#03271E] font-medium hover:text-[#047857] transition py-1"
@@ -278,7 +304,6 @@ export default function Header() {
             Blog
           </Link>
 
-          {/* 🚀 Donate to Us Link (Mobile) - MODIFIED TO BUTTON STYLE */}
           <Link
             href="/donate-to-us"
             className="text-center bg-[#047857] text-white px-4 py-2 rounded-lg font-medium transition duration-150 ease-in-out hover:bg-[#03271E] shadow-md block"

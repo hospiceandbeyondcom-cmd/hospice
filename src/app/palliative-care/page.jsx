@@ -62,11 +62,44 @@ export default function PalliativeCare() {
     },
   ];
 
+  const stages = [
+    {
+      number: "01",
+      title: "Creating Awareness & Understanding",
+      description:
+        "The first stage focuses on helping patients and families understand what palliative care truly means — not as end-of-life care alone, but as comfort-centered support that enhances quality of life.",
+    },
+    {
+      number: "02",
+      title: "Assessment & Care Planning",
+      description:
+        "Our team works with patients and families to assess medical, emotional, and spiritual needs. Together, we develop a personalized care plan that aligns with your values, preferences, and goals.",
+    },
+    {
+      number: "03",
+      title: "Symptom Control & Active Care",
+      description:
+        "At this stage, care centers on relieving pain and managing symptoms such as fatigue, anxiety, and breathlessness. Medical and therapeutic teams coordinate to maintain comfort and stability.",
+    },
+    {
+      number: "04",
+      title: "Emotional, Social & Spiritual Support",
+      description:
+        "Beyond medical treatment, palliative care strengthens emotional wellbeing and provides counseling, social work, and spiritual guidance — helping families navigate each step with compassion and peace.",
+    },
+    {
+      number: "05",
+      title: "Transition & Bereavement Care",
+      description:
+        "When the patient’s journey transitions, our team continues to support families through grief counseling, memorial support, and follow-up care — ensuring no one faces loss alone.",
+    },
+  ];
+
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Header />
 
-      {/* ===== Hero Section (Optimized like MITE) ===== */}
+      {/* ===== Hero Section ===== */}
       <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         <video
           ref={videoRef}
@@ -127,6 +160,48 @@ export default function PalliativeCare() {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* ===== 5 Stages of Palliative Care ===== */}
+      <section className="bg-[#f9fafb] py-20 px-6 md:px-12 lg:px-20">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-10"
+            style={{ color: "#006D66" }}
+          >
+            The 5 Stages of Palliative Care
+          </h2>
+          <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-16">
+            Palliative care is a journey that evolves with every individual’s
+            needs. These five stages ensure care remains compassionate,
+            structured, and centered on dignity from start to finish.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {stages.map((stage, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  className="text-4xl font-extrabold mb-4"
+                  style={{ color: "#7D5F42" }}
+                >
+                  {stage.number}
+                </div>
+                <h3
+                  className="text-xl font-semibold mb-3"
+                  style={{ color: "#006D66" }}
+                >
+                  {stage.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {stage.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ===== CTA Section ===== */}

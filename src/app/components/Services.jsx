@@ -1,16 +1,20 @@
 "use client";
 
+// ====================================================================
+// 1. External Imports (React/Next.js/Third-party)
+// ====================================================================
 import { motion } from "framer-motion";
+// NOTE: Removed 'import Link from "next/link";'
 
 // ====================================================================
-// 1. COLORS
+// 2. Constants & Data
 // ====================================================================
+
+// --- Colors (Must be defined for Tailwind CSS styling) ---
 const PRIMARY_TEAL = "#006D66";
 const ACCENT_GOLD = "#D4881A";
 
-// ====================================================================
-// 2. SERVICES DATA
-// ====================================================================
+// --- Service Data (Updated - Removed 'link' property) ---
 const services = [
   {
     title: "Hospice Care",
@@ -33,19 +37,6 @@ const services = [
     image: "/family.png",
   },
   {
-    // 🟢 Center Card (Text-Only)
-    title: "Specialized Clinical & Support Services",
-    desc: `
-      <ul class='text-left list-none space-y-3 leading-relaxed'>
-        <li><span class='font-semibold text-[#006D66]'>💛 Grieve & Bereavement Care:</span> Emotional guidance and counseling for families coping with loss, helping them find peace and renewal.</li>
-        <li><span class='font-semibold text-[#006D66]'>🩺 Physician Services:</span> Compassionate, expert-led medical management tailored to each patient’s needs and comfort.</li>
-        <li><span class='font-semibold text-[#006D66]'>👩‍⚕️ Nursing Care:</span> Skilled nursing professionals providing dedicated, gentle, and attentive care around the clock.</li>
-        <li><span class='font-semibold text-[#006D66]'>⚕️ Others Include:</span> Pharmacy, Physiotherapy, Occupational Therapy, and Speech Therapy — offering a complete circle of healing and wellness.</li>
-      </ul>
-    `,
-    image: null,
-  },
-  {
     title: "24/7 Compassionate Assistance",
     desc: "Our team is available around the clock to provide guidance, emotional support, and medical expertise — whenever and wherever you need us most.",
     image: "/services2.png",
@@ -53,47 +44,44 @@ const services = [
 ];
 
 // ====================================================================
-// 3. SERVICE CARD COMPONENT
+// 3. Sub-Components
 // ====================================================================
+
+/**
+ * Card component for individual services.
+ * Now a static div, not a link.
+ */
+// NOTE: Removed 'link' from props
 const ServiceCard = ({ title, image }) => {
-  const isTextCard = !image;
+  // Find the description for this service to display it in the card
+  const serviceData = services.find(s => s.title === title);
+  const desc = serviceData?.desc;
 
   return (
-    <div
-      className={`block group cursor-default ${
-        isTextCard
-          ? "bg-[#F8FAFA] rounded-[2rem] p-8 shadow-lg flex flex-col justify-start"
-          : ""
-      }`}
-      style={isTextCard ? { paddingTop: "1.5rem" } : {}}
-    >
-      {/* Image Card */}
-      {!isTextCard && (
-        <div className="relative h-64 overflow-hidden rounded-[2rem] shadow-xl transition-transform duration-700 ease-in-out transform group-hover:scale-[1.03] group-hover:rotate-1">
-          <img src={image} alt={title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/20 duration-300" />
-        </div>
-      )}
-
-      {/* Text / Content */}
+    // Replaced <Link> with a static <div> element
+    <div className="block group cursor-default">
+      <div className="relative h-64 overflow-hidden rounded-[2rem] shadow-xl transition-transform duration-700 ease-in-out transform group-hover:scale-[1.03] group-hover:rotate-1">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+        {/* Added a subtle overlay for polish, as it's not a link */}
+        <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/20 duration-300" />
+      </div>
       <div
-        className={`mt-${isTextCard ? "2" : "6"} p-2 text-center border-2 border-transparent transition-all duration-300 rounded-xl group-hover:border-[${ACCENT_GOLD}]`}
+        // 🚨 CORRECTED: Use backticks (`) for template literal
+        className={`mt-6 p-2 text-center border-2 border-transparent transition-all duration-300 rounded-xl group-hover:border-[${ACCENT_GOLD}]`}
       >
         <h3
+          // 🚨 CORRECTED: Use backticks (`) for template literal
           className={`font-serif text-2xl sm:text-3xl font-bold text-[${PRIMARY_TEAL}] group-hover:text-[${ACCENT_GOLD}] transition duration-300 leading-snug`}
         >
           {title}
         </h3>
-
-        {services.find((s) => s.title === title)?.desc && (
-          <div
-            className={`mt-3 text-sm text-gray-600 max-w-xs mx-auto leading-relaxed ${
-              isTextCard ? "text-left max-w-md" : "text-center"
-            }`}
-            dangerouslySetInnerHTML={{
-              __html: services.find((s) => s.title === title).desc,
-            }}
-          />
+        {/* Display the description */}
+        {desc && (
+             <p className="mt-2 text-sm text-gray-600 max-w-xs mx-auto">{desc}</p>
         )}
       </div>
     </div>
@@ -101,17 +89,24 @@ const ServiceCard = ({ title, image }) => {
 };
 
 // ====================================================================
-// 4. MAIN SERVICES SECTION
+// 4. Main Component (Services Section)
 // ====================================================================
+
+/**
+ * Component for the "What We Offer (Services)" Section.
+ */
 export const MoladavServicesSection = () => {
   return (
+    // 🚨 CORRECTED: Use backticks (`) for template literal
     <section className={`py-16 md:py-24 px-6 md:px-12 bg-white`}>
       <div className="container mx-auto text-center">
         {/* Title and Subtitle */}
         <h2
+          // 🚨 CORRECTED: Use backticks (`) for template literal
           className={`font-serif text-4xl md:text-6xl font-extrabold text-[${PRIMARY_TEAL}] text-center mb-10 relative before:absolute before:content-[''] before:w-24 before:h-1.5 before:bg-gradient-to-r before:from-transparent before:via-[${ACCENT_GOLD}] before:to-transparent before:-bottom-4 before:left-1/2 before:-translate-x-1/2 before:rounded-full`}
         >
           Compassionate Care Designed to{" "}
+          {/* 🚨 CORRECTED: Use backticks (`) for template literal */}
           <span className={`text-[${ACCENT_GOLD}]`}>Honor Every Life</span>
         </h2>
         <p className="text-xl mb-16 text-gray-700 max-w-3xl mx-auto font-light leading-relaxed">
@@ -123,7 +118,12 @@ export const MoladavServicesSection = () => {
         {/* Service Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((s, index) => (
-            <ServiceCard key={index} title={s.title} image={s.image} />
+            <ServiceCard
+              key={index}
+              title={s.title}
+              image={s.image}
+              // NOTE: Removed link prop
+            />
           ))}
         </div>
       </div>
