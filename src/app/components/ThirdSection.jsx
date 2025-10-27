@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaFeatherAlt, FaChild, FaTrophy } from "react-icons/fa"; // icons updated to match screenshot style
+import { FaFeatherAlt, FaChild, FaTrophy } from "react-icons/fa";
 
-// === Color Constants ===
 const BACKGROUND_MID = "#f3f4f6";
 const PRIMARY_TEAL = "#006D66";
 const ACCENT_GOLD = "#7d5f42";
@@ -14,7 +13,7 @@ export default function ExperienceSection() {
       className="py-16 md:py-24 px-6 md:px-12 relative overflow-hidden"
       style={{ backgroundColor: BACKGROUND_MID }}
     >
-      {/* === Animated Gradient Background === */}
+      {/* Animated Gradient Background */}
       <motion.div
         className="absolute inset-0 -z-30 opacity-40"
         animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
@@ -30,7 +29,7 @@ export default function ExperienceSection() {
         }}
       />
 
-      {/* === Subtle Motion Texture === */}
+      {/* Subtle Motion Texture */}
       <motion.div
         className="absolute inset-0 -z-20 opacity-[0.06]"
         animate={{ x: ["0%", "4%", "0%"], y: ["0%", "3%", "0%"] }}
@@ -47,12 +46,12 @@ export default function ExperienceSection() {
         }}
       />
 
-      {/* === Content === */}
+      {/* Content */}
       <div className="container mx-auto flex flex-col md:flex-row-reverse items-center gap-12 relative z-10">
-        {/* === Right Image === */}
+        {/* Right Image */}
         <div className="relative w-full md:w-1/2 flex justify-center items-center">
           <motion.img
-            src="/missionvisionvalues.png" // ✅ replace with your new image
+            src="/missionvisionvalues.png"
             alt="Our Mission, Vision, and Core Values"
             className="rounded-[2rem] shadow-2xl w-full md:w-4/5 object-cover relative z-10"
             whileHover={{ scale: 1.02 }}
@@ -60,34 +59,34 @@ export default function ExperienceSection() {
           />
         </div>
 
-        {/* === Left Text Section === */}
+        {/* Left Text Section */}
         <div className="md:w-1/2 relative z-10">
           <h2 className="font-serif text-4xl md:text-6xl font-extrabold mb-6 leading-snug text-[#003D39]">
             Bringing Comfort, Dignity & Peace to Every Life We Touch
           </h2>
           <p className="text-xl mb-8 leading-relaxed text-gray-700 font-light">
             At Hospice and Beyond, our mission, vision, and core values guide
-            everything we do — ensuring that every patient and family
+            everything we do ensuring that every patient and family
             experiences compassionate care, emotional peace, and spiritual
             wholeness.
           </p>
 
-          {/* === Vision, Mission, Values Cards === */}
+          {/* Vision, Mission, Values Cards */}
           <div className="space-y-6">
             {[
               {
                 title: "Our Mission",
-                text: "To bring exceptional comfort, dignity, and peace to every patient and family we serve. We ensure that life’s final chapter is lived with grace — supported by compassionate professionals who understand that every moment matters.",
+                text: "To bring exceptional comfort, dignity, and peace to every patient and family we serve. We ensure that life’s final chapter is lived with grace supported by compassionate professionals who understand that every moment matters.",
                 icon: <FaFeatherAlt />,
               },
               {
                 title: "Our Vision",
-                text: "To be a guiding light of hope and healing in our communities — where every individual experiences compassionate care, emotional peace, and spiritual wholeness.",
+                text: "To be a guiding light of hope and healing in our communities where every individual experiences compassionate care, emotional peace, and spiritual wholeness.",
                 icon: <FaChild />,
               },
               {
                 title: "Our Core Values",
-                text: "Compassion | Dignity | Integrity | Family | Hope — These are the principles that shape every decision, every visit, and every conversation at Hospice and Beyond.",
+                text: "Compassion | Dignity | Integrity | Family | Hope These are the principles that shape every decision, every visit, and every conversation at Hospice and Beyond.",
                 icon: <FaTrophy />,
               },
             ].map((item, i) => (

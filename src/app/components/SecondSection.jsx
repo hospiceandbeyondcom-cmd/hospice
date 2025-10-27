@@ -17,7 +17,7 @@ const SecondSection = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-          {/* === IMAGE COLUMN === */}
+          {/* IMAGE COLUMN */}
           <div className="relative mb-12 lg:mb-0 lg:order-2">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
               <Image
@@ -42,7 +42,7 @@ const SecondSection = () => {
             ></div>
           </div>
 
-          {/* === TEXT COLUMN === */}
+          {/* TEXT COLUMN */}
           <div className="lg:order-1 lg:pr-12">
             <h2
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight"
@@ -67,16 +67,16 @@ const SecondSection = () => {
             >
               <p>
                 Hospice and Beyond Palliative Care is founded on a simple but
-                sacred belief — that every person deserves dignity, comfort, and
+                sacred belief that every person deserves dignity, comfort, and
                 peace through every stage of life. We are a compassionate team
                 of professionals who walk hand in hand with patients and their
                 loved ones, creating a space where healing, presence, and hope
                 are honored.
               </p>
               <p>
-                We bring care directly to where it’s most meaningful — the home.
+                We bring care directly to where it’s most meaningful the home.
                 Our focus extends beyond medical support to emotional and
-                spiritual well-being, helping families find calm even in
+                spiritual well being, helping families find calm even in
                 difficult transitions.
               </p>
               <p>
@@ -85,7 +85,7 @@ const SecondSection = () => {
               </p>
             </div>
 
-            {/* === BUTTON === */}
+            {/* BUTTON */}
             <div className="mt-10">
               <Link
                 href="/about"

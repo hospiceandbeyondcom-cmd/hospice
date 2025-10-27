@@ -9,7 +9,7 @@ export default function OurCareJourney() {
         </h2>
         <p className="text-gray-200 max-w-3xl mx-auto mb-16">
           Every journey we walk with our patients and families is guided by one
-          purpose — to bring light, peace, and dignity to every moment.
+          purpose to bring light, peace, and dignity to every moment.
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
@@ -18,7 +18,7 @@ export default function OurCareJourney() {
               Listening
             </h3>
             <p>
-              It starts with listening — to fears, to hopes, to the simple
+              It starts with listening to fears, to hopes, to the simple
               truths that define what truly matters most.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function OurCareJourney() {
               Honoring
             </h3>
             <p>
-              We honor life — every story, every smile, every goodbye — with
+              We honor life every story, every smile, every goodbye with
               compassion that continues beyond the moment.
             </p>
           </div>

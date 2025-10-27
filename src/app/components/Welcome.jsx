@@ -12,19 +12,12 @@ export default function Welcome() {
     transition: { duration: 0.9, ease: "easeOut" },
   };
 
-  const brochureLink = "/path/to/your/brochure.pdf"; // TODO: Update this to your actual brochure file path
+  const brochureLink = "/path/to/your/brochure.pdf";
 
   return (
     <section className="relative bg-white py-24 sm:py-28 text-[#03271E] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        
-        {/*
-        |--------------------------------------------------
-        | Mission / Vision / Values Section (Kept as is)
-        |--------------------------------------------------
-        */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {/* Mission */}
           <motion.div
             {...fadeUp}
             className="bg-[#F9FAFB] rounded-2xl text-center shadow-[0_0_20px_rgba(0,0,0,0.06)] hover:shadow-[0_0_25px_rgba(0,0,0,0.1)] transition duration-300"
@@ -40,12 +33,11 @@ export default function Welcome() {
             <p className="text-gray-700 px-6 pb-8 leading-relaxed">
               To bring exceptional comfort, dignity, and peace to every patient
               and family we serve. We ensure that life’s final chapter is lived
-              with grace — supported by compassionate professionals who
+              with grace supported by compassionate professionals who
               understand that every moment matters.
             </p>
           </motion.div>
 
-          {/* Vision */}
           <motion.div
             {...fadeUp}
             transition={{ delay: 0.1 }}
@@ -60,13 +52,12 @@ export default function Welcome() {
               Our Vision
             </h3>
             <p className="text-gray-700 px-6 pb-8 leading-relaxed">
-              To be a guiding light of hope and healing in our communities —
+              To be a guiding light of hope and healing in our communities
               where every individual experiences compassionate care, emotional
               peace, and spiritual wholeness.
             </p>
           </motion.div>
 
-          {/* Core Values */}
           <motion.div
             {...fadeUp}
             transition={{ delay: 0.2 }}
@@ -89,23 +80,16 @@ export default function Welcome() {
         </div>
 
         <hr className="my-16 border-gray-100" />
-        
-        {/*
-        |--------------------------------------------------
-        | Beautiful Brochure Download Section (NEW)
-        |--------------------------------------------------
-        */}
+
         <motion.div
           {...fadeUp}
           transition={{ delay: 0.3 }}
-          className="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_15px_60px_rgba(0,0,0,0.08)]" // Elevated, beautiful card container
+          className="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_15px_60px_rgba(0,0,0,0.08)]"
         >
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            
-            {/* Image Section (Left Column - Desktop) */}
             <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-2xl overflow-hidden shadow-2xl shadow-green-200/50">
               <Image
-                src="/book.png" // Your requested image path
+                src="/book.png"
                 alt="Download Our Detailed Hospice Brochure"
                 fill
                 className="object-cover object-center"
@@ -113,7 +97,6 @@ export default function Welcome() {
               />
             </div>
 
-            {/* Text & Button Section (Right Column - Desktop) */}
             <div className="flex flex-col justify-center py-4">
               <h2 className="text-4xl font-extrabold text-[#03271E] mb-4 leading-tight">
                 Deepen Your Understanding
@@ -127,7 +110,7 @@ export default function Welcome() {
                 and families. Learn more about our philosophy, our team, and how
                 we bring comfort and dignity to life's final chapter.
               </p>
-              
+
               <a
                 href={brochureLink}
                 download
@@ -137,12 +120,11 @@ export default function Welcome() {
                 Download Brochure
               </a>
               <p className="mt-4 text-sm text-gray-500 text-center sm:text-left">
-                (PDF, 1.2MB - Click to start the download)
+                (PDF, 1.2MB Click to start the download)
               </p>
             </div>
           </div>
         </motion.div>
-        
       </div>
     </section>
   );
