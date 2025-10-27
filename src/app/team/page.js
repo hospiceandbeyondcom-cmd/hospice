@@ -30,7 +30,6 @@ export default function Team() {
     <div className="bg-white min-h-screen flex flex-col">
       <Header />
 
-      {/* ===== Hero Section with teams.mp4 ===== */}
       <section className="relative w-full h-[70vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
         <video
           ref={videoRef}
@@ -62,9 +61,7 @@ export default function Team() {
         </motion.div>
       </section>
 
-      {/* ===== Founder Section ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center gap-10">
-        {/* Founder Image */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -82,7 +79,6 @@ export default function Team() {
           </div>
         </motion.div>
 
-        {/* Founder Text */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -97,7 +93,7 @@ export default function Team() {
             Our Founder
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            At the heart of Hospice and Beyond is our visionary founder — a
+            At the heart of Hospice and Beyond is our visionary founder, a
             compassionate leader whose mission is to restore dignity, warmth,
             and humanity to care. Her leadership inspires every nurse, chaplain,
             and caregiver to serve with love and excellence. Through her
@@ -107,10 +103,8 @@ export default function Team() {
         </motion.div>
       </section>
 
-      {/* ===== Our Extended Family of Care (Text Left / Image Right) ===== */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
-          {/* Text Column (Left on Desktop) */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -125,9 +119,9 @@ export default function Team() {
               Our Extended Family of Care
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              Compassion is a shared mission. Our team works together — blending
+              Compassion is a shared mission. Our team works together, blending
               medical expertise, emotional support, and spiritual care to meet
-              every patient’s unique needs with grace and dedication.
+              every patients unique needs with grace and dedication.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed">
               From physicians and nurses to chaplains and therapists, every
@@ -136,7 +130,6 @@ export default function Team() {
             </p>
           </motion.div>
 
-          {/* Image Column (Right on Desktop) */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -155,7 +148,6 @@ export default function Team() {
         </div>
       </section>
 
-      {/* ===== Professional Roles Section ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20">
         <motion.h2
           variants={fadeUp}
@@ -200,7 +192,6 @@ export default function Team() {
         </div>
       </section>
 
-      {/* ===== CTA Section ===== */}
       <section
         className="py-16 text-center"
         style={{
@@ -223,7 +214,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-white mb-6 text-lg max-w-2xl mx-auto"
         >
-          Every heart that serves here is part of a shared purpose — to make
+          Every heart that serves here is part of a shared purpose, to make
           every moment matter.
         </motion.p>
         <motion.a
