@@ -13,7 +13,6 @@ export default function AboutPage() {
     <main className="bg-white text-gray-800 font-sans leading-relaxed antialiased">
       <Header />
 
-      {/* ===== Hero Section (fixed to show full head) ===== */}
       <section className="relative h-[75vh] md:h-[85vh] w-full flex items-center justify-center overflow-hidden shadow-xl">
         <div className="relative w-full h-full">
           <Image
@@ -21,26 +20,23 @@ export default function AboutPage() {
             alt="Hospice and Beyond Hero"
             fill
             priority
-            className="object-cover object-top" // keeps head visible
+            className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 100vw"
           />
         </div>
 
-        {/* Subtle gradient overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
 
-        {/* Hero Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 py-10 z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg max-w-4xl">
             Hospice and Beyond Palliative Care
           </h1>
           <p className="text-xl sm:text-2xl font-light italic max-w-3xl border-t-2 border-white/50 pt-2 mt-2">
-            “A Legacy of Compassion – Honoring Every Life, Every Moment.”
+            “A Legacy of Compassion  Honoring Every Life, Every Moment.”
           </p>
         </div>
       </section>
 
-      {/* ===== Welcome Section ===== */}
       <section className="grid md:grid-cols-2 items-center gap-10 px-6 md:px-12 py-24 max-w-7xl xl:max-w-8xl mx-auto border-b border-gray-100">
         <div className="relative h-[350px] sm:h-[450px] w-full rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-500">
           <Image
@@ -61,9 +57,9 @@ export default function AboutPage() {
           </p>
           <p className="text-gray-700 mb-4 text-base leading-relaxed">
             At Hospice and Beyond Palliative Care, our calling is more than
-            medical — it’s deeply human. We exist to surround you with
+            medical  it’s deeply human. We exist to surround you with
             expertise, understanding, and presence. Hospice care is not about
-            surrendering; it’s about cherishing what matters most — comfort,
+            surrendering; it’s about cherishing what matters most  comfort,
             dignity, and connection.
           </p>
           <p className="text-gray-700 mb-4 text-base leading-relaxed">
@@ -74,7 +70,7 @@ export default function AboutPage() {
             family will be supported every step of the way.
           </p>
           <p className="text-gray-700 mb-6 text-base leading-relaxed">
-            You can reach our team any time — day or night — 24/7 for comfort,
+            You can reach our team any time  day or night  24/7 for comfort,
             guidance, and reassurance.
           </p>
           <div className="mt-8 pt-4 border-t border-gray-200">
@@ -89,7 +85,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===== Mission Section ===== */}
       <div className="bg-[#F9FAF9] py-20 px-6 md:px-12">
         <section className="grid md:grid-cols-2 items-center gap-10 max-w-7xl mx-auto pb-20">
           <div className="relative h-[300px] sm:h-[400px] w-full rounded-xl shadow-lg overflow-hidden">
@@ -108,7 +103,7 @@ export default function AboutPage() {
             <p className="text-gray-700 text-lg border-l-4 border-[#047857] pl-4 italic">
               "To bring exceptional comfort, dignity, and peace to every
               patient and family we serve. We exist to ensure that life’s final
-              chapter is lived with grace — supported by compassionate
+              chapter is lived with grace supported by compassionate
               professionals who understand that every moment matters."
             </p>
           </div>
@@ -122,7 +117,7 @@ export default function AboutPage() {
               Our Vision
             </h2>
             <p className="text-gray-700 text-lg border-l-4 border-[#047857] pl-4 italic">
-              "To be a guiding light of hope and healing in our communities —
+              "To be a guiding light of hope and healing in our communities 
               where every individual experiences compassionate care, emotional
               peace, and spiritual wholeness."
             </p>
@@ -139,7 +134,6 @@ export default function AboutPage() {
         </section>
       </div>
 
-      {/* ===== Foundation Section ===== */}
       <section className="py-24 px-6 md:px-12 bg-white">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#03271E] mb-12">
           Our Foundation of Care
@@ -203,7 +197,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===== Closing Section ===== */}
       <section className="bg-[#03271E] text-white py-16 px-6 md:px-12 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
