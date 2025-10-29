@@ -1,35 +1,58 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, Facebook, Twitter, Instagram, Youtube, Music } from "lucide-react";
+import { Phone, Mail } from "lucide-react"; 
+import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaTiktok, FaLinkedinIn } from "react-icons/fa6"; 
 
 export default function Footer() {
+    
+    // 1. Define Brand Colors
+    const brandColors = {
+        Facebook: "#1877F2",
+        X: "#000000",        // Black is the official color for the 'X' icon
+        Instagram: "#E4405F", // Using a common gradient center/primary color
+        Youtube: "#FF0000",
+        TikTok: "#000000",   // Black is common for the logo on a white background
+        LinkedIn: "#0A66C2",
+    };
+
     // Define the social media links
     const socialLinks = [
         {
-            icon: Facebook,
+            icon: FaFacebookF,
             href: "http://facebook.com/hospiceandbeyond",
             label: "Facebook",
+            colorKey: "Facebook",
         },
         {
-            icon: Twitter, // Used for X
+            icon: FaXTwitter,
             href: "https://x.com/hospicenbeyond",
             label: "X (Twitter)",
+            colorKey: "X",
         },
         {
-            icon: Instagram,
+            icon: FaInstagram,
             href: "https://www.instagram.com/hospiceandbeyond",
             label: "Instagram",
+            colorKey: "Instagram",
         },
         {
-            icon: Youtube,
+            icon: FaYoutube,
             href: "https://www.youtube.com/@hospiceandbeyond",
             label: "YouTube",
+            colorKey: "Youtube",
         },
         {
-            icon: Music, // Used as the icon for TikTok
+            icon: FaTiktok,
             href: "https://www.tiktok.com/@hospiceandbeyond",
             label: "TikTok",
+            colorKey: "TikTok",
+        },
+        {
+            icon: FaLinkedinIn,
+            href: "https://www.linkedin.com/company/hospice-and-beyond-palliative-care",
+            label: "LinkedIn",
+            colorKey: "LinkedIn",
         },
     ];
 
@@ -159,9 +182,14 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label={link.label}
-                                className="p-2 rounded-full border border-[#006D66]/30 hover:bg-[#006D66] hover:text-white transition"
+                                // Removed hover styles since we are using brand colors
+                                className="p-2 rounded-full border border-gray-300 transition" 
                             >
-                                <link.icon size={20} />
+                                <link.icon 
+                                    size={20} 
+                                    // Apply the brand color here
+                                    color={brandColors[link.colorKey]} 
+                                />
                             </a>
                         ))}
                     </div>
