@@ -11,49 +11,46 @@ const BRAND_GOLD = "#7D5F42";
 
 export default function HospiceEligibilityPage() {
   const [formData, setFormData] = useState({});
-  const [currentStep, setCurrentStep] = useState(0);
+  const [showSavedModal, setShowSavedModal] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [showSavedModal, setShowSavedModal] = useState(false);
   const videoRef = useRef(null);
 
-  /* ---------- Load saved progress ---------- */
+  // ---------------- LOAD SAVED DATA ----------------
   useEffect(() => {
-    const savedData = localStorage.getItem("hospiceFormData");
-    const savedStep = localStorage.getItem("hospiceFormStep");
-    if (savedData || savedStep) setShowSavedModal(true);
+    const saved = localStorage.getItem("hospiceFormData");
+    if (saved) setShowSavedModal(true);
   }, []);
 
-  /* ---------- Save progress on every change ---------- */
+  // ---------------- SAVE DATA ON CHANGE ----------------
   useEffect(() => {
     if (Object.keys(formData).length > 0) {
       localStorage.setItem("hospiceFormData", JSON.stringify(formData));
-      localStorage.setItem("hospiceFormStep", currentStep.toString());
     }
-  }, [formData, currentStep]);
+  }, [formData]);
+
+  const onChange = (name, value) =>
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
   const loadSaved = () => {
-    const savedData = localStorage.getItem("hospiceFormData");
-    const savedStep = localStorage.getItem("hospiceFormStep");
-    if (savedData) setFormData(JSON.parse(savedData));
-    if (savedStep) setCurrentStep(Number(savedStep));
+    const saved = localStorage.getItem("hospiceFormData");
+    if (saved) setFormData(JSON.parse(saved));
     setShowSavedModal(false);
   };
 
   const startOver = () => {
     localStorage.removeItem("hospiceFormData");
-    localStorage.removeItem("hospiceFormStep");
     setFormData({});
-    setCurrentStep(0);
     setShowSavedModal(false);
   };
 
-  /* ---------- Video autoplay ---------- */
+  // ---------------- VIDEO AUTOPLAY ----------------
   useEffect(() => {
     const video = videoRef.current;
     if (video) video.play().catch(() => {});
   }, []);
 
+  // ---------------- FORM QUESTIONS ----------------
   const healthQs = [
     "Have you or your loved one been admitted to the hospital or emergency room multiple times in the past 6 months?",
     "Are you experiencing more frequent infections (e.g., pneumonia, urinary tract infections)?",
@@ -77,26 +74,7 @@ export default function HospiceEligibilityPage() {
     "Do you want to learn more about the comfort, dignity, and support hospice can provide?",
   ];
 
-  const steps = [
-    { title: "Health & Medical History", questions: healthQs },
-    { title: "Daily Living & Function", questions: dailyQs },
-    { title: "Communication & Planning", questions: commQs },
-    { title: "Contact Information & Consent", questions: [] },
-  ];
-
-  const onChange = (name, value) =>
-    setFormData((p) => ({
-      ...p,
-      [name]: value,
-    }));
-
-  const nextStep = () => {
-    if (currentStep < steps.length - 1) setCurrentStep((s) => s + 1);
-  };
-  const prevStep = () => {
-    if (currentStep > 0) setCurrentStep((s) => s - 1);
-  };
-
+  // ---------------- FORM SUBMISSION ----------------
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -109,7 +87,6 @@ export default function HospiceEligibilityPage() {
       if (!res.ok) throw new Error(await res.text());
       setShowSuccess(true);
       localStorage.removeItem("hospiceFormData");
-      localStorage.removeItem("hospiceFormStep");
       setFormData({});
     } catch (err) {
       alert("❌ " + err.message);
@@ -122,7 +99,7 @@ export default function HospiceEligibilityPage() {
     <div className="flex flex-col min-h-screen bg-[#F9F9F8] text-gray-900">
       <Header />
 
-      {/* ===== Hero ===== */}
+      {/* ===== HERO SECTION ===== */}
       <section className="relative h-[60vh] overflow-hidden">
         <video
           ref={videoRef}
@@ -153,7 +130,7 @@ export default function HospiceEligibilityPage() {
         </div>
       </section>
 
-      {/* ===== Step Form ===== */}
+      {/* ===== FORM SECTION ===== */}
       <main className="flex-1 py-16 px-4 sm:px-8 flex justify-center bg-[#F9F9F8]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -161,146 +138,118 @@ export default function HospiceEligibilityPage() {
           className="max-w-3xl w-full bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-10 border-t-8"
           style={{ borderColor: BRAND_GOLD }}
         >
-          {/* Progress Bar */}
-          <div className="mb-10">
-            <div className="flex justify-between text-sm font-semibold text-gray-600 mb-2">
-              <span>{steps[currentStep].title}</span>
-              <span>
-                Step {currentStep + 1} of {steps.length}
-              </span>
-            </div>
-            <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-              <div
-                className="h-2 transition-all duration-500"
-                style={{
-                  width: `${((currentStep + 1) / steps.length) * 100}%`,
-                  backgroundColor: BRAND_GOLD,
-                }}
-              ></div>
-            </div>
-          </div>
+          <form onSubmit={handleSubmit} className="space-y-10">
+            <Section title="Health & Medical History" color={BRAND_GREEN}>
+              {healthQs.map((q, i) => (
+                <YesNo
+                  key={i}
+                  name={`health-${i}`}
+                  question={q}
+                  value={formData[`health-${i}`] || ""}
+                  onChange={onChange}
+                  color={BRAND_GOLD}
+                />
+              ))}
+            </Section>
 
-          {/* Step Content */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentStep}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.6 }}
+            <Section title="Daily Living & Function" color={BRAND_GREEN}>
+              {dailyQs.map((q, i) => (
+                <YesNo
+                  key={i}
+                  name={`daily-${i}`}
+                  question={q}
+                  value={formData[`daily-${i}`] || ""}
+                  onChange={onChange}
+                  color={BRAND_GOLD}
+                />
+              ))}
+            </Section>
+
+            <Section title="Communication & Planning" color={BRAND_GREEN}>
+              {commQs.map((q, i) => (
+                <YesNo
+                  key={i}
+                  name={`comm-${i}`}
+                  question={q}
+                  value={formData[`comm-${i}`] || ""}
+                  onChange={onChange}
+                  color={BRAND_GOLD}
+                />
+              ))}
+            </Section>
+
+            <Section title="Contact Information" color={BRAND_GREEN}>
+              <Input
+                label="Full Name"
+                name="fullName"
+                value={formData.fullName || ""}
+                onChange={onChange}
+                color={BRAND_GOLD}
+              />
+              <Input
+                label="Email Address"
+                name="email"
+                type="email"
+                value={formData.email || ""}
+                onChange={onChange}
+                color={BRAND_GOLD}
+              />
+              <Input
+                label="Phone Number"
+                name="phone"
+                value={formData.phone || ""}
+                onChange={onChange}
+                color={BRAND_GOLD}
+              />
+            </Section>
+
+            {/* Consent section */}
+            <div className="bg-[#FFFDF9] border border-[#E7D7C4] text-gray-700 rounded-xl p-4 text-sm leading-relaxed">
+              By submitting this form, you consent to be contacted by Hospice
+              and Beyond Palliative Care LLC regarding your hospice eligibility
+              and available care options. To withdraw consent, email{" "}
+              <a
+                href="mailto:beyondhospicehpcare@gmail.com"
+                className="font-semibold"
+                style={{ color: BRAND_GOLD }}
+              >
+                beyondhospicehpcare@gmail.com
+              </a>{" "}
+              or call <span className="font-semibold">325-249-2748</span>.
+            </div>
+
+            {/* Submit button */}
+            <button
+              type="submit"
+              disabled={submitting}
+              className="w-full py-4 text-lg font-semibold rounded-xl shadow-md transition-transform transform hover:scale-[1.01]"
+              style={{
+                backgroundColor: BRAND_GREEN,
+                color: "white",
+                borderBottom: `4px solid ${BRAND_GOLD}`,
+              }}
             >
-              {currentStep < steps.length - 1 ? (
-                steps[currentStep].questions.map((q, i) => (
-                  <YesNo
-                    key={i}
-                    name={`${steps[currentStep].title}-${i}`}
-                    question={q}
-                    value={formData[`${steps[currentStep].title}-${i}`] || ""}
-                    onChange={onChange}
-                    color={BRAND_GOLD}
-                  />
-                ))
-              ) : (
-                <div className="space-y-6">
-                  <Input
-                    label="Full Name"
-                    name="fullName"
-                    value={formData.fullName || ""}
-                    onChange={onChange}
-                    color={BRAND_GOLD}
-                  />
-                  <Input
-                    label="Email Address"
-                    name="email"
-                    type="email"
-                    value={formData.email || ""}
-                    onChange={onChange}
-                    color={BRAND_GOLD}
-                  />
-                  <Input
-                    label="Phone Number"
-                    name="phone"
-                    value={formData.phone || ""}
-                    onChange={onChange}
-                    color={BRAND_GOLD}
-                  />
-                  {/* Consent Section */}
-                  <div className="bg-[#FFFDF9] border border-[#E7D7C4] text-gray-700 rounded-xl p-4 text-sm leading-relaxed">
-                    By submitting this form, you consent to be contacted by
-                    Hospice and Beyond Palliative Care LLC regarding your
-                    hospice eligibility and available care options. To withdraw
-                    consent, email{" "}
-                    <a
-                      href="mailto:beyondhospicehpcare@gmail.com"
-                      className="font-semibold"
-                      style={{ color: BRAND_GOLD }}
-                    >
-                      beyondhospicehpcare@gmail.com
-                    </a>{" "}
-                    or call{" "}
-                    <span className="font-semibold">325-249-2748</span>.
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation */}
-          <div className="flex justify-between mt-10">
-            {currentStep > 0 ? (
-              <button
-                type="button"
-                onClick={prevStep}
-                className="px-6 py-3 rounded-lg font-semibold text-gray-800 bg-gray-200 hover:bg-gray-300"
-              >
-                Back
-              </button>
-            ) : (
-              <div />
-            )}
-
-            {currentStep < steps.length - 1 ? (
-              <button
-                type="button"
-                onClick={nextStep}
-                className="px-6 py-3 rounded-lg font-semibold text-white shadow-md hover:scale-[1.02]"
-                style={{ backgroundColor: BRAND_GREEN }}
-              >
-                Next
-              </button>
-            ) : (
-              <button
-                type="submit"
-                onClick={handleSubmit}
-                disabled={submitting}
-                className="px-6 py-3 rounded-lg font-semibold text-white shadow-md hover:scale-[1.02] transition"
-                style={{
-                  backgroundColor: BRAND_GREEN,
-                  borderBottom: `4px solid ${BRAND_GOLD}`,
-                }}
-              >
-                {submitting ? "Submitting..." : "Submit"}
-              </button>
-            )}
-          </div>
+              {submitting ? "Sending..." : "Submit Questionnaire"}
+            </button>
+          </form>
         </motion.div>
       </main>
 
       <Footer />
 
-      {/* ===== Restore Progress Modal ===== */}
+      {/* ===== RESTORE SAVED DATA MODAL ===== */}
       <AnimatePresence>
         {showSavedModal && (
           <motion.div
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              exit={{ scale: 0.85, opacity: 0 }}
               className="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-sm border-t-4"
               style={{ borderColor: BRAND_GOLD }}
             >
@@ -331,7 +280,7 @@ export default function HospiceEligibilityPage() {
         )}
       </AnimatePresence>
 
-      {/* ===== Elegant Success Modal ===== */}
+      {/* ===== SUCCESS POPUP ===== */}
       <AnimatePresence>
         {showSuccess && (
           <motion.div
@@ -386,10 +335,22 @@ export default function HospiceEligibilityPage() {
   );
 }
 
-/* ---------- Subcomponents ---------- */
+/* ---------- SUBCOMPONENTS ---------- */
+
+const Section = ({ title, color, children }) => (
+  <div>
+    <h3
+      className="text-xl font-semibold mb-4 pb-2 border-b-2"
+      style={{ borderColor: color, color }}
+    >
+      {title}
+    </h3>
+    <div className="space-y-4">{children}</div>
+  </div>
+);
 
 const YesNo = ({ name, question, value, onChange, color }) => (
-  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-[#FDFBF8] border border-[#E8E4DE] rounded-xl p-4 mb-4 hover:shadow-md transition">
+  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-[#FDFBF8] border border-[#E8E4DE] rounded-xl p-4 hover:shadow-sm transition">
     <p className="text-gray-700 sm:w-3/4">{question}</p>
     <div className="flex gap-4 sm:w-1/4 justify-end">
       {["Yes", "No"].map((opt) => (
