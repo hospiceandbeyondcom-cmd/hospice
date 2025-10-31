@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -22,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-white shadow-lg">
+    <header className="w-full bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 md:py-4">
         {/* === LOGO === */}
         <Link
@@ -32,18 +33,15 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="Hospice and Beyond Logo"
-            width={200}
-            height={60}
+            width={180}
+            height={55}
             className="object-contain rounded-lg"
           />
         </Link>
 
-        {/* === DESKTOP MENU === */}
-        <nav className="hidden md:flex items-center space-x-8 text-[#03271E] font-medium">
-          <Link
-            href="/"
-            className="hover:text-[#047857] transition-colors rounded-lg p-1"
-          >
+        {/* === DESKTOP MENU - UPDATED CLASSES HERE === */}
+        <nav className="hidden md:flex items-center space-x-7 text-[#03271E] font-medium text-[15.5px] leading-[1.6] tracking-tight">
+          <Link href="/" className="hover:text-[#047857] transition-colors">
             Home
           </Link>
 
@@ -53,16 +51,16 @@ export default function Header() {
             onMouseEnter={() => setAboutOpen(true)}
             onMouseLeave={() => setAboutOpen(false)}
           >
-            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors p-1">
+            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors">
               <span>About</span>
               <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
                   aboutOpen ? "rotate-180" : "rotate-0"
                 }`}
               />
             </button>
             {aboutOpen && (
-              <div className="absolute left-0 top-8 bg-white shadow-xl rounded-xl py-2 w-40 border border-gray-100 z-50 overflow-hidden transform transition-all duration-200">
+              <div className="absolute left-0 top-7 bg-white shadow-xl rounded-xl py-2 w-36 border border-gray-100 z-50">
                 <Link
                   href="/about"
                   className="block px-4 py-2 text-sm hover:bg-[#047857] hover:text-white transition-colors"
@@ -85,16 +83,16 @@ export default function Header() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors p-1">
+            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors">
               <span>Services</span>
               <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
                   servicesOpen ? "rotate-180" : "rotate-0"
                 }`}
               />
             </button>
             {servicesOpen && (
-              <div className="absolute left-0 top-8 bg-white shadow-xl rounded-xl py-2 w-56 border border-gray-100 z-50 transform transition-all duration-200">
+              <div className="absolute left-0 top-7 bg-white shadow-xl rounded-xl py-2 w-56 border border-gray-100 z-50">
                 {[
                   { title: "Hospice Care", href: "/services" },
                   { title: "Palliative Care", href: "/palliative-care" },
@@ -126,16 +124,16 @@ export default function Header() {
             onMouseEnter={() => setFaqOpen(true)}
             onMouseLeave={() => setFaqOpen(false)}
           >
-            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors p-1">
+            <button className="flex items-center space-x-1 hover:text-[#047857] transition-colors">
               <span>Myth & FAQ</span>
               <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
                   faqOpen ? "rotate-180" : "rotate-0"
                 }`}
               />
             </button>
             {faqOpen && (
-              <div className="absolute left-0 top-8 bg-white shadow-xl rounded-xl py-2 w-40 border border-gray-100 z-50 transform transition-all duration-200">
+              <div className="absolute left-0 top-7 bg-white shadow-xl rounded-xl py-2 w-36 border border-gray-100 z-50">
                 <Link
                   href="/myth"
                   className="block px-4 py-2 text-sm hover:bg-[#047857] hover:text-white transition-colors"
@@ -152,32 +150,26 @@ export default function Header() {
             )}
           </div>
 
-          <Link
-            href="/careers"
-            className="hover:text-[#047857] transition-colors p-1"
-          >
+          {/* === OTHER PAGES === */}
+          <Link href="/careers" className="hover:text-[#047857]">
             Careers
           </Link>
-
-          <Link
-            href="/contact"
-            className="hover:text-[#047857] transition-colors p-1"
-          >
+          <Link href="/contact" className="hover:text-[#047857]">
             Contact
           </Link>
-
-          <Link
-            href="/blog"
-            className="hover:text-[#047857] transition-colors p-1"
-          >
+          <Link href="/blog" className="hover:text-[#047857]">
             Blog
           </Link>
+          <Link href="/donate-to-us" className="hover:text-[#047857]">
+            Donate
+          </Link>
 
+          {/* === LAST: TAKE HOSPICE ELIGIBILITY QUESTIONNAIRE === */}
           <Link
-            href="/donate-to-us"
-            className="ml-3 bg-[#047857] hover:bg-[#03271E] text-white font-semibold px-4 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-[1.05]"
+            href="/hospice-eligibility-questionnaire"
+            className="bg-[#047857] hover:bg-[#065f46] text-white font-medium px-4 py-2 rounded-full shadow-md transition-all duration-300 whitespace-nowrap text-[14px]"
           >
-            Donate to Us
+            Take the Hospice Eligibility Questionnaire
           </Link>
         </nav>
 
@@ -185,14 +177,12 @@ export default function Header() {
         <button
           className="md:hidden text-[#03271E] p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#047857]"
           onClick={toggleMenu}
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* === MOBILE MENU === */}
+      {/* === MOBILE MENU (unchanged) === */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
@@ -335,13 +325,21 @@ export default function Header() {
           >
             Blog
           </Link>
-
           <Link
             href="/donate-to-us"
             onClick={closeAll}
-            className="mt-4 block bg-[#047857] hover:bg-[#03271E] text-white font-semibold px-5 py-3 rounded-full shadow-md text-center transition-all duration-300"
+            className="block py-2 hover:bg-[#047857]/10 hover:text-[#047857] rounded-lg px-2"
           >
-            Donate to Us
+            Donate
+          </Link>
+
+          {/* === LAST: TAKE HOSPICE ELIGIBILITY QUESTIONNAIRE === */}
+          <Link
+            href="/hospice-eligibility-questionnaire"
+            onClick={closeAll}
+            className="mt-4 block bg-[#047857] hover:bg-[#065f46] text-white font-semibold px-5 py-3 rounded-full shadow-md text-center transition-all duration-300"
+          >
+            Take the Hospice Eligibility Questionnaire
           </Link>
         </div>
       </div>

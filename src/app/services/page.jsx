@@ -73,6 +73,39 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ===== Recognizing When Hospice Care May Be Needed ===== */}
+      <section className="py-20 px-6 md:px-12 bg-gradient-to-b from-[#F9FAF9] to-[#E8F5F2]">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#03271E] mb-6">
+            Recognizing When Hospice Care May Be Needed
+          </h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
+            We provide caring in-home assessments to help you decide if hospice care
+            is the right choice for yourself or someone you care about. Please contact
+            us if you observe any of the following signs:
+          </p>
+
+          <ul className="text-left text-gray-800 bg-white rounded-2xl shadow-lg p-8 md:p-10 max-w-3xl mx-auto space-y-4 leading-relaxed">
+            <li>• Repeated hospital stays or visits to the emergency room</li>
+            <li>• Persistent or recurring infections</li>
+            <li>• Difficulty or noticeable decline in managing everyday tasks</li>
+            <li>• Multiple long-term health conditions</li>
+            <li>• Unexpected weight loss or significant changes in weight</li>
+            <li>• More frequent falls or decreased ability to move around</li>
+            <li>• Changes or drops in oxygen levels</li>
+          </ul>
+
+          <div className="mt-10">
+            <Link
+              href="/hospice-eligibility-questionnaire"
+              className="inline-block bg-[#047857] hover:bg-[#065f46] text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-300"
+            >
+              Take the Hospice Eligibility Questionnaire
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ===== Four Types of Hospice Care ===== */}
       <section className="bg-[#F9FAF9] py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto text-center">
@@ -107,7 +140,7 @@ export default function ServicesPage() {
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 For times of medical crisis when symptoms become difficult to
-                manage, continuous home care offers round the clock nursing
+                manage, continuous home care offers round-the-clock nursing
                 support at home. Our skilled professionals remain by your side,
                 ensuring relief, comfort, and safety.
               </p>
@@ -132,9 +165,9 @@ export default function ServicesPage() {
                 4. Respite Care
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Short term inpatient care that provides temporary relief for
+                Short-term inpatient care that provides temporary relief for
                 family caregivers. It allows loved ones to rest, recharge, and
-                focus on their own well being while knowing their family member
+                focus on their own well-being while knowing their family member
                 is receiving exceptional care and attention.
               </p>
             </div>
