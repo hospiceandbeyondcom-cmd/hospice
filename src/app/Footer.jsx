@@ -197,7 +197,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className="mt-6 pt-6 border-t border-gray-200 text-center text-gray-500 text-sm">
-                    © {new Date().getFullYear()} Hospice & Beyond. All rights reserved.
+                    © {new Date().getFullYear()} Hospice & Beyond. All rights reserved 2025.
                 </div>
             </div>
         </footer>
