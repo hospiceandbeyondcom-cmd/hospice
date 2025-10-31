@@ -116,7 +116,7 @@ export default function MITE() {
         }}
       >
         <h3 className="text-white text-2xl md:text-3xl font-semibold mb-4">
-          Understanding Brings Peace
+          Understanding Brings Peace.
         </h3>
         <p className="text-white mb-6 text-lg">
           Our team is always here to clarify, support, and guide with honesty
