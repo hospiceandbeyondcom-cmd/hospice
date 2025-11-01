@@ -10,7 +10,7 @@ export default function Blog() {
   const blogs = [
     {
       title: "When You Start Noticing They’re Getting Weaker — What to Do Next",
-      image: "/blog3.png",
+      image: "/blog01.png",
       link: "/when-you-start-noticing-they-are-getting-weaker-what-to-do-next",
     },
   ];
