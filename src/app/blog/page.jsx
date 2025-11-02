@@ -9,9 +9,16 @@ export default function Blog() {
 
   const blogs = [
     {
-      title: "When You Start Noticing They’re Getting Weaker — What to Do Next",
+      title: "When You Start Noticing They’re Getting Weaker What to Do Next",
       image: "/blog01.png",
       link: "/when-you-start-noticing-they-are-getting-weaker-what-to-do-next",
+      objectPosition: "object-center", // default center
+    },
+    {
+      title: "How to Comfort Without Fear",
+      image: "/blog02.png",
+      link: "/how-to-comfort-without-fear",
+      objectPosition: "object-top", // start from top for second image
     },
   ];
 
@@ -48,18 +55,18 @@ export default function Blog() {
             Explore Our Blog
           </h2>
           <p className="text-gray-700 max-w-3xl text-lg leading-relaxed">
-            We release new posts regularly — each one written with warmth, clarity, and purpose. 
-            Our blog shares insights from hospice and palliative care professionals, 
+            We release new posts regularly each one written with warmth, clarity, and purpose.
+            Our blog shares insights from hospice and palliative care professionals,
             helping you stay connected to the heart of compassionate care.
           </p>
         </div>
 
         {/* Blog Cards */}
-        <div className="flex justify-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {blogs.map((blog, i) => (
             <div
               key={i}
-              className="bg-white border border-[#E6E6E6] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer w-full sm:w-[75%] md:w-[45%] lg:w-[32%]"
+              className="bg-white border border-[#E6E6E6] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               {/* Blog Image */}
               <div className="relative w-full h-48 md:h-56 overflow-hidden">
@@ -67,7 +74,7 @@ export default function Blog() {
                   src={blog.image}
                   alt={blog.title}
                   fill
-                  className="object-cover object-center transform hover:scale-105 transition duration-700"
+                  className={`object-cover ${blog.objectPosition} transform hover:scale-105 transition duration-700`}
                 />
               </div>
 
