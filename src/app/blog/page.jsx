@@ -20,6 +20,12 @@ export default function Blog() {
       link: "/how-to-comfort-without-fear",
       objectPosition: "object-top", // start from top for second image
     },
+    {
+      title: "What Love Looks Like at the End",
+      image: "/blog03.png",
+      link: "/what-love-looks-like-at-the-end",
+      objectPosition: "object-center", // balanced image position
+    },
   ];
 
   return (
@@ -62,7 +68,7 @@ export default function Blog() {
         </div>
 
         {/* Blog Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {blogs.map((blog, i) => (
             <div
               key={i}
