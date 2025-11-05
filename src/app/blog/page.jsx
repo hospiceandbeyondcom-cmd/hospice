@@ -12,19 +12,25 @@ export default function Blog() {
       title: "When You Start Noticing They’re Getting Weaker What to Do Next",
       image: "/blog01.png",
       link: "/when-you-start-noticing-they-are-getting-weaker-what-to-do-next",
-      objectPosition: "object-center", // default center
+      objectPosition: "object-center",
     },
     {
       title: "How to Comfort Without Fear",
       image: "/blog02.png",
       link: "/how-to-comfort-without-fear",
-      objectPosition: "object-top", // start from top for second image
+      objectPosition: "object-top",
     },
     {
       title: "What Love Looks Like at the End",
       image: "/blog03.png",
       link: "/what-love-looks-like-at-the-end",
-      objectPosition: "object-center", // balanced image position
+      objectPosition: "object-center",
+    },
+    {
+      title: "When Goodbye Becomes a Beginning",
+      image: "/blog04.png",
+      link: "/when-goodbye-becomes-a-beginning",
+      objectPosition: "object-top",
     },
   ];
 
