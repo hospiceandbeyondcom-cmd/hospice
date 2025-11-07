@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const SecondSection = () => {
   const PRIMARY_TEAL = "#006D66";
@@ -16,6 +17,33 @@ const SecondSection = () => {
       ></div>
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+        {/* Animated Centered Heading */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
+            style={{ fontFamily: "Poppins, sans-serif", color: "#1a1a1a" }}
+          >
+            <span className="block">A simple but</span>
+            <span
+              className="block"
+              style={{
+                background: `linear-gradient(90deg, ${PRIMARY_TEAL}, ${ACCENT_ROSEGOLD})`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              sacred belief
+            </span>
+          </h2>
+        </motion.div>
+
+        {/* Two-column layout below */}
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           {/* IMAGE COLUMN */}
           <div className="relative mb-12 lg:mb-0 lg:order-2">
@@ -34,8 +62,6 @@ const SecondSection = () => {
                 }}
               ></div>
             </div>
-
-            {/* Soft color glow behind image */}
             <div
               className="hidden lg:block absolute inset-0 -top-10 -right-10 w-full h-full rounded-3xl -z-10 opacity-20"
               style={{ backgroundColor: ACCENT_ROSEGOLD }}
@@ -44,25 +70,8 @@ const SecondSection = () => {
 
           {/* TEXT COLUMN */}
           <div className="lg:order-1 lg:pr-12">
-            <h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight"
-              style={{ fontFamily: "Poppins, sans-serif", color: "#1a1a1a" }}
-            >
-              <span className="block">A simple but</span>
-              <span
-                className="block"
-                style={{
-                  background: `linear-gradient(90deg, ${PRIMARY_TEAL}, ${ACCENT_ROSEGOLD})`,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                sacred belief
-              </span>
-            </h2>
-
             <div
-              className="space-y-6 text-lg text-gray-700 leading-relaxed"
+              className="space-y-6 text-lg text-gray-700 leading-relaxed text-justify"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               <p>
@@ -74,29 +83,38 @@ const SecondSection = () => {
                 are honored.
               </p>
               <p>
-                We bring care directly to where it’s most meaningful the home.
+                We bring care directly to where it’s most meaningful — the home.
                 Our focus extends beyond medical support to emotional and
-                spiritual well being, helping families find calm even in
+                spiritual well-being, helping families find calm even in
                 difficult transitions.
               </p>
-              <p>
-                At Hospice and Beyond, every heartbeat, every moment, and every
-                story matters.
-              </p>
-            </div>
 
-            {/* BUTTON */}
-            <div className="mt-10">
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-base"
-                style={{
-                  background: `linear-gradient(90deg, ${PRIMARY_TEAL}, ${ACCENT_ROSEGOLD})`,
-                  fontFamily: "Inter, sans-serif",
-                }}
-              >
-                Learn More About Our Care
-              </Link>
+              {/* Last Paragraph + Inline Button */}
+              <p className="flex flex-wrap items-center gap-4">
+                <span>
+                  At Hospice and Beyond, every heartbeat, every moment, and
+                  every story matters.
+                </span>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
+                    style={{
+                      background: `linear-gradient(90deg, ${PRIMARY_TEAL}, ${ACCENT_ROSEGOLD})`,
+                      fontFamily: "Inter, sans-serif",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Learn More About Our Care
+                  </Link>
+                </motion.div>
+              </p>
             </div>
           </div>
         </div>

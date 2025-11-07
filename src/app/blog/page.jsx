@@ -14,6 +14,14 @@ export default function Blog() {
 
   const blogs = [
     {
+      title: "Holding Space When Words Fall Short",
+      image: "/blog05.png",
+      link: "/holding-space-when-words-fall-short",
+      dateDisplay: "Nov 6, 2025",
+      dateISO: "2025-11-06",
+      objectPosition: "object-top",
+    },
+    {
       title: "When Goodbye Becomes a Beginning",
       image: "/blog04.png",
       link: "/when-goodbye-becomes-a-beginning",
@@ -55,16 +63,16 @@ export default function Blog() {
       (post) => new Date(post.dateISO).toDateString() === selectedDate.toDateString()
     );
 
-    if (filtered.length === 0) {
-      setFilteredPosts([]);
-    } else {
-      setFilteredPosts(filtered);
-    }
+    setFilteredPosts(filtered);
   };
 
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut", staggerChildren: 0.15 },
+    },
   };
 
   const postsToDisplay =
@@ -74,8 +82,7 @@ export default function Blog() {
     <div
       className="min-h-screen flex flex-col"
       style={{
-        background:
-          "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
+        background: "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
       }}
     >
       <Header />
@@ -83,7 +90,12 @@ export default function Blog() {
       {/* ===== Split Hero Section ===== */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
         {/* Text Side */}
-        <div className="w-full md:w-1/2 p-10 md:p-20 text-center md:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-1/2 p-10 md:p-20 text-center md:text-left"
+        >
           <h1
             className="text-3xl md:text-5xl font-bold mb-6 leading-snug"
             style={{
@@ -98,10 +110,15 @@ export default function Blog() {
             Reflections, guidance, and heartfelt stories on care, compassion, and connection.
             Discover gentle insights and uplifting perspectives from hospice and palliative care professionals.
           </p>
-        </div>
+        </motion.div>
 
         {/* Image Side */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-[70vh] relative">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="w-full md:w-1/2 h-[40vh] md:h-[70vh] relative"
+        >
           <Image
             src="/blog.png"
             alt="Hospice and Beyond Blog Hero"
@@ -110,13 +127,19 @@ export default function Blog() {
             className="object-cover object-center rounded-bl-[2rem] md:rounded-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent md:hidden"></div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ===== Blog Section ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20 text-center">
         {/* Section Intro */}
-        <div className="mb-12">
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <h2
             className="text-3xl md:text-4xl font-semibold mb-4"
             style={{
@@ -132,7 +155,7 @@ export default function Blog() {
             Our blog shares insights from hospice and palliative care professionals,
             helping you stay connected to the heart of compassionate care.
           </p>
-        </div>
+        </motion.div>
 
         {/* ===== Filter Button + Calendar ===== */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
@@ -142,6 +165,7 @@ export default function Blog() {
           <input
             type="date"
             min="2025-11-01"
+            max="2025-11-30"
             onChange={handleFilter}
             value={filterDate}
             className="border border-[#ccc] rounded-lg px-4 py-2 focus:outline-none focus:border-[#006D66] transition-all shadow-sm bg-white/70 backdrop-blur-sm"
@@ -188,7 +212,6 @@ export default function Blog() {
                   className="bg-white/90 border border-[#E6E6E6] rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer relative backdrop-blur-sm"
                   variants={fadeUp}
                 >
-                  {/* Blog Image */}
                   <div className="relative w-full h-48 md:h-56 overflow-hidden">
                     <Image
                       src={blog.image}
@@ -196,11 +219,11 @@ export default function Blog() {
                       fill
                       className={`object-cover ${blog.objectPosition} transform hover:scale-105 transition duration-700`}
                     />
-                    {/* Date Ribbon */}
+                    {/* Date Tag — bottom left */}
                     <div
-                      className="absolute top-4 left-4 text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-md shadow-md"
+                      className="absolute bottom-4 left-4 text-[#006D66] text-xs md:text-sm px-3 py-1 rounded-md shadow-md bg-white"
                       style={{
-                        background: "linear-gradient(90deg, #006D66, #7D5F42)",
+                        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
                       }}
                     >
                       {blog.dateDisplay}
@@ -209,10 +232,12 @@ export default function Blog() {
 
                   {/* Blog Details */}
                   <div className="p-6 text-left">
-                    <h3 className="text-xl md:text-2xl font-semibold text-black mb-4">
+                    <h3
+                      className="text-xl md:text-2xl font-normal text-[#222] mb-4 leading-snug"
+                      style={{ fontWeight: 400 }}
+                    >
                       {blog.title}
                     </h3>
-
                     <button
                       onClick={() => {
                         setLoading(i);
