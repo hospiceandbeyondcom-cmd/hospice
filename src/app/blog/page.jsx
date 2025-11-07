@@ -14,6 +14,14 @@ export default function Blog() {
 
   const blogs = [
     {
+      title: "The Kindness That Lingers",
+      image: "/blog06.png",
+      link: "/the-kindness-that-lingers",
+      dateDisplay: "Nov 7, 2025",
+      dateISO: "2025-11-07",
+      objectPosition: "object-top",
+    },
+    {
       title: "Holding Space When Words Fall Short",
       image: "/blog05.png",
       link: "/holding-space-when-words-fall-short",
