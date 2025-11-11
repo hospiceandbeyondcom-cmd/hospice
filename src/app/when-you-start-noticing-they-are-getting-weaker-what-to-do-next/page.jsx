@@ -149,7 +149,7 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
               background: "linear-gradient(90deg,#006D66,#7D5F42)",
             }}
           >
-            ← Return to Blog
+            ← Return to Blog.
           </Link>
 
           <div className="mt-10 text-gray-700 text-base leading-relaxed max-w-xl mx-auto">
