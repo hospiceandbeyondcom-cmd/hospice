@@ -12,7 +12,40 @@ export default function Blog() {
   const [filterDate, setFilterDate] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
+  // ===== BLOG LIST up to NOVEMBER 11 =====
   const blogs = [
+    {
+      title: "Learning to Listen to Stillness",
+      image: "/blog10.png",
+      link: "/learning-to-listen-to-stillness",
+      dateDisplay: "Nov 11, 2025",
+      dateISO: "2025-11-11",
+      objectPosition: "object-center",
+    },
+    {
+      title: "When Presence Says More Than Words",
+      image: "/blog09.png",
+      link: "/when-presence-says-more-than-words",
+      dateDisplay: "Nov 10, 2025",
+      dateISO: "2025-11-10",
+      objectPosition: "object-center",
+    },
+    {
+      title: "The Quiet Strength of Letting Go",
+      image: "/blog08.png",
+      link: "/the-quiet-strength-of-letting-go",
+      dateDisplay: "Nov 9, 2025",
+      dateISO: "2025-11-09",
+      objectPosition: "object-top",
+    },
+    {
+      title: "What It Means to Be Gentle With Time",
+      image: "/blog07.png",
+      link: "/what-it-means-to-be-gentle-with-time",
+      dateDisplay: "Nov 8, 2025",
+      dateISO: "2025-11-08",
+      objectPosition: "object-center",
+    },
     {
       title: "The Kindness That Lingers",
       image: "/blog06.png",
@@ -61,16 +94,23 @@ export default function Blog() {
       dateISO: "2025-11-02",
       objectPosition: "object-center",
     },
+    {
+      title: "What Palliative Care Really Means",
+      image: "/blog11.png",
+      link: "/what-palliative-care-really-means",
+      dateDisplay: "Nov 1, 2025",
+      dateISO: "2025-11-01",
+      objectPosition: "object-center",
+    },
   ];
 
+  // ===== HANDLE DATE FILTER =====
   const handleFilter = (e) => {
     const selectedDate = new Date(e.target.value);
     setFilterDate(e.target.value);
-
     const filtered = blogs.filter(
       (post) => new Date(post.dateISO).toDateString() === selectedDate.toDateString()
     );
-
     setFilteredPosts(filtered);
   };
 
@@ -95,7 +135,7 @@ export default function Blog() {
     >
       <Header />
 
-      {/* ===== Split Hero Section ===== */}
+      {/* ===== HERO SECTION ===== */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
         {/* Text Side */}
         <motion.div
@@ -138,7 +178,7 @@ export default function Blog() {
         </motion.div>
       </section>
 
-      {/* ===== Blog Section ===== */}
+      {/* ===== BLOG SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20 text-center">
         {/* Section Intro */}
         <motion.div
@@ -167,20 +207,18 @@ export default function Blog() {
 
         {/* ===== Filter Button + Calendar ===== */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
-          <label className="text-gray-700 font-medium text-base">
-            Filter by Date:
-          </label>
+          <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
           <input
             type="date"
             min="2025-11-01"
             max="2025-11-30"
             onChange={handleFilter}
             value={filterDate}
-            className="border border-[#ccc] rounded-lg px-4 py-2 focus:outline-none focus:border-[#006D66] transition-all shadow-sm bg-white/70 backdrop-blur-sm"
+            className="border border-[#ccc] rounded-lg px-4 py-2 w-[230px] focus:outline-none focus:border-[#006D66] transition-all shadow-sm bg-white/70 backdrop-blur-sm"
           />
         </div>
 
-        {/* ===== Blog Cards or No Posts Message ===== */}
+        {/* ===== Blog Cards ===== */}
         <AnimatePresence mode="wait">
           {filterDate && filteredPosts.length === 0 ? (
             <motion.div
@@ -190,9 +228,7 @@ export default function Blog() {
               exit={{ opacity: 0, y: -30 }}
               className="text-center mt-12 bg-white/70 backdrop-blur-sm p-10 rounded-2xl shadow-md inline-block"
             >
-              <p className="text-gray-700 text-lg mb-6">
-                No posts found for the selected date.
-              </p>
+              <p className="text-gray-700 text-lg mb-6">No posts found for the selected date.</p>
               <button
                 onClick={() => {
                   setFilterDate("");
@@ -227,7 +263,6 @@ export default function Blog() {
                       fill
                       className={`object-cover ${blog.objectPosition} transform hover:scale-105 transition duration-700`}
                     />
-                    {/* Date Tag — bottom left */}
                     <div
                       className="absolute bottom-4 left-4 text-[#006D66] text-xs md:text-sm px-3 py-1 rounded-md shadow-md bg-white"
                       style={{

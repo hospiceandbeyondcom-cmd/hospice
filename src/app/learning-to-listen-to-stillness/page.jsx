@@ -6,7 +6,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Link from "next/link";
 
-export default function WhenYouStartNoticingTheyAreGettingWeaker() {
+export default function LearningToListenToStillness() {
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -17,7 +17,7 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
       className="min-h-screen flex flex-col"
       style={{
         background:
-          "linear-gradient(180deg,#FAFAF8 0%,#FDFCF9 60%,#F7F5EF 100%)",
+          "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
       }}
     >
       <Header />
@@ -34,20 +34,15 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
           <h1
             className="text-3xl md:text-5xl font-bold mb-6 leading-snug"
             style={{
-              background: "linear-gradient(90deg,#006D66,#7D5F42)",
+              background: "linear-gradient(90deg, #006D66, #7D5F42)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            When You Start Noticing They Are Getting Weaker What to Do Next
+            Learning to Listen to Stillness
           </h1>
-          <p className="text-gray-700 text-base md:text-lg mb-3">
-            November 4, 2025
-          </p>
           <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-            Noticing a loved one grow weaker can be heartbreaking, but it can
-            also be a gentle call to shift from fixing to caring, from doing to
-            being present.
+            November 11, 2025
           </p>
         </motion.div>
 
@@ -59,8 +54,8 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
           className="w-full md:w-1/2 h-[40vh] md:h-[70vh] relative"
         >
           <Image
-            src="/blog01.png"
-            alt="When You Start Noticing They Are Getting Weaker"
+            src="/blog10.png"
+            alt="Learning to Listen to Stillness"
             fill
             priority
             className="object-cover object-center rounded-bl-[2rem] md:rounded-none"
@@ -79,58 +74,46 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
           className="space-y-6 text-[17px]"
         >
           <p>
-            It often begins quietly. Maybe they sleep more than before. Maybe
-            they eat less, move slower, or seem to lose their usual energy. It
-            can feel like watching a candle dim—slowly, softly, and without
-            warning. When you start noticing that someone you love is getting
-            weaker, it is natural to feel fear, confusion, or helplessness. But
-            this moment also carries an invitation—to lean closer with
-            gentleness, to listen, and to care in new ways.
+            Stillness can feel uncomfortable at first. In a world that moves
+            quickly, silence often feels like something to fill. But when we
+            begin to listen to stillness, we discover it is not empty. It is
+            full of meaning, memory, and gentle truth waiting to be heard.
           </p>
 
           <p>
-            The first step is not to panic but to observe. Try to notice what
-            has changed and when. Is your loved one having trouble breathing?
-            Are they eating less? Are they more tired than usual? These small
-            details can help healthcare providers understand what is happening
-            and guide you toward the right kind of support. Trust your
-            instincts. You know this person deeply, and your awareness matters.
+            In hospice care, stillness is often where the most sacred moments
+            happen. Between breaths, between words, between the rhythm of
+            machines and the quiet of the room, something larger than sound
+            begins to speak. It is peace in its simplest form, inviting us to
+            slow down and notice what our hearts already know.
           </p>
 
           <p>
-            The second step is to start a conversation—with your loved one, with
-            family, or with their doctor. You do not have to have all the
-            answers. Simply saying, I have noticed these changes and I am
-            concerned, opens a door. If the changes are significant, it may be
-            time to explore whether palliative or hospice care could help.
-            These services focus on comfort, dignity, and quality of life—not
-            just medical needs but emotional and spiritual ones too.
+            Learning to listen to stillness is not about doing nothing. It is
+            about being fully present. It is in the way you sit beside someone
+            without rushing, the way you breathe when you feel helpless, or the
+            way your heart softens as you realize that love does not always need
+            movement to exist.
           </p>
 
           <p>
-            In hospice and palliative care, weakness is not just a symptom to
-            treat but a message to honor. It tells us that the body is working
-            hard and needs a different kind of care. This is where compassion
-            replaces correction, where being present becomes more important than
-            being busy. Helping someone sit up, offering sips of water, adjusting
-            a pillow, or simply being near them—these small acts are sacred.
+            Families often say that the quiet moments near the end of life feel
+            the most profound. The sound of soft breathing, a hand being held,
+            light through a window, these are the moments that imprint deeply.
+            They remind us that connection is not always spoken. It can be felt.
           </p>
 
           <p>
-            The hardest part for many caregivers is accepting that love may now
-            look quieter. It is no longer about finding solutions but about
-            offering peace. It is the love that watches, waits, and whispers,
-            You are not alone. That is the kind of love that sustains both the
-            giver and the receiver, the kind that turns fear into tenderness and
-            helplessness into grace.
+            When you allow yourself to rest inside stillness, you begin to hear
+            the wisdom it carries. You notice the subtle language of care, the
+            unspoken gratitude between you and your loved one, and the peace
+            that comes from simply allowing things to be as they are.
           </p>
 
           <p>
-            Noticing weakness does not mean giving up. It means recognizing what
-            truly matters. It means making space for rest, for connection, and
-            for gentleness. And in those moments, you may discover that even in
-            decline, there is still deep beauty in caring, in loving, and in
-            simply being together.
+            Stillness is not the absence of life. It is its most honest
+            reflection. It teaches us how to listen beyond words, how to feel
+            beyond sight, and how to love beyond the limits of time.
           </p>
         </motion.div>
 
@@ -146,7 +129,7 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
             href="/blog"
             className="inline-block px-8 py-3 rounded-full font-semibold text-white transition hover:opacity-90 shadow-md"
             style={{
-              background: "linear-gradient(90deg,#006D66,#7D5F42)",
+              background: "linear-gradient(90deg, #006D66, #7D5F42)",
             }}
           >
             ← Return to Blog

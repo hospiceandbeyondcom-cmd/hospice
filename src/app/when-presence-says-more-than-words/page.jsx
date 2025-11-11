@@ -6,7 +6,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Link from "next/link";
 
-export default function WhenYouStartNoticingTheyAreGettingWeaker() {
+export default function WhenPresenceSaysMoreThanWords() {
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -17,7 +17,7 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
       className="min-h-screen flex flex-col"
       style={{
         background:
-          "linear-gradient(180deg,#FAFAF8 0%,#FDFCF9 60%,#F7F5EF 100%)",
+          "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
       }}
     >
       <Header />
@@ -34,20 +34,15 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
           <h1
             className="text-3xl md:text-5xl font-bold mb-6 leading-snug"
             style={{
-              background: "linear-gradient(90deg,#006D66,#7D5F42)",
+              background: "linear-gradient(90deg, #006D66, #7D5F42)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            When You Start Noticing They Are Getting Weaker What to Do Next
+            When Presence Says More Than Words
           </h1>
-          <p className="text-gray-700 text-base md:text-lg mb-3">
-            November 4, 2025
-          </p>
           <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-            Noticing a loved one grow weaker can be heartbreaking, but it can
-            also be a gentle call to shift from fixing to caring, from doing to
-            being present.
+            November 9, 2025
           </p>
         </motion.div>
 
@@ -59,8 +54,8 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
           className="w-full md:w-1/2 h-[40vh] md:h-[70vh] relative"
         >
           <Image
-            src="/blog01.png"
-            alt="When You Start Noticing They Are Getting Weaker"
+            src="/blog09.png"
+            alt="When Presence Says More Than Words"
             fill
             priority
             className="object-cover object-center rounded-bl-[2rem] md:rounded-none"
@@ -79,58 +74,47 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
           className="space-y-6 text-[17px]"
         >
           <p>
-            It often begins quietly. Maybe they sleep more than before. Maybe
-            they eat less, move slower, or seem to lose their usual energy. It
-            can feel like watching a candle dim—slowly, softly, and without
-            warning. When you start noticing that someone you love is getting
-            weaker, it is natural to feel fear, confusion, or helplessness. But
-            this moment also carries an invitation—to lean closer with
-            gentleness, to listen, and to care in new ways.
+            Sometimes there are no words that feel right. No sentences that can
+            hold the weight of what we wish we could say. In those moments,
+            presence becomes the most powerful language we have. In hospice
+            care, presence is not silence. It is communication in its truest
+            form. It is love expressed through stillness.
           </p>
 
           <p>
-            The first step is not to panic but to observe. Try to notice what
-            has changed and when. Is your loved one having trouble breathing?
-            Are they eating less? Are they more tired than usual? These small
-            details can help healthcare providers understand what is happening
-            and guide you toward the right kind of support. Trust your
-            instincts. You know this person deeply, and your awareness matters.
+            There are times when the kindest thing we can offer is not advice or
+            reassurance, but our calm and steady being. Sitting quietly beside
+            someone, breathing the same air, allowing the room to soften, that
+            is compassion without the need for explanation. It says, you are not
+            alone, and I am here.
           </p>
 
           <p>
-            The second step is to start a conversation—with your loved one, with
-            family, or with their doctor. You do not have to have all the
-            answers. Simply saying, I have noticed these changes and I am
-            concerned, opens a door. If the changes are significant, it may be
-            time to explore whether palliative or hospice care could help.
-            These services focus on comfort, dignity, and quality of life—not
-            just medical needs but emotional and spiritual ones too.
+            In the final seasons of life, presence often carries more meaning
+            than words ever could. It holds the power to soothe without fixing,
+            to comfort without trying to control. A hand resting gently on
+            another, a nod, a shared breath, these become the poetry of care.
           </p>
 
           <p>
-            In hospice and palliative care, weakness is not just a symptom to
-            treat but a message to honor. It tells us that the body is working
-            hard and needs a different kind of care. This is where compassion
-            replaces correction, where being present becomes more important than
-            being busy. Helping someone sit up, offering sips of water, adjusting
-            a pillow, or simply being near them—these small acts are sacred.
+            Families sometimes feel the need to fill the silence, fearing that
+            stillness is empty. But silence is often where love speaks most
+            clearly. In that quiet, hearts align. What was once spoken becomes
+            understood through the language of closeness and care.
           </p>
 
           <p>
-            The hardest part for many caregivers is accepting that love may now
-            look quieter. It is no longer about finding solutions but about
-            offering peace. It is the love that watches, waits, and whispers,
-            You are not alone. That is the kind of love that sustains both the
-            giver and the receiver, the kind that turns fear into tenderness and
-            helplessness into grace.
+            Presence teaches us patience. It reminds us that comfort is not
+            always about doing, but about being. When we let go of the pressure
+            to find the right words, we make space for grace to enter, for peace
+            to settle, and for love to unfold naturally in its own rhythm.
           </p>
 
           <p>
-            Noticing weakness does not mean giving up. It means recognizing what
-            truly matters. It means making space for rest, for connection, and
-            for gentleness. And in those moments, you may discover that even in
-            decline, there is still deep beauty in caring, in loving, and in
-            simply being together.
+            In the end, being present is one of the greatest gifts we can give.
+            It tells the person we love that they are seen, valued, and
+            remembered. It says without speaking, your life matters, and I am
+            here with you through it all.
           </p>
         </motion.div>
 
@@ -146,7 +130,7 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
             href="/blog"
             className="inline-block px-8 py-3 rounded-full font-semibold text-white transition hover:opacity-90 shadow-md"
             style={{
-              background: "linear-gradient(90deg,#006D66,#7D5F42)",
+              background: "linear-gradient(90deg, #006D66, #7D5F42)",
             }}
           >
             ← Return to Blog
