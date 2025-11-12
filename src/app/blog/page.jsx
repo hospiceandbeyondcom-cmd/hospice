@@ -12,8 +12,16 @@ export default function Blog() {
   const [filterDate, setFilterDate] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  // ===== BLOG LIST up to NOVEMBER 11 =====
+  // ===== BLOG LIST up to NOVEMBER 12 =====
   const blogs = [
+    {
+      title: "Hospice Is Not the End It Is the Space Where Love Deepens",
+      image: "/blog12.png",
+      link: "/hospice-is-not-the-end-it-is-the-space-where-love-deepens",
+      dateDisplay: "Nov 12, 2025",
+      dateISO: "2025-11-12",
+      objectPosition: "object-center",
+    },
     {
       title: "Learning to Listen to Stillness",
       image: "/blog10.png",
