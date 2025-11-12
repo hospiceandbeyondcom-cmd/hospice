@@ -26,7 +26,7 @@ export default function Career() {
     {
       title: "Social Worker (MSW / BSW)",
       details:
-        "Support patients and families with counseling, resources, and advocacy. We are looking for social workers with strong hearts, listening ears, and at least one year of hospice or healthcare experience.",
+        "Support patients and families with counseling, resource(s), and advocacy. We are looking for social workers with strong hearts, listening ears, and at least one year of hospice or healthcare experience.",
     },
     {
       title: "Physical Therapist",
