@@ -12,8 +12,16 @@ export default function Blog() {
   const [filterDate, setFilterDate] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  // ===== BLOG LIST up to NOVEMBER 12 =====
+  // ===== BLOG LIST up to NOVEMBER 13 =====
   const blogs = [
+    {
+      title: "The Gentle Power of Saying I Love You Out Loud",
+      image: "/blog13.png",
+      link: "/the-gentle-power-of-saying-i-love-you-out-loud",
+      dateDisplay: "Nov 13, 2025",
+      dateISO: "2025-11-13",
+      objectPosition: "object-center",
+    },
     {
       title: "Hospice Is Not the End It Is the Space Where Love Deepens",
       image: "/blog12.png",
@@ -145,7 +153,6 @@ export default function Blog() {
 
       {/* ===== HERO SECTION ===== */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
-        {/* Text Side */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -168,7 +175,6 @@ export default function Blog() {
           </p>
         </motion.div>
 
-        {/* Image Side */}
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -188,7 +194,6 @@ export default function Blog() {
 
       {/* ===== BLOG SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20 text-center">
-        {/* Section Intro */}
         <motion.div
           className="mb-12"
           initial={{ opacity: 0, y: 30 }}
@@ -213,7 +218,7 @@ export default function Blog() {
           </p>
         </motion.div>
 
-        {/* ===== Filter Button + Calendar ===== */}
+        {/* ===== Filter and Cards ===== */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
           <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
           <input
@@ -226,7 +231,6 @@ export default function Blog() {
           />
         </div>
 
-        {/* ===== Blog Cards ===== */}
         <AnimatePresence mode="wait">
           {filterDate && filteredPosts.length === 0 ? (
             <motion.div
@@ -281,7 +285,6 @@ export default function Blog() {
                     </div>
                   </div>
 
-                  {/* Blog Details */}
                   <div className="p-6 text-left">
                     <h3
                       className="text-xl md:text-2xl font-normal text-[#222] mb-4 leading-snug"
