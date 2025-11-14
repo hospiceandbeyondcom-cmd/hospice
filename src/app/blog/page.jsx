@@ -12,8 +12,16 @@ export default function Blog() {
   const [filterDate, setFilterDate] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  // ===== BLOG LIST up to NOVEMBER 13 =====
+  // ===== BLOG LIST up to NOVEMBER 14 =====
   const blogs = [
+    {
+      title: "The Grace We Find in Hospice and Palliative Moments",
+      image: "/blog14.png",
+      link: "/the-grace-we-find-in-hospice-and-palliative-moments",
+      dateDisplay: "Nov 14, 2025",
+      dateISO: "2025-11-14",
+      objectPosition: "object-center",
+    },
     {
       title: "The Gentle Power of Saying I Love You Out Loud",
       image: "/blog13.png",
@@ -218,7 +226,7 @@ export default function Blog() {
           </p>
         </motion.div>
 
-        {/* ===== Filter and Cards ===== */}
+        {/* ===== Filter and Blog Cards ===== */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
           <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
           <input
@@ -288,7 +296,6 @@ export default function Blog() {
                   <div className="p-6 text-left">
                     <h3
                       className="text-xl md:text-2xl font-normal text-[#222] mb-4 leading-snug"
-                      style={{ fontWeight: 400 }}
                     >
                       {blog.title}
                     </h3>
