@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import { Heart, Home, ShieldCheck } from "lucide-react";
 
+const gradientHeading = {
+  background: "linear-gradient(90deg, #006D66, #7D5F42)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+};
+
 export default function WhyChooseUs() {
   const fadeUp = {
     initial: { opacity: 0, y: 50 },
@@ -21,37 +27,42 @@ export default function WhyChooseUs() {
       icon: Heart,
       title: "Compassion at the Core",
       description:
-        "Every service we offer begins with empathy. Our team listens deeply, ensuring care is always human, heartfelt, and centered on comfort.",
+        "Every service we offer begins with empathy. Our team listens deeply ensuring care is always human heartfelt and centered on comfort.",
     },
     {
       icon: Home,
       title: "Family Focused Support",
       description:
-        "We care for the family as much as the patient providing counseling, resources, and emotional connection throughout the entire journey.",
+        "We care for the family as much as the patient providing counseling resources and emotional connection throughout the entire journey.",
     },
     {
       icon: ShieldCheck,
-      title: "Integrity & Dignity",
+      title: "Integrity and Dignity",
       description:
-        "We respect every spiritual path and honor each persons story with complete privacy, grace, and unwavering professional dignity.",
+        "We respect every spiritual path and honor each persons story with complete privacy grace and unwavering professional dignity.",
     },
   ];
 
   return (
     <section className="bg-white py-32 sm:py-40 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
+
+        {/* GRADIENT HEADING */}
         <motion.h2
           {...fadeUp}
-          className="text-5xl md:text-6xl font-extrabold text-[#03271E] mb-6 leading-tight"
+          className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+          style={gradientHeading}
         >
           Why Choose Hospice and Beyond?
         </motion.h2>
+
+        {/* JUSTIFIED SUBTEXT */}
         <motion.p
           {...itemStagger(0.1)}
-          className="text-xl text-gray-700 max-w-4xl mx-auto mb-20"
+          className="text-xl text-gray-700 max-w-4xl mx-auto mb-20 text-justify leading-relaxed"
         >
           Choosing end of life care is a sacred decision. Heres why countless
-          families trust us to walk that journey with them, grounded in
+          families trust us to walk that journey with them grounded in
           expertise and deep respect.
         </motion.p>
 
@@ -71,7 +82,7 @@ export default function WhyChooseUs() {
               <h3 className="text-2xl font-bold text-[#03271E] mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-justify">
                 {feature.description}
               </p>
             </motion.div>

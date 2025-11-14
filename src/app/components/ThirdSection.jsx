@@ -13,6 +13,12 @@ export default function ExperienceSection() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const gradientHeading = {
+    background: "linear-gradient(90deg, #006D66, #7D5F42)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  };
+
   return (
     <motion.section
       className="py-16 md:py-24 px-6 md:px-12 relative overflow-hidden"
@@ -53,6 +59,7 @@ export default function ExperienceSection() {
 
       {/* Content */}
       <div className="container mx-auto flex flex-col md:flex-row-reverse items-center gap-12 relative z-10">
+        
         {/* Right Image */}
         <motion.div
           className="relative w-full md:w-1/2 flex justify-center items-center"
@@ -77,13 +84,15 @@ export default function ExperienceSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {/* Heading */}
+
+          {/* UPDATED HEADING */}
           <motion.h2
-            className="font-serif text-4xl md:text-6xl font-extrabold mb-6 leading-snug text-[#003D39] text-left md:text-justify"
+            className="font-serif text-3xl md:text-4xl font-extrabold mb-6 leading-snug text-left md:text-justify"
+            style={gradientHeading}
             variants={fadeUp}
             transition={{ duration: 0.8 }}
           >
-            Bringing Comfort, Dignity and Peace to Every Life We Touch
+            Bringing Comfort Dignity and Peace to Every Life We Touch
           </motion.h2>
 
           {/* Intro Paragraph */}
@@ -92,9 +101,9 @@ export default function ExperienceSection() {
             variants={fadeUp}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            At Hospice and Beyond, our mission, vision, and core values guide
-            everything we do, ensuring that every patient and family experiences
-            compassionate care, emotional peace, and spiritual wholeness.
+            At Hospice and Beyond our mission vision and core values guide
+            everything we do ensuring that every patient and family experiences
+            compassionate care emotional peace and spiritual wholeness.
           </motion.p>
 
           {/* Mission, Vision, Values Cards */}
@@ -102,17 +111,17 @@ export default function ExperienceSection() {
             {[
               {
                 title: "Our Mission",
-                text: "To bring exceptional comfort, dignity, and peace to every patient and family we serve. We ensure that life’s final chapter is lived with grace, supported by compassionate professionals who understand that every moment matters.",
+                text: "To bring exceptional comfort dignity and peace to every patient and family we serve. We ensure that lifes final chapter is lived with grace supported by compassionate professionals who understand that every moment matters.",
                 icon: <FaFeatherAlt />,
               },
               {
                 title: "Our Vision",
-                text: "To be a guiding light of hope and healing in our communities, where every individual experiences compassionate care, emotional peace, and spiritual wholeness.",
+                text: "To be a guiding light of hope and healing in our communities where every individual experiences compassionate care emotional peace and spiritual wholeness.",
                 icon: <FaChild />,
               },
               {
                 title: "Our Core Values",
-                text: "Compassion, Dignity, Integrity, Family, and Hope. These are the principles that shape every decision, every visit, and every conversation at Hospice and Beyond.",
+                text: "Compassion Dignity Integrity Family and Hope. These are the principles that shape every decision every visit and every conversation at Hospice and Beyond.",
                 icon: <FaTrophy />,
               },
             ].map((item, i) => (
@@ -166,6 +175,7 @@ export default function ExperienceSection() {
               </motion.div>
             ))}
           </div>
+
         </motion.div>
       </div>
     </motion.section>

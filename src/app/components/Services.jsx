@@ -5,30 +5,36 @@ import { motion } from "framer-motion";
 const PRIMARY_TEAL = "#006D66";
 const ACCENT_GOLD = "#D4881A";
 
+const gradientHeading = {
+  background: "linear-gradient(90deg, #006D66, #7D5F42)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+};
+
 const services = [
   {
     title: "Hospice Care",
-    desc: "Personalized, comfort focused medical and emotional support for individuals facing advanced or terminal illness delivered wherever the patient calls home. Our care focuses on dignity, peace, and the human connection that matters most.",
+    desc: "Personalized comfort focused medical and emotional support for individuals facing advanced or terminal illness delivered wherever the patient calls home. Our care focuses on dignity peace and the human connection that matters most.",
     image: "/hospice.png",
   },
   {
     title: "Palliative Care",
-    desc: "Comprehensive care that manages pain, symptoms, and emotional needs for patients at any stage of serious illness supporting both healing and quality of life with compassion and respect.",
+    desc: "Comprehensive care that manages pain symptoms and emotional needs for patients at any stage of serious illness supporting both healing and quality of life with compassion and respect.",
     image: "/palliative.png",
   },
   {
-    title: "Faith & Spiritual Care",
-    desc: "Respectful, non denominational guidance and comfort for patients and families seeking peace, meaning, or strength through spiritual connection. We help each person find serenity and faith during life’s most meaningful moments.",
+    title: "Faith and Spiritual Care",
+    desc: "Respectful non denominational guidance and comfort for patients and families seeking peace meaning or strength through spiritual connection. We help each person find serenity and faith during life’s most meaningful moments.",
     image: "/faith.png",
   },
   {
     title: "Family Support",
-    desc: "Assistance with care planning, counseling, and access to community resources to help patients and caregivers navigate emotional, financial, and practical challenges ensuring families never walk alone in the journey of care.",
+    desc: "Assistance with care planning counseling and access to community resources to help patients and caregivers navigate emotional financial and practical challenges ensuring families never walk alone in the journey of care.",
     image: "/family.png",
   },
   {
     title: "24/7 Compassionate Assistance",
-    desc: "Our team is available around the clock to provide guidance, emotional support, and medical expertise whenever and wherever you need us most.",
+    desc: "Our team is available around the clock to provide guidance emotional support and medical expertise whenever and wherever you need us most.",
     image: "/services2.png",
   },
 ];
@@ -43,14 +49,14 @@ const ServiceCard = ({ title, image }) => {
         <img src={image} alt={title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/20 duration-300" />
       </div>
-      <div
-        className={`mt-6 p-2 text-center border-2 border-transparent transition-all duration-300 rounded-xl group-hover:border-[${ACCENT_GOLD}]`}
-      >
+
+      <div className={`mt-6 p-2 text-center border-2 border-transparent transition-all duration-300 rounded-xl group-hover:border-[${ACCENT_GOLD}]`}>
         <h3
           className={`font-serif text-2xl sm:text-3xl font-bold text-[${PRIMARY_TEAL}] group-hover:text-[${ACCENT_GOLD}] transition duration-300 leading-snug`}
         >
           {title}
         </h3>
+
         {desc && (
           <p className="mt-2 text-sm text-gray-600 max-w-xs mx-auto">{desc}</p>
         )}
@@ -61,18 +67,24 @@ const ServiceCard = ({ title, image }) => {
 
 export const MoladavServicesSection = () => {
   return (
-    <section className={`py-16 md:py-24 px-6 md:px-12 bg-white`}>
+    <section className="py-16 md:py-24 px-6 md:px-12 bg-white">
       <div className="container mx-auto text-center">
-        <h2
-          className={`font-serif text-4xl md:text-6xl font-extrabold text-[${PRIMARY_TEAL}] text-center mb-10 relative before:absolute before:content-[''] before:w-24 before:h-1.5 before:bg-gradient-to-r before:from-transparent before:via-[${ACCENT_GOLD}] before:to-transparent before:-bottom-4 before:left-1/2 before:-translate-x-1/2 before:rounded-full`}
+
+        {/* UPDATED HEADING WITH GRADIENT + SLIDE UP */}
+        <motion.h2
+          style={gradientHeading}
+          className="font-serif text-3xl md:text-5xl font-extrabold text-center mb-10 leading-tight"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           Compassionate Care Designed to{" "}
-          <span className={`text-[${ACCENT_GOLD}]`}>Honor Every Life</span>
-        </h2>
+          <span style={{ color: ACCENT_GOLD }}>Honor Every Life</span>
+        </motion.h2>
+
         <p className="text-xl mb-16 text-gray-700 max-w-3xl mx-auto font-light leading-relaxed">
-          At Hospice and Beyond Palliative Care LLC, we offer a full spectrum of
-          services designed to meet the diverse needs of patients and families
-          providing comfort, guidance, and heartfelt care every step of the way.
+          At Hospice and Beyond Palliative Care LLC we offer a full spectrum of services designed to meet the diverse needs of patients and families providing comfort guidance and heartfelt care every step of the way.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -80,6 +92,7 @@ export const MoladavServicesSection = () => {
             <ServiceCard key={index} title={s.title} image={s.image} />
           ))}
         </div>
+
       </div>
     </section>
   );

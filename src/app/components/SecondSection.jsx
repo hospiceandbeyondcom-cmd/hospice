@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -17,7 +19,8 @@ const SecondSection = () => {
       ></div>
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-        {/* Animated Centered Heading */}
+        
+        {/* Updated Heading — One line on desktop */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
@@ -26,26 +29,26 @@ const SecondSection = () => {
           viewport={{ once: true }}
         >
           <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
-            style={{ fontFamily: "Poppins, sans-serif", color: "#1a1a1a" }}
+            className="
+              text-4xl sm:text-5xl lg:text-6xl 
+              font-extrabold leading-tight
+              lg:whitespace-nowrap
+            "
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              background: `linear-gradient(90deg, ${PRIMARY_TEAL}, ${ACCENT_ROSEGOLD})`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
-            <span className="block">A simple but</span>
-            <span
-              className="block"
-              style={{
-                background: `linear-gradient(90deg, ${PRIMARY_TEAL}, ${ACCENT_ROSEGOLD})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              sacred belief
-            </span>
+            A simple but sacred belief
           </h2>
         </motion.div>
 
-        {/* Two-column layout below */}
+        {/* Layout below */}
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-          {/* IMAGE COLUMN */}
+          
+          {/* IMAGE */}
           <div className="relative mb-12 lg:mb-0 lg:order-2">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
               <Image
@@ -62,6 +65,7 @@ const SecondSection = () => {
                 }}
               ></div>
             </div>
+
             <div
               className="hidden lg:block absolute inset-0 -top-10 -right-10 w-full h-full rounded-3xl -z-10 opacity-20"
               style={{ backgroundColor: ACCENT_ROSEGOLD }}
@@ -76,24 +80,24 @@ const SecondSection = () => {
             >
               <p>
                 Hospice and Beyond Palliative Care is founded on a simple but
-                sacred belief that every person deserves dignity, comfort, and
+                sacred belief that every person deserves dignity comfort and
                 peace through every stage of life. We are a compassionate team
                 of professionals who walk hand in hand with patients and their
-                loved ones, creating a space where healing, presence, and hope
+                loved ones creating a space where healing presence and hope
                 are honored.
               </p>
+
               <p>
-                We bring care directly to where it’s most meaningful — the home.
-                Our focus extends beyond medical support to emotional and
-                spiritual well-being, helping families find calm even in
+                We bring care directly to where it is most meaningful — the
+                home. Our focus extends beyond medical support to emotional and
+                spiritual well being helping families find calm even in
                 difficult transitions.
               </p>
 
-              {/* Last Paragraph + Inline Button */}
               <p className="flex flex-wrap items-center gap-4">
                 <span>
-                  At Hospice and Beyond, every heartbeat, every moment, and
-                  every story matters.
+                  At Hospice and Beyond every heartbeat every moment and every
+                  story matters.
                 </span>
 
                 <motion.div
@@ -117,6 +121,7 @@ const SecondSection = () => {
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
