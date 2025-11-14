@@ -30,6 +30,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-20">
+          
           {/* === LEFT CONTENT === */}
           <motion.div
             initial="hidden"
@@ -46,10 +47,16 @@ export default function Hero() {
               Hospice Care with Compassion
             </motion.p>
 
+            {/* === UPDATED MAIN HEADING WITH BLOG GRADIENT === */}
             <motion.h1
               variants={itemVariants}
               className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight"
-              style={{ color: PRIMARY_DARK, fontFamily: "Poppins, sans-serif" }}
+              style={{
+                background: "linear-gradient(90deg, #006D66, #7D5F42)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontFamily: "Poppins, sans-serif"
+              }}
             >
               Bring Comfort and Peace to Every Life
             </motion.h1>
@@ -88,6 +95,7 @@ export default function Hero() {
                   Call to Get in Touch
                 </span>
               </div>
+
               <div className="flex items-center gap-2">
                 <Mail className="w-5 h-5" style={{ color: PRIMARY_TEAL }} />
                 <a
@@ -132,11 +140,12 @@ export default function Hero() {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: `linear-gradient(to top, rgba(0, 61, 57, 0.25), transparent 70%)`,
+                  background: "linear-gradient(to top, rgba(0, 61, 57, 0.25), transparent 70%)",
                 }}
               />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
