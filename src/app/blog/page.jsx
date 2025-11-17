@@ -12,8 +12,32 @@ export default function Blog() {
   const [filterDate, setFilterDate] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  // ===== BLOG LIST up to NOVEMBER 14 =====
+  // ===== BLOG LIST up to NOVEMBER 17 =====
   const blogs = [
+    {
+      title: "Skin Care in Hospice",
+      image: "/blog17.png",
+      link: "/skin-care-in-hospice",
+      dateDisplay: "Nov 17, 2025",
+      dateISO: "2025-11-17",
+      objectPosition: "object-center",
+    },
+    {
+      title: "How Hospice Eligibility Works and Why It Matters in Serious Illness Care",
+      image: "/blog16.png",
+      link: "/how-hospice-eligibility-works-and-why-it-matters-in-serious-illness-care",
+      dateDisplay: "Nov 16, 2025",
+      dateISO: "2025-11-16",
+      objectPosition: "object-center",
+    },
+    {
+      title: "How to Prevent Pressure Ulcers in Hospice",
+      image: "/blog15.png",
+      link: "/how-to-prevent-pressure-ulcers-in-hospice",
+      dateDisplay: "Nov 15, 2025",
+      dateISO: "2025-11-15",
+      objectPosition: "object-center",
+    },
     {
       title: "The Grace We Find in Hospice and Palliative Moments",
       image: "/blog14.png",
@@ -95,7 +119,7 @@ export default function Blog() {
       objectPosition: "object-top",
     },
     {
-      title: "When You Start Noticing They’re Getting Weaker What to Do Next",
+      title: "When You Start Noticing They Are Getting Weaker What to Do Next",
       image: "/blog01.png",
       link: "/when-you-start-noticing-they-are-getting-weaker-what-to-do-next",
       dateDisplay: "Nov 4, 2025",
@@ -159,7 +183,7 @@ export default function Blog() {
     >
       <Header />
 
-      {/* ===== HERO SECTION ===== */}
+      {/* ========= HERO SECTION ========= */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -200,7 +224,7 @@ export default function Blog() {
         </motion.div>
       </section>
 
-      {/* ===== BLOG SECTION ===== */}
+      {/* ========= BLOG SECTION ========= */}
       <section className="max-w-6xl mx-auto px-6 py-20 text-center">
         <motion.div
           className="mb-12"
@@ -226,7 +250,7 @@ export default function Blog() {
           </p>
         </motion.div>
 
-        {/* ===== Filter and Blog Cards ===== */}
+        {/* Filter */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
           <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
           <input
@@ -239,6 +263,7 @@ export default function Blog() {
           />
         </div>
 
+        {/* Blog Cards */}
         <AnimatePresence mode="wait">
           {filterDate && filteredPosts.length === 0 ? (
             <motion.div
@@ -294,9 +319,7 @@ export default function Blog() {
                   </div>
 
                   <div className="p-6 text-left">
-                    <h3
-                      className="text-xl md:text-2xl font-normal text-[#222] mb-4 leading-snug"
-                    >
+                    <h3 className="text-xl md:text-2xl font-normal text-[#222] mb-4 leading-snug">
                       {blog.title}
                     </h3>
                     <button
