@@ -12,8 +12,16 @@ export default function Blog() {
   const [filterDate, setFilterDate] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  // ===== BLOG LIST up to NOVEMBER 17 =====
+  // ===== BLOG LIST up to NOVEMBER 18 =====
   const blogs = [
+    {
+      title: "How Hospice Provides Medical Emotional and Practical Support When It Matters Most",
+      image: "/blog18.png",
+      link: "/how-hospice-provides-medical-emotional-and-practical-support-when-it-matters-most",
+      dateDisplay: "Nov 18, 2025",
+      dateISO: "2025-11-18",
+      objectPosition: "object-center",
+    },
     {
       title: "Skin Care in Hospice",
       image: "/blog17.png",
