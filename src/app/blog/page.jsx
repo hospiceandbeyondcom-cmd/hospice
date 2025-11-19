@@ -15,6 +15,15 @@ export default function Blog() {
   // ===== BLOG LIST up to NOVEMBER 18 =====
   const blogs = [
     {
+  title: "Why Palliative Care Matters Long Before Hospice Even Begins",
+  image: "/blog19.png",
+  link: "/why-palliative-care-matters-long-before-hospice-even-begins",
+  dateDisplay: "Nov 19, 2025",
+  dateISO: "2025-11-19",
+  objectPosition: "object-center",
+   },
+    
+    {
       title: "How Hospice Provides Medical Emotional and Practical Support When It Matters Most",
       image: "/blog18.png",
       link: "/how-hospice-provides-medical-emotional-and-practical-support-when-it-matters-most",
