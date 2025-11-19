@@ -37,7 +37,7 @@ export default function DurableEquipment() {
   const services = [
     {
       title: "Reliable Home Medical Equipment",
-      image: "/equipment1.png",
+      image: "/ment.png",
       description:
         "We provide hospital grade medical equipment that ensures safety, comfort, and convenience at home, helping patients maintain independence and dignity during care.",
     },
@@ -51,20 +51,15 @@ export default function DurableEquipment() {
       title: "Respiratory and Oxygen Therapy",
       image: "/equipment3.png",
       description:
-        "Our respiratory support tools include oxygen concentrators, nebulizers, and ventilator accessories, all maintained and serviced regularly for optimal performance and safety.",
+        "Our respiratory support tools include oxygen concentrators- all maintained and serviced regularly for optimal performance and safety.",
     },
     {
       title: "Pressure Relief and Comfort Systems",
       image: "/equipment4.png",
       description:
-        "We offer pressure relief mattresses, positioning devices, and specialized cushions that prevent skin breakdown and promote relaxation for long term patients.",
+        "We offer relief mattresses, positioning devices, and specialized cushions that prevent skin breakdown and promote relaxation for long term patients.",
     },
-    {
-      title: "Monitoring and Safety Devices",
-      image: "/equipment5.png",
-      description:
-        "Our monitors, alert systems, and vital sign devices help families and nurses track health indicators and respond quickly to changes in patient condition.",
-    },
+    // The "Monitoring and Safety Devices" section (index 4 in the original array) has been removed.
     {
       title: "Delivery, Setup and Maintenance",
       image: "/equipment6.png",
@@ -78,47 +73,62 @@ export default function DurableEquipment() {
       <Header />
 
       <main className="bg-white text-gray-800 overflow-hidden">
-        {/* === HERO SECTION === */}
+        {/* ===== HERO (Blog Style: Text Left + Video Right) ===== */}
         <section
           ref={heroRef}
-          className="relative w-full py-24 md:h-[80vh] flex items-center justify-center overflow-hidden"
+          className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]"
         >
-          {videoVisible ? (
-            <video
-              src="/equipment.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="none"
-              className="absolute inset-0 w-full h-full object-cover"
-            ></video>
-          ) : (
-            <div className="absolute inset-0 bg-transparent" />
-          )}
-
-          <div className="relative z-10 text-center px-6 md:px-12 max-w-3xl">
-            <motion.h1
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="text-3xl md:text-6xl font-extrabold text-white drop-shadow-lg leading-tight"
+          {/* LEFT TEXT */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="w-full md:w-1/2 p-10 md:p-20 text-center md:text-left"
+          >
+            <h1
+              className="text-4xl md:text-5xl font-extrabold mb-6 leading-snug"
+              style={{
+                background: "linear-gradient(90deg, #006D66, #7D5F42)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
             >
               Durable Medical Equipment
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.3 }}
-              className="mt-6 text-lg md:text-xl text-white leading-relaxed drop-shadow-md"
-            >
-              Providing dependable hospital grade equipment for comfort, safety, and care at home.
-            </motion.p>
-          </div>
+            </h1>
+
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0 text-justify">
+              Providing dependable hospital grade equipment that enhances comfort, safety,
+              mobility, and independence for patients receiving care at home.
+            </p>
+          </motion.div>
+
+          {/* RIGHT VIDEO */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="w-full md:w-1/2 h-[45vh] md:h-[70vh] relative"
+          >
+            {videoVisible ? (
+              <video
+                src="/equip.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+                className="absolute inset-0 w-full h-full object-cover rounded-bl-[2rem] md:rounded-none"
+              ></video>
+            ) : (
+              <div className="absolute inset-0 bg-transparent"></div>
+            )}
+
+            {/* Mobile Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent md:hidden"></div>
+          </motion.div>
         </section>
 
-        {/* === SERVICES SECTION === */}
+        {/* ===== SERVICES LIST ===== */}
         <section className="max-w-7xl mx-auto py-20 px-6 md:px-12 lg:px-20 space-y-20">
           {services.map((service, index) => (
             <motion.div
@@ -131,13 +141,7 @@ export default function DurableEquipment() {
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="w-full md:w-1/2"
-              >
+              <div className="w-full md:w-1/2">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -145,30 +149,21 @@ export default function DurableEquipment() {
                   height={400}
                   className="rounded-3xl shadow-md w-full h-auto object-cover"
                 />
-              </motion.div>
+              </div>
 
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="w-full md:w-1/2"
-              >
-                <h2
-                  className="text-2xl md:text-3xl font-semibold mb-4"
-                  style={{ color: "#006D66" }}
-                >
+              <div className="w-full md:w-1/2">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4" style={{ color: "#006D66" }}>
                   {service.title}
                 </h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-gray-700 text-lg leading-relaxed text-justify">
                   {service.description}
                 </p>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </section>
 
-        {/* === CTA SECTION === */}
+        {/* ===== CTA SECTION ===== */}
         <section
           className="relative w-full py-24 flex items-center justify-center overflow-hidden text-center px-6"
           style={{
@@ -185,9 +180,9 @@ export default function DurableEquipment() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-snug text-white">
               Reliable Equipment, Seamless Care
             </h2>
-            <p className="text-base sm:text-lg text-white mb-8 leading-relaxed">
-              From delivery to maintenance, we ensure every piece of equipment supports patient
-              comfort, safety, and peace of mind every single day.
+            <p className="text-base sm:text-lg text-white mb-8 leading-relaxed text-justify">
+              From delivery to maintenance, we ensure every piece of equipment supports comfort,
+              safety, and peace of mind every single day.
             </p>
             <a
               href="/contact"
