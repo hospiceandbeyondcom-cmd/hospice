@@ -113,7 +113,7 @@ export default function WhyEarlyHospiceAdmissionOftenBringsMorePeaceAndStability
         <p className="text-lg leading-relaxed text-justify">
           By choosing hospice earlier, families give themselves the opportunity to experience peace,
           clarity, and stability throughout the journey. It allows loved ones to focus on presence,
-          connection, and emotional closeness rather than stress and uncertainty.
+          connection, and emotional closeness, rather than stress and uncertainty.
         </p>
 
         {/* CTA BUTTON */}
