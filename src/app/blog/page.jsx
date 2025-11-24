@@ -33,7 +33,7 @@ export default function Blog() {
       objectPosition: "object-center",
     },
     {
-      title: "A Simple Understanding of How Medicare and Insurance Support Hospice Care",
+      title: "A Simple Understanding of How Medicare & Insurance Support Hospice Care",
       image: "/blog23.png",
       link: "/a-simple-understanding-of-how-medicare-and-insurance-support-hospice-care",
       dateDisplay: "Nov 23, 2025",
