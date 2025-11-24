@@ -141,9 +141,10 @@ export default function Team() {
               Our Extended Family of Care
             </h2>
 
+            {/* FIXED LINE BELOW */}
             <p className="text-gray-700 text-lg leading-relaxed mb-4 text-justify">
               Compassion is a shared mission. Our team works together, blending medical
-              expertise, emotional support, and spiritual care to meet every patient's unique
+              expertise, emotional support, and spiritual care to meet every patient&apos;s unique
               needs with grace and dedication.
             </p>
 
