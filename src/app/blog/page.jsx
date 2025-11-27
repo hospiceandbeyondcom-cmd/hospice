@@ -16,6 +16,14 @@ export default function Blog() {
   // FULL BLOG LIST (NOVEMBER 1 → NOVEMBER 25)
   // ======================================================
   const blogs = [
+     {
+    title: "Signs a Patient Might Need Hospice Care",
+    image: "/blog26.png",
+    link: "/signs-a-patient-might-need-hospice-care",
+    dateDisplay: "Nov 26, 2025",
+    dateISO: "2025-11-26",
+    objectPosition: "object-center",
+  },
     {
       title: "Why Early Hospice Admission Often Brings More Peace and Stability",
       image: "/blog25.png",
