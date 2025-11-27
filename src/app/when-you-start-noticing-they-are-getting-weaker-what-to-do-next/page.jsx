@@ -155,7 +155,7 @@ export default function WhenYouStartNoticingTheyAreGettingWeaker() {
           <div className="mt-10 text-gray-700 text-base leading-relaxed max-w-xl mx-auto">
             <p className="mb-2">
               Take our Hospice Eligibility Questionnaire to learn more about
-              care options at:
+              care options at-
             </p>
             <a
               href="https://hospiceandbeyond.com/hospice-eligibility-questionnaire"
