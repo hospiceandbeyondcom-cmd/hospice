@@ -162,7 +162,7 @@ export default function Team() {
             className="w-full md:w-1/2 flex justify-center md:justify-end"
           >
             <Image
-              src="/teams.png"
+              src="/teamsdetails.png"
               alt="Hospice and Beyond Extended Family of Care"
               width={800}
               height={600}
