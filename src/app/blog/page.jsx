@@ -13,17 +13,25 @@ export default function Blog() {
   const [filteredPosts, setFilteredPosts] = useState([]);
 
   // ======================================================
-  // FULL BLOG LIST (NOVEMBER 1 → NOVEMBER 25)
+  // FULL BLOG LIST (NOV 1 → DEC 1)
   // ======================================================
   const blogs = [
-     {
-    title: "Signs a Patient Might Need Hospice Care",
-    image: "/blog26.png",
-    link: "/signs-a-patient-might-need-hospice-care",
-    dateDisplay: "Nov 26, 2025",
-    dateISO: "2025-11-26",
-    objectPosition: "object-center",
-  },
+    {
+      title: "Common Misconceptions About Hospice Care",
+      image: "/blog27.png",
+      link: "/common-misconceptions-about-hospice-care",
+      dateDisplay: "Dec 1, 2025",
+      dateISO: "2025-12-01",
+      objectPosition: "object-center",
+    },
+    {
+      title: "Signs a Patient Might Need Hospice Care",
+      image: "/blog26.png",
+      link: "/signs-a-patient-might-need-hospice-care",
+      dateDisplay: "Nov 26, 2025",
+      dateISO: "2025-11-26",
+      objectPosition: "object-center",
+    },
     {
       title: "Why Early Hospice Admission Often Brings More Peace and Stability",
       image: "/blog25.png",
@@ -223,7 +231,7 @@ export default function Blog() {
       dateDisplay: "Nov 1, 2025",
       dateISO: "2025-11-01",
       objectPosition: "object-center",
-    }
+    },
   ];
 
   // ======================================================
@@ -279,7 +287,7 @@ export default function Blog() {
     >
       <Header />
 
-      {/* ========= HERO ========= */}
+      {/* ===== HERO ===== */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -317,23 +325,23 @@ export default function Blog() {
         </motion.div>
       </section>
 
-      {/* ========= BLOG SECTION ========= */}
+      {/* ===== BLOG SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        
-        {/* Filter */}
+
+        {/* FILTER */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
           <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
           <input
             type="date"
             min="2025-11-01"
-            max="2025-11-25"
+            max="2025-12-01"
             onChange={handleFilter}
             value={filterDate}
             className="border border-[#ccc] rounded-lg px-4 py-2 w-[230px]"
           />
         </div>
 
-        {/* Blog Grid */}
+        {/* BLOG GRID */}
         <AnimatePresence mode="wait">
           <motion.div
             key="posts"
@@ -384,7 +392,7 @@ export default function Blog() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Pagination */}
+        {/* PAGINATION */}
         <div className="flex justify-center items-center gap-3 mt-12">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
