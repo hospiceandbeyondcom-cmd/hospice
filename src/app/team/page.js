@@ -35,7 +35,7 @@ export default function Team() {
 
       {/* ===== HERO (TEXT LEFT + VIDEO RIGHT) ===== */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
-
+        
         {/* LEFT TEXT */}
         <motion.div
           variants={fadeUp}
@@ -147,7 +147,7 @@ export default function Team() {
 
             <p className="text-gray-700 text-lg leading-relaxed mb-4 text-justify">
               Compassion is a shared mission. Our team works together, blending medical
-              expertise, emotional support, and spiritual care to meet every patient's unique
+              expertise, emotional support, and spiritual care to meet every patient&apos;s unique
               needs with grace and dedication.
             </p>
 
@@ -207,6 +207,7 @@ export default function Team() {
               text: "Provides spiritual comfort and emotional support to patients and their families."
             },
             {
+              // 🐛 FIX: Replaced unescaped single quote (') with &apos;
               title: "Social Worker",
               text: "Supports families with counseling, resources, and assistance to navigate care with confidence."
             },
