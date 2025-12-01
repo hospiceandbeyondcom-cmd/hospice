@@ -1,6 +1,8 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+
 import Header from "../Header";
 import Footer from "../Footer";
 import Image from "next/image";
@@ -83,6 +85,7 @@ export default function Team() {
 
       {/* ===== FOUNDER SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center gap-10">
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -127,6 +130,7 @@ export default function Team() {
       {/* ===== EXTENDED TEAM SECTION ===== */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -141,10 +145,9 @@ export default function Team() {
               Our Extended Family of Care
             </h2>
 
-            {/* FIXED LINE BELOW */}
             <p className="text-gray-700 text-lg leading-relaxed mb-4 text-justify">
               Compassion is a shared mission. Our team works together, blending medical
-              expertise, emotional support, and spiritual care to meet every patient&apos;s unique
+              expertise, emotional support, and spiritual care to meet every patient's unique
               needs with grace and dedication.
             </p>
 
@@ -182,18 +185,43 @@ export default function Team() {
           className="text-3xl md:text-4xl font-semibold text-center mb-12"
           style={{ color: "#006D66" }}
         >
-          Meet Our Professional Team
+          Our Professional Team
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
           {[
-            "Medical Director",
-            "Nurse",
-            "Chaplain",
-            "Social Worker",
-            "Physical Therapist",
-            "Occupational Therapist",
-            "Speech Therapist",
+            {
+              title: "Medical Director",
+              text: "Provides clinical leadership and ensures every patient receives safe, thoughtful, and effective care."
+            },
+            {
+              title: "Registered Nurse",
+              text: "Delivers expert nursing care, monitors patient needs, and supports families with compassion and skill."
+            },
+            {
+              title: "Nurse Practitioner",
+              text: "Provides advanced patient care, evaluates needs, and supports treatment with clinical expertise."
+            },
+            {
+              title: "Chaplain",
+              text: "Provides spiritual comfort and emotional support to patients and their families."
+            },
+            {
+              title: "Social Worker",
+              text: "Supports families with counseling, resources, and assistance to navigate care with confidence."
+            },
+            {
+              title: "Physical Therapist",
+              text: "Enhances comfort and mobility through personalized movement and strength support."
+            },
+            {
+              title: "Occupational Therapist",
+              text: "Helps patients maintain independence through practical daily living support."
+            },
+            {
+              title: "Speech Therapist",
+              text: "Assists patients with communication and swallowing needs to improve comfort and quality of life."
+            }
           ].map((role, index) => (
             <motion.div
               key={index}
@@ -204,10 +232,10 @@ export default function Team() {
               className="p-6 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 bg-white"
             >
               <h3 className="text-xl font-semibold mb-2" style={{ color: "#7D5F42" }}>
-                {role}
+                {role.title}
               </h3>
               <p className="text-gray-700 text-base leading-relaxed text-justify">
-                Dedicated to compassionate, holistic, and coordinated care.
+                {role.text}
               </p>
             </motion.div>
           ))}
