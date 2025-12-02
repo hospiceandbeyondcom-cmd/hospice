@@ -13,9 +13,17 @@ export default function Blog() {
   const [filteredPosts, setFilteredPosts] = useState([]);
 
   // ======================================================
-  // FULL BLOG LIST (NOV 1 → DEC 1)
+  // FULL BLOG LIST (NOV 1 → DEC 2)
   // ======================================================
   const blogs = [
+    {
+      title: "What to Expect in a Hospice Visit",
+      image: "/blog28.png",
+      link: "/what-to-expect-in-a-hospice-visit",
+      dateDisplay: "Dec 2, 2025",
+      dateISO: "2025-12-02",
+      objectPosition: "object-center",
+    },
     {
       title: "Common Misconceptions About Hospice Care",
       image: "/blog27.png",
@@ -49,7 +57,7 @@ export default function Blog() {
       objectPosition: "object-center",
     },
     {
-      title: "A Simple Understanding of How Medicare & Insurance Support Hospice Care",
+      title: "A Simple Understanding of How Medicare and Insurance Support Hospice Care",
       image: "/blog23.png",
       link: "/a-simple-understanding-of-how-medicare-and-insurance-support-hospice-care",
       dateDisplay: "Nov 23, 2025",
@@ -231,7 +239,7 @@ export default function Blog() {
       dateDisplay: "Nov 1, 2025",
       dateISO: "2025-11-01",
       objectPosition: "object-center",
-    },
+    }
   ];
 
   // ======================================================
@@ -334,7 +342,7 @@ export default function Blog() {
           <input
             type="date"
             min="2025-11-01"
-            max="2025-12-01"
+            max="2025-12-02"
             onChange={handleFilter}
             value={filterDate}
             className="border border-[#ccc] rounded-lg px-4 py-2 w-[230px]"
