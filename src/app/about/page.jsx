@@ -15,22 +15,23 @@ export default function AboutPage() {
     <main className="bg-white text-gray-800 font-sans leading-relaxed antialiased">
       <Header />
 
-      {/* ===== HERO (Blog Style: Image Left, Text Right) ===== */}
+      {/* ===== HERO SECTION ===== */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white shadow-sm rounded-b-[2rem]">
-        
-        {/* IMAGE SIDE */}
+
+        {/* VIDEO SIDE */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="relative w-full md:w-1/2 h-[50vh] md:h-[85vh]"
+          className="relative w-full md:w-1/2 h-[50vh] md:h-[85vh] overflow-hidden"
         >
-          <Image
-            src="/heroabout.png"
-            alt="Hospice and Beyond Hero"
-            fill
-            priority
-            className="object-contain md:object-center"
+          <video
+            src="/aboutvid.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
@@ -44,7 +45,7 @@ export default function AboutPage() {
           <h1
             className="text-3xl md:text-6xl font-extrabold mb-4 leading-snug"
             style={{
-              background: "linear-gradient(90deg, #006D66, #7D5F42)",
+              background: "linear-gradient(90deg, #05796B, #7D5F42)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -58,16 +59,11 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* ===== SECTION TWO ===== */}
-      <section className="grid md:grid-cols-2 items-start gap-10 px-6 md:px-12 py-24 max-w-7xl xl:max-w-8xl mx-auto border-b border-gray-100">
+      {/* ===== SECTION TWO (WELCOME) ===== */}
+      <section className="grid md:grid-cols-2 items-start gap-4 md:gap-10 px-6 md:px-12 py-8 md:py-16 max-w-7xl xl:max-w-8xl mx-auto">
 
-        {/* TEXT FIRST ALWAYS */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          className="order-1"
-        >
+        {/* TEXT COLUMN */}
+        <motion.div variants={fadeUp} initial="hidden" animate="show">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#03271E] mb-6 border-b-2 border-[#047857]/50 pb-2">
             Welcome to Our Family
           </h2>
@@ -77,7 +73,7 @@ export default function AboutPage() {
           </p>
 
           <p className="text-gray-700 mb-4 text-base leading-relaxed text-justify">
-            At Hospice and Beyond Palliative Care, our calling is more than medical it is deeply human. We exist to surround you with expertise, understanding, and presence. Hospice care is not about surrendering it is about cherishing what matters most comfort dignity and connection.
+            At Hospice and Beyond Palliative Care, our calling is more than medical it is deeply human. We exist to surround you with expertise understanding and presence. Hospice care is not about surrendering it is about cherishing what matters most comfort dignity and connection.
           </p>
 
           <p className="text-gray-700 mb-4 text-base leading-relaxed text-justify">
@@ -88,19 +84,19 @@ export default function AboutPage() {
             You can reach our team any time day or night twenty four seven for comfort guidance and reassurance.
           </p>
 
-          <div className="mt-8 pt-4 border-t border-gray-200">
+          <div className="pt-2 border-t border-gray-200 md:mt-8 md:pt-4">
             <p className="font-bold text-lg text-[#03271E]">With warm regard,</p>
             <p className="text-lg text-[#03271E]">Awau Omole</p>
             <p className="text-gray-600 text-sm">Hospice and Beyond Palliative Care</p>
           </div>
         </motion.div>
 
-        {/* IMAGE SECOND ALWAYS */}
+        {/* IMAGE COLUMN */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="relative h-[350px] sm:h-[450px] w-full rounded-xl shadow-xl overflow-hidden order-2"
+          className="relative h-[350px] sm:h-[450px] w-full overflow-hidden"
         >
           <Image
             src="/about3.png"
@@ -111,15 +107,17 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* ===== MISSION ===== */}
-      <div className="bg-[#F9FAF9] py-20 px-6 md:px-12">
-        <section className="grid md:grid-cols-2 items-center gap-10 max-w-7xl mx-auto pb-20">
-          
+      {/* ===== MISSION & VISION ===== */}
+      <div className="bg-[#F9FAF9] py-8 md:py-12 px-6 md:px-12 flex flex-col gap-10">
+
+        {/* MISSION */}
+        <section className="grid md:grid-cols-2 items-center gap-4 md:gap-10 max-w-7xl mx-auto w-full">
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="relative h-[300px] sm:h-[400px] w-full rounded-xl shadow-lg overflow-hidden"
+            className="relative h-[300px] sm:h-[400px] w-full overflow-hidden"
           >
             <Image src="/mission.png" alt="Mission Image" fill className="object-contain" />
           </motion.div>
@@ -132,17 +130,10 @@ export default function AboutPage() {
           </motion.div>
         </section>
 
-        <hr className="max-w-7xl mx-auto border-gray-300 my-8" />
+        {/* VISION */}
+        <section className="grid md:grid-cols-2 items-center gap-4 md:gap-10 max-w-7xl mx-auto w-full">
 
-        {/* ===== VISION ===== */}
-        <section className="grid md:grid-cols-2 items-center gap-10 max-w-7xl mx-auto pt-20">
-          
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="order-2 md:order-1 p-4"
-          >
+          <motion.div variants={fadeUp} initial="hidden" animate="show" className="order-2 md:order-1">
             <h2 className="text-3xl font-bold text-[#03271E] mb-4">Our Vision</h2>
             <p className="text-gray-700 text-lg border-l-4 border-[#047857] pl-4 italic text-justify">
               To be a guiding light of hope and healing in our communities where every individual experiences compassionate care emotional peace and spiritual wholeness.
@@ -153,16 +144,15 @@ export default function AboutPage() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="relative h-[300px] sm:h-[400px] w-full rounded-xl shadow-lg overflow-hidden order-1 md:order-2"
+            className="relative h-[300px] sm:h-[400px] w-full overflow-hidden order-1 md:order-2"
           >
             <Image src="/about2.png" alt="Vision Image" fill className="object-contain" />
           </motion.div>
-
         </section>
       </div>
 
       {/* ===== FOUNDATION OF CARE ===== */}
-      <section className="py-24 px-6 md:px-12 bg-white">
+      <section className="py-20 px-6 md:px-12 bg-white">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#03271E] mb-12">
           Our Foundation of Care
         </h2>

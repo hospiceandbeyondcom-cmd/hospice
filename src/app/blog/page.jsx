@@ -13,9 +13,17 @@ export default function Blog() {
   const [filteredPosts, setFilteredPosts] = useState([]);
 
   // ======================================================
-  // FULL BLOG LIST (NOV 1 → DEC 2)
+  // FULL BLOG LIST (NOV 1 → DEC 3)
   // ======================================================
   const blogs = [
+    {
+      title: "Essential Steps for Fall Prevention in the Hospice Home",
+      image: "/blog29.png",
+      link: "/essential-steps-for-fall-prevention-in-the-hospice-home",
+      dateDisplay: "Dec 3, 2025",
+      dateISO: "2025-12-03",
+      objectPosition: "object-center",
+    },
     {
       title: "What to Expect in a Hospice Visit",
       image: "/blog28.png",
@@ -342,7 +350,7 @@ export default function Blog() {
           <input
             type="date"
             min="2025-11-01"
-            max="2025-12-02"
+            max="2025-12-03"
             onChange={handleFilter}
             value={filterDate}
             className="border border-[#ccc] rounded-lg px-4 py-2 w-[230px]"
