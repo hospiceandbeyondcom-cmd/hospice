@@ -13,9 +13,18 @@ export default function Blog() {
   const [filteredPosts, setFilteredPosts] = useState([]);
 
   // ======================================================
-  // FULL BLOG LIST (NOV 1 → DEC 4)
+  // FULL BLOG LIST (NOV 1 → DEC 5)
   // ======================================================
   const blogs = [
+
+    {
+      title: "Ways to Prevent Infections at Home",
+      image: "/blog31.png",
+      link: "/ways-to-prevent-infections-at-home",
+      dateDisplay: "Dec 5, 2025",
+      dateISO: "2025-12-05",
+      objectPosition: "object-center",
+    },
 
     {
       title: "What Are the Early Signs of Hospice Decline",
@@ -34,6 +43,7 @@ export default function Blog() {
       dateISO: "2025-12-03",
       objectPosition: "object-center",
     },
+
     {
       title: "What to Expect in a Hospice Visit",
       image: "/blog28.png",
@@ -42,6 +52,7 @@ export default function Blog() {
       dateISO: "2025-12-02",
       objectPosition: "object-center",
     },
+
     {
       title: "Common Misconceptions About Hospice Care",
       image: "/blog27.png",
@@ -50,6 +61,7 @@ export default function Blog() {
       dateISO: "2025-12-01",
       objectPosition: "object-center",
     },
+
     {
       title: "Signs a Patient Might Need Hospice Care",
       image: "/blog26.png",
@@ -58,6 +70,7 @@ export default function Blog() {
       dateISO: "2025-11-26",
       objectPosition: "object-center",
     },
+
     {
       title: "Why Early Hospice Admission Often Brings More Peace and Stability",
       image: "/blog25.png",
@@ -66,6 +79,7 @@ export default function Blog() {
       dateISO: "2025-11-25",
       objectPosition: "object-center",
     },
+
     {
       title: "Meeting the Hospice Team and How Each Member Supports Your Loved One",
       image: "/blog24.png",
@@ -74,6 +88,7 @@ export default function Blog() {
       dateISO: "2025-11-24",
       objectPosition: "object-center",
     },
+
     {
       title: "A Simple Understanding of How Medicare and Insurance Support Hospice Care",
       image: "/blog23.png",
@@ -82,6 +97,7 @@ export default function Blog() {
       dateISO: "2025-11-23",
       objectPosition: "object-center",
     },
+
     {
       title: "How Pain and Symptom Management Helps Maintain Dignity and Ease",
       image: "/blog22.png",
@@ -90,6 +106,7 @@ export default function Blog() {
       dateISO: "2025-11-22",
       objectPosition: "object-center",
     },
+
     {
       title: "The Quiet but Essential Role of Hospice Nurses in Daily Patient Comfort",
       image: "/blog21.png",
@@ -98,6 +115,7 @@ export default function Blog() {
       dateISO: "2025-11-21",
       objectPosition: "object-center",
     },
+
     {
       title: "What Families Should Know in the First Days After a Serious Diagnosis",
       image: "/blog20.png",
@@ -106,6 +124,7 @@ export default function Blog() {
       dateISO: "2025-11-20",
       objectPosition: "object-center",
     },
+
     {
       title: "Why Palliative Care Matters Long Before Hospice Even Begins",
       image: "/blog19.png",
@@ -114,6 +133,7 @@ export default function Blog() {
       dateISO: "2025-11-19",
       objectPosition: "object-center",
     },
+
     {
       title: "How Hospice Provides Medical Emotional and Practical Support When It Matters Most",
       image: "/blog18.png",
@@ -122,6 +142,7 @@ export default function Blog() {
       dateISO: "2025-11-18",
       objectPosition: "object-center",
     },
+
     {
       title: "Skin Care in Hospice",
       image: "/blog17.png",
@@ -130,6 +151,7 @@ export default function Blog() {
       dateISO: "2025-11-17",
       objectPosition: "object-center",
     },
+
     {
       title: "How Hospice Eligibility Works and Why It Matters in Serious Illness Care",
       image: "/blog16.png",
@@ -138,6 +160,7 @@ export default function Blog() {
       dateISO: "2025-11-16",
       objectPosition: "object-center",
     },
+
     {
       title: "How to Prevent Pressure Ulcers in Hospice",
       image: "/blog15.png",
@@ -146,6 +169,7 @@ export default function Blog() {
       dateISO: "2025-11-15",
       objectPosition: "object-center",
     },
+
     {
       title: "The Grace We Find in Hospice and Palliative Moments",
       image: "/blog14.png",
@@ -154,6 +178,7 @@ export default function Blog() {
       dateISO: "2025-11-14",
       objectPosition: "object-center",
     },
+
     {
       title: "The Gentle Power of Saying I Love You Out Loud",
       image: "/blog13.png",
@@ -162,6 +187,7 @@ export default function Blog() {
       dateISO: "2025-11-13",
       objectPosition: "object-center",
     },
+
     {
       title: "Hospice Is Not the End It Is the Space Where Love Deepens",
       image: "/blog12.png",
@@ -170,6 +196,7 @@ export default function Blog() {
       dateISO: "2025-11-12",
       objectPosition: "object-center",
     },
+
     {
       title: "Learning to Listen to Stillness",
       image: "/blog10.png",
@@ -178,6 +205,7 @@ export default function Blog() {
       dateISO: "2025-11-11",
       objectPosition: "object-center",
     },
+
     {
       title: "When Presence Says More Than Words",
       image: "/blog09.png",
@@ -186,6 +214,7 @@ export default function Blog() {
       dateISO: "2025-11-10",
       objectPosition: "object-center",
     },
+
     {
       title: "The Quiet Strength of Letting Go",
       image: "/blog08.png",
@@ -194,6 +223,7 @@ export default function Blog() {
       dateISO: "2025-11-09",
       objectPosition: "object-top",
     },
+
     {
       title: "What It Means to Be Gentle With Time",
       image: "/blog07.png",
@@ -202,6 +232,7 @@ export default function Blog() {
       dateISO: "2025-11-08",
       objectPosition: "object-center",
     },
+
     {
       title: "The Kindness That Lingers",
       image: "/blog06.png",
@@ -210,6 +241,7 @@ export default function Blog() {
       dateISO: "2025-11-07",
       objectPosition: "object-top",
     },
+
     {
       title: "Holding Space When Words Fall Short",
       image: "/blog05.png",
@@ -218,6 +250,7 @@ export default function Blog() {
       dateISO: "2025-11-06",
       objectPosition: "object-top",
     },
+
     {
       title: "When Goodbye Becomes a Beginning",
       image: "/blog04.png",
@@ -226,6 +259,7 @@ export default function Blog() {
       dateISO: "2025-11-05",
       objectPosition: "object-top",
     },
+
     {
       title: "When You Start Noticing They Are Getting Weaker What to Do Next",
       image: "/blog01.png",
@@ -234,6 +268,7 @@ export default function Blog() {
       dateISO: "2025-11-04",
       objectPosition: "object-center",
     },
+
     {
       title: "How to Comfort Without Fear",
       image: "/blog02.png",
@@ -242,6 +277,7 @@ export default function Blog() {
       dateISO: "2025-11-03",
       objectPosition: "object-top",
     },
+
     {
       title: "What Love Looks Like at the End",
       image: "/blog03.png",
@@ -250,6 +286,7 @@ export default function Blog() {
       dateISO: "2025-11-02",
       objectPosition: "object-center",
     },
+
     {
       title: "What Palliative Care Really Means",
       image: "/blog11.png",
@@ -267,7 +304,8 @@ export default function Blog() {
     const selectedDate = new Date(e.target.value);
     setFilterDate(e.target.value);
     const filtered = blogs.filter(
-      (post) => new Date(post.dateISO).toDateString() === selectedDate.toDateString()
+      (post) =>
+        new Date(post.dateISO).toDateString() === selectedDate.toDateString()
     );
     setFilteredPosts(filtered);
   };
@@ -308,7 +346,8 @@ export default function Blog() {
     <div
       className="min-h-screen flex flex-col"
       style={{
-        background: "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
+        background:
+          "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
       }}
     >
       <Header />
@@ -353,14 +392,14 @@ export default function Blog() {
 
       {/* ===== BLOG SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-
+        
         {/* FILTER */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
           <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
           <input
             type="date"
             min="2025-11-01"
-            max="2025-12-04"
+            max="2025-12-05"
             onChange={handleFilter}
             value={filterDate}
             className="border border-[#ccc] rounded-lg px-4 py-2 w-[230px]"
