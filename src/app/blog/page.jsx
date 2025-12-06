@@ -18,9 +18,9 @@ export default function Blog() {
   const blogs = [
 
     {
-      title: "Ways to Prevent Infections at Home",
-      image: "/blog31.png",
-      link: "/ways-to-prevent-infections-at-home",
+      title: "5 Simple Ways to Bring Cheer to Hospice Patients This Season",
+      image: "/blog32.png",
+      link: "/5-simple-ways-to-bring-cheer-to-hospice-patients-this-season",
       dateDisplay: "Dec 5, 2025",
       dateISO: "2025-12-05",
       objectPosition: "object-center",
@@ -294,7 +294,8 @@ export default function Blog() {
       dateDisplay: "Nov 1, 2025",
       dateISO: "2025-11-01",
       objectPosition: "object-center",
-    }
+    },
+
   ];
 
   // ======================================================
@@ -304,8 +305,7 @@ export default function Blog() {
     const selectedDate = new Date(e.target.value);
     setFilterDate(e.target.value);
     const filtered = blogs.filter(
-      (post) =>
-        new Date(post.dateISO).toDateString() === selectedDate.toDateString()
+      (post) => new Date(post.dateISO).toDateString() === selectedDate.toDateString()
     );
     setFilteredPosts(filtered);
   };
@@ -346,8 +346,7 @@ export default function Blog() {
     <div
       className="min-h-screen flex flex-col"
       style={{
-        background:
-          "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
+        background: "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
       }}
     >
       <Header />
@@ -392,7 +391,7 @@ export default function Blog() {
 
       {/* ===== BLOG SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        
+
         {/* FILTER */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
           <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
