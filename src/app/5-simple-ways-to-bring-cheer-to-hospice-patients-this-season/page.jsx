@@ -42,6 +42,7 @@ export default function FiveSimpleWaysToBringCheer() {
           >
             5 Simple Ways to Bring Cheer to Hospice Patients This Season
           </h1>
+
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
             December 5, 2025
           </p>
@@ -66,40 +67,78 @@ export default function FiveSimpleWaysToBringCheer() {
       </section>
 
       {/* ===== MAIN CONTENT ===== */}
-      <section className="max-w-4xl mx-auto px-6 md:px-8 py-20 text-gray-800 leading-relaxed text-justify">
+      <section className="max-w-4xl mx-auto px-6 md:px-8 py-20 text-gray-800 leading-relaxed">
         
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="space-y-6 text-[17px]"
+          className="space-y-10 text-[17px]"
         >
 
-          {/* YOUR EXACT CONTENT STARTS HERE — UNEDITED */}
-          <p>
-            The holidays can be meaningful, even in the most delicate moments of life.
-            Here are gentle, heartfelt ways to brighten a patient’s day:
+          {/* Intro */}
+          <p className="text-justify">
+            The holidays can be meaningful even in the most delicate moments of life.  
+            Here are gentle and heartfelt ways to brighten a patient’s day.
           </p>
 
-          <p>🎄 1. Create Personalized Seasonal Moments<br/>
-          A soft holiday scent, warm lights, or their favorite music can instantly lift their spirits.</p>
+          {/* SECTION 1 */}
+          <div>
+            <h2 className="text-xl font-semibold mb-2 text-[#006D66]">
+              🎄 Create Personalized Seasonal Moments
+            </h2>
+            <p className="text-justify">
+              A soft holiday scent warm lights or their favorite music can instantly lift their spirits.
+            </p>
+          </div>
 
-          <p>💌 2. Share Heartfelt Notes and Memory Cards<br/>
-          Short messages, prayers, or shared memories provide comfort and connection.</p>
+          {/* SECTION 2 */}
+          <div>
+            <h2 className="text-xl font-semibold mb-2 text-[#006D66]">
+              💌 Share Heartfelt Notes and Memory Cards
+            </h2>
+            <p className="text-justify">
+              Short messages prayers or shared memories provide comfort and connection.
+            </p>
+          </div>
 
-          <p>🧁 3. Offer Comforting Seasonal Treats<br/>
-          If medically appropriate, familiar tastes and aromas like warm cider or soft cookies spark joy and nostalgia.</p>
+          {/* SECTION 3 */}
+          <div>
+            <h2 className="text-xl font-semibold mb-2 text-[#006D66]">
+              🧁 Offer Comforting Seasonal Treats
+            </h2>
+            <p className="text-justify">
+              If medically appropriate familiar tastes and aromas like warm cider or soft cookies spark joy and nostalgia.
+            </p>
+          </div>
 
-          <p>📸 4. Celebrate With Gentle Activities<br/>
-          Holiday stories, soft carols, or peaceful movies create calming, meaningful experiences.</p>
+          {/* SECTION 4 */}
+          <div>
+            <h2 className="text-xl font-semibold mb-2 text-[#006D66]">
+              📸 Celebrate With Gentle Activities
+            </h2>
+            <p className="text-justify">
+              Holiday stories soft carols or peaceful movies create calming and meaningful experiences.
+            </p>
+          </div>
 
-          <p>🤝 5. Be Present<br/>
-          A warm hand, a kind conversation, or simply sitting together can be the greatest gift of all.</p>
+          {/* SECTION 5 */}
+          <div>
+            <h2 className="text-xl font-semibold mb-2 text-[#006D66]">
+              🤝 Be Present
+            </h2>
+            <p className="text-justify">
+              A warm hand a kind conversation or simply sitting together can be the greatest gift of all.
+            </p>
+          </div>
 
-          <p>✨ This season, small acts of kindness can make a big difference.<br/>
-          — Hospice and Beyond Palliative Care</p>
-          {/* YOUR EXACT CONTENT ENDS HERE */}
+          {/* Closing */}
+          <p className="text-justify">
+            ✨ This season small acts of kindness can make a big difference.  
+            <br />
+            <span className="font-semibold text-[#006D66]">Hospice and Beyond Palliative Care</span>
+          </p>
 
         </motion.div>
 
