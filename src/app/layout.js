@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 // ===============================
-// FIXED METADATA (themeColor REMOVED)
+// COMPLETE + FIXED METADATA
 // ===============================
 export const metadata = {
+  metadataBase: new URL("https://hospiceandbeyond.com"),
   title: "Hospice & Beyond",
   description: "A legacy of compassion – honoring every life, every moment.",
 
@@ -47,11 +48,11 @@ export const metadata = {
     title: "Hospice & Beyond",
     description: "A legacy of compassion – honoring every life, every moment.",
     images: ["/og-image.png"],
-  }
+  },
 };
 
 // ===============================
-// REQUIRED: MOVE themeColor HERE
+// themeColor MUST BE IN viewport
 // ===============================
 export const viewport = {
   themeColor: "#ffffff",
