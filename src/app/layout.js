@@ -12,6 +12,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// ===============================
+// FIXED METADATA (themeColor REMOVED)
+// ===============================
 export const metadata = {
   title: "Hospice & Beyond",
   description: "A legacy of compassion – honoring every life, every moment.",
@@ -29,7 +32,7 @@ export const metadata = {
     siteName: "Hospice & Beyond",
     images: [
       {
-        url: "/og-image.png", // optional – add file if you want a preview image
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Hospice & Beyond",
@@ -44,17 +47,20 @@ export const metadata = {
     title: "Hospice & Beyond",
     description: "A legacy of compassion – honoring every life, every moment.",
     images: ["/og-image.png"],
-  },
+  }
+};
 
+// ===============================
+// REQUIRED: MOVE themeColor HERE
+// ===============================
+export const viewport = {
   themeColor: "#ffffff",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <MusicPlayer />
       </body>
