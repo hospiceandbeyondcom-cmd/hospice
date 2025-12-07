@@ -16,6 +16,14 @@ export default function Blog() {
   // FULL BLOG LIST (NOV 1 → DEC 5)
   // ======================================================
   const blogs = [
+    {
+  title: "How to Talk With a Loved One in Hospice Without It Feeling Like an Interview",
+  image: "/blog33.png",
+  link: "/how-to-talk-with-a-loved-one-in-hospice-without-it-feeling-like-an-interview",
+  dateDisplay: "Dec 6, 2025",
+  dateISO: "2025-12-06",
+  objectPosition: "object-center",
+},
 
     {
       title: "5 Simple Ways to Bring Cheer to Hospice Patients This Season",
