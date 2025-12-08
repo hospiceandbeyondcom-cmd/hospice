@@ -17,13 +17,13 @@ export default function Blog() {
   // ======================================================
   const blogs = [
     {
-  title: "How to Talk With a Loved One in Hospice Without It Feeling Like an Interview",
-  image: "/blog33.png",
-  link: "/how-to-talk-with-a-loved-one-in-hospice-without-it-feeling-like-an-interview",
-  dateDisplay: "Dec 6, 2025",
-  dateISO: "2025-12-06",
-  objectPosition: "object-center",
-},
+      title: "Precious Memories Talking With a Hospice Loved One About the Life They Lived",
+      image: "/blog33.png",
+      link: "/precious-memories-talking-with-a-hospice-loved-one-about-the-life-they-lived",
+      dateDisplay: "Dec 6, 2025",
+      dateISO: "2025-12-06",
+      objectPosition: "object-center",
+    },
 
     {
       title: "5 Simple Ways to Bring Cheer to Hospice Patients This Season",
@@ -303,7 +303,6 @@ export default function Blog() {
       dateISO: "2025-11-01",
       objectPosition: "object-center",
     },
-
   ];
 
   // ======================================================
@@ -313,7 +312,8 @@ export default function Blog() {
     const selectedDate = new Date(e.target.value);
     setFilterDate(e.target.value);
     const filtered = blogs.filter(
-      (post) => new Date(post.dateISO).toDateString() === selectedDate.toDateString()
+      (post) =>
+        new Date(post.dateISO).toDateString() === selectedDate.toDateString()
     );
     setFilteredPosts(filtered);
   };
@@ -331,7 +331,8 @@ export default function Blog() {
     };
     updatePostsPerPage();
     window.addEventListener("resize", updatePostsPerPage);
-    return () => window.removeEventListener("resize", updatePostsPerPage);
+    return () =>
+      window.removeEventListener("resize", updatePostsPerPage);
   }, []);
 
   const list = filterDate ? filteredPosts : blogs;
@@ -354,7 +355,8 @@ export default function Blog() {
     <div
       className="min-h-screen flex flex-col"
       style={{
-        background: "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
+        background:
+          "linear-gradient(180deg, #FAFAF8 0%, #FDFCF9 60%, #F7F5EF 100%)",
       }}
     >
       <Header />
@@ -399,10 +401,11 @@ export default function Blog() {
 
       {/* ===== BLOG SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-
         {/* FILTER */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
-          <label className="text-gray-700 font-medium text-base">Filter by Date:</label>
+          <label className="text-gray-700 font-medium text-base">
+            Filter by Date:
+          </label>
           <input
             type="date"
             min="2025-11-01"
@@ -453,7 +456,8 @@ export default function Blog() {
                     disabled={loading === i}
                     className="px-6 py-2 rounded-full text-white font-semibold"
                     style={{
-                      background: "linear-gradient(90deg, #006D66, #7D5F42)",
+                      background:
+                        "linear-gradient(90deg, #006D66, #7D5F42)",
                     }}
                   >
                     {loading === i ? "Opening..." : "Read More"}
@@ -466,21 +470,22 @@ export default function Blog() {
 
         {/* PAGINATION */}
         <div className="flex justify-center items-center gap-3 mt-12">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`px-4 py-2 rounded-md border font-medium ${
-                currentPage === page
-                  ? "bg-[#006D66] text-white"
-                  : "bg-white text-[#006D66] border-[#006D66]"
-              }`}
-            >
-              {page}
-            </button>
-          ))}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+            (page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-4 py-2 rounded-md border font-medium ${
+                  currentPage === page
+                    ? "bg-[#006D66] text-white"
+                    : "bg-white text-[#006D66] border-[#006D66]"
+                }`}
+              >
+                {page}
+              </button>
+            )
+          )}
         </div>
-
       </section>
 
       <Footer />
