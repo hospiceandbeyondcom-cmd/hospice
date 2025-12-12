@@ -13,9 +13,20 @@ export default function Blog() {
   const [filteredPosts, setFilteredPosts] = useState([]);
 
   // ======================================================
-  // FULL BLOG LIST (NOV 1 → DEC 11)
+  // FULL BLOG LIST (NOV 1 → DEC 12)
   // ======================================================
   const blogs = [
+
+    // ⭐ NEW POST ADDED HERE ⭐
+    {
+      title: "Trauma at the End of Life When Neglect Replaces Compassion",
+      image: "/blog39.png",
+      link: "/trauma-at-the-end-of-life-when-neglect-replaces-compassion",
+      dateDisplay: "Dec 12, 2025",
+      dateISO: "2025-12-12",
+      objectPosition: "object-center",
+    },
+
     {
       title: "Early Signs of Incontinence Families Should Not Ignore",
       image: "/blog38.png",
@@ -314,9 +325,7 @@ export default function Blog() {
     },
   ];
 
-  // ======================================================
   // DATE FILTER
-  // ======================================================
   const handleFilter = (e) => {
     const selectedDate = new Date(e.target.value);
     setFilterDate(e.target.value);
@@ -327,9 +336,7 @@ export default function Blog() {
     setFilteredPosts(filtered);
   };
 
-  // ======================================================
   // PAGINATION
-  // ======================================================
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(12);
 
@@ -370,7 +377,7 @@ export default function Blog() {
     >
       <Header />
 
-      {/* ===== HERO ===== */}
+      {/* HERO */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -408,9 +415,9 @@ export default function Blog() {
         </motion.div>
       </section>
 
-      {/* ===== BLOG SECTION ===== */}
+      {/* BLOGS */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        
+
         {/* FILTER */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
           <label className="text-gray-700 font-medium text-base">
@@ -419,14 +426,14 @@ export default function Blog() {
           <input
             type="date"
             min="2025-11-01"
-            max="2025-12-11"
+            max="2025-12-12"
             onChange={handleFilter}
             value={filterDate}
             className="border border-[#ccc] rounded-lg px-4 py-2 w-[230px]"
           />
         </div>
 
-        {/* BLOG GRID */}
+        {/* GRID */}
         <AnimatePresence mode="wait">
           <motion.div
             key="posts"
@@ -480,21 +487,19 @@ export default function Blog() {
 
         {/* PAGINATION */}
         <div className="flex justify-center items-center gap-3 mt-12">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-            (page) => (
-              <button
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`px-4 py-2 rounded-md border font-medium ${
-                  currentPage === page
-                    ? "bg-[#006D66] text-white"
-                    : "bg-white text-[#006D66] border-[#006D66]"
-                }`}
-              >
-                {page}
-              </button>
-            )
-          )}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`px-4 py-2 rounded-md border font-medium ${
+                currentPage === page
+                  ? "bg-[#006D66] text-white"
+                  : "bg-white text-[#006D66] border-[#006D66]"
+              }`}
+            >
+              {page}
+            </button>
+          ))}
         </div>
       </section>
 
