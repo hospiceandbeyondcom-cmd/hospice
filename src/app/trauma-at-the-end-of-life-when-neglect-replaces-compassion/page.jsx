@@ -40,7 +40,7 @@ export default function TraumaAtTheEndOfLifeWhenNeglectReplacesCompassion() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Trauma at the End of Life When Neglect Replaces Compassion
+            Trauma at the End of Life: When Neglect Replaces Compassion
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">

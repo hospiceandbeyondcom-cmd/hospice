@@ -19,7 +19,7 @@ export default function Blog() {
 
     // ⭐ NEW POST ADDED HERE ⭐
     {
-      title: "Trauma at the End of Life When Neglect Replaces Compassion",
+      title: "Trauma at the End of Life: When Neglect Replaces Compassion",
       image: "/blog39.png",
       link: "/trauma-at-the-end-of-life-when-neglect-replaces-compassion",
       dateDisplay: "Dec 12, 2025",
