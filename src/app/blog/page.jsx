@@ -19,6 +19,16 @@ export default function Blog() {
 
     // ⭐ NEW POST ADDED HERE ⭐
     {
+  title: "When Eating Becomes Optional Understanding Nutrition at the End of Life",
+  image: "/blog40.png",
+  link: "/when-eating-becomes-optional-understanding-nutrition-at-the-end-of-life",
+  dateDisplay: "Dec 13, 2025",
+  dateISO: "2025-12-13",
+  objectPosition: "object-center",
+    },
+
+     
+    {
       title: "Trauma at the End of Life: When Neglect Replaces Compassion",
       image: "/blog39.png",
       link: "/trauma-at-the-end-of-life-when-neglect-replaces-compassion",
