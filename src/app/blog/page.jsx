@@ -18,6 +18,15 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+   {
+  title: "Honoring the Worth of Every Person",
+  image: "/blog41.png",
+  link: "/honoring-the-worth-of-every-person",
+  dateDisplay: "Dec 14, 2025",
+  dateISO: "2025-12-14",
+  objectPosition: "object-center",
+},
+   
     {
   title: "When Eating Becomes Optional Understanding Nutrition at the End of Life",
   image: "/blog40.png",
