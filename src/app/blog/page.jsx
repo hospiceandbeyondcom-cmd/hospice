@@ -18,6 +18,15 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+
+     {
+  title: "Understanding pain at end of life:what families should know",
+  image: "/blog42.png",
+  link: "/understanding-pain-at-end-of-life-what-families-should-know",
+  dateDisplay: "Dec 15, 2025",
+  dateISO: "2025-15-14",
+  objectPosition: "object-center",
+},
    {
   title: "Honoring the Worth of Every Person",
   image: "/blog41.png",
