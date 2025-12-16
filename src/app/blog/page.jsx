@@ -18,6 +18,15 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+      
+     {
+  title: "Repositioning for comfort not just prevention",
+  image: "/blog43.png",
+  link: "/Repositioning-for-comfort-not-just-prevention",
+  dateDisplay: "Dec 16, 2025",
+  dateISO: "2025-16-14",
+  objectPosition: "object-center",
+},
 
      {
   title: "Understanding pain at end of life:what families should know",
