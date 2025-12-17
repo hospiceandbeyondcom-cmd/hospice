@@ -22,8 +22,8 @@ export default function Blog() {
   title: "Delirium vs dementia vs. terminal agitation: how to tell the difference",
   image: "/blog45.png",
   link: "/Delirium-vs-dementia-vs.-terminal-agitation-how-to-tell-the-difference",
-  dateDisplay: "Dec 16, 2025",
-  dateISO: "2025-16-14",
+  dateDisplay: "Dec 17, 2025",
+  dateISO: "2025-15-16",
   objectPosition: "object-center",
 },
      {
@@ -31,7 +31,7 @@ export default function Blog() {
   image: "/blog43.png",
   link: "/Repositioning-for-comfort-not-just-prevention",
   dateDisplay: "Dec 16, 2025",
-  dateISO: "2025-16-14",
+  dateISO: "2025-15-15",
   objectPosition: "object-center",
 },
 
