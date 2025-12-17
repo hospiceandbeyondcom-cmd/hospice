@@ -10,12 +10,22 @@ const ACCENT_ROSEGOLD = "#7D5F42";
 export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+    visible: { 
+      opacity: 1, 
+      transition: { 
+        staggerChildren: 0.1, // Slightly faster stagger
+        delayChildren: 0.1 
+      } 
+    },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 15 }, // Reduced y distance for a snappier feel
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: "easeOut" } 
+    },
   };
 
   return (
@@ -34,20 +44,18 @@ export default function Hero() {
           {/* === LEFT CONTENT === */}
           <motion.div
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
+            animate="visible" // "animate" is faster than "whileInView" for top-of-page content
             variants={containerVariants}
-            className="w-full md:w-1/2 text-center md:text-left"
+            className="w-full md:w-1/2 text-center md:text-left will-change-transform"
           >
             <motion.p
               variants={itemVariants}
               className="uppercase font-semibold tracking-widest mb-3 text-sm sm:text-base"
-              style={{ color: PRIMARY_TEAL, fontFamily: "Inter, sans-serif" }}
+              style={{ color: PRIMARY_TEAL }}
             >
               Hospice Care with Compassion
             </motion.p>
 
-            {/* === UPDATED MAIN HEADING WITH BLOG GRADIENT === */}
             <motion.h1
               variants={itemVariants}
               className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight"
@@ -55,7 +63,6 @@ export default function Hero() {
                 background: "linear-gradient(90deg, #006D66, #7D5F42)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                fontFamily: "Poppins, sans-serif"
               }}
             >
               Bring Comfort and Peace to Every Life
@@ -64,7 +71,6 @@ export default function Hero() {
             <motion.p
               variants={itemVariants}
               className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed font-light"
-              style={{ fontFamily: "Inter, sans-serif" }}
             >
               Experience hospice care designed for dignity, compassion, and comfort through every moment.
             </motion.p>
@@ -73,10 +79,9 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="mt-10">
               <a
                 href="/services"
-                className="font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out inline-flex items-center justify-center text-white"
+                className="group font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out inline-flex items-center justify-center text-white"
                 style={{
                   background: `linear-gradient(90deg, ${PRIMARY_TEAL}, ${ACCENT_ROSEGOLD})`,
-                  fontFamily: "Inter, sans-serif",
                 }}
               >
                 Explore Our Services
@@ -91,7 +96,7 @@ export default function Hero() {
             >
               <div className="flex items-center gap-2">
                 <Phone className="w-5 h-5" style={{ color: PRIMARY_TEAL }} />
-                <span className="text-base font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
+                <span className="text-base font-medium">
                   Call to Get in Touch
                 </span>
               </div>
@@ -100,11 +105,8 @@ export default function Hero() {
                 <Mail className="w-5 h-5" style={{ color: PRIMARY_TEAL }} />
                 <a
                   href="mailto:info@hospiceandbeyond.com"
-                  className="text-base font-medium transition-colors"
-                  style={{
-                    color: ACCENT_ROSEGOLD,
-                    fontFamily: "Inter, sans-serif",
-                  }}
+                  className="text-base font-medium transition-colors hover:opacity-80"
+                  style={{ color: ACCENT_ROSEGOLD }}
                 >
                   Send a Message
                 </a>
@@ -114,10 +116,9 @@ export default function Hero() {
 
           {/* === RIGHT VIDEO === */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full md:w-1/2 flex justify-center md:justify-end"
           >
             <div
@@ -131,14 +132,16 @@ export default function Hero() {
             >
               <video
                 src="/palliative.mp4"
+                poster="/hero-poster.webp" // Fast-loading preview image
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="metadata" // Only preloads first few frames to save bandwidth
                 className="object-cover w-full h-full"
               />
               <div
-                className="absolute inset-0"
+                className="absolute inset-0 pointer-events-none"
                 style={{
                   background: "linear-gradient(to top, rgba(0, 61, 57, 0.25), transparent 70%)",
                 }}
