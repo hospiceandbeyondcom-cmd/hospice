@@ -23,15 +23,15 @@ export default function Blog() {
   image: "/blog45.png",
   link: "/Delirium-vs-dementia-vs.-terminal-agitation-how-to-tell-the-difference",
   dateDisplay: "Dec 17, 2025",
-  dateISO: "2025-15-16",
+  dateISO: "2025-12-17",
   objectPosition: "object-center",
 },
      {
   title: "Repositioning for comfort not just prevention",
   image: "/blog43.png",
   link: "/Repositioning-for-comfort-not-just-prevention",
-  dateDisplay: "Dec 16, 2025",
-  dateISO: "2025-15-15",
+  dateDisplay: "Dec 15, 2025",
+  dateISO: "2025-12-15",
   objectPosition: "object-center",
 },
 
@@ -40,7 +40,7 @@ export default function Blog() {
   image: "/blog42.png",
   link: "/understanding-pain-at-end-of-life-what-families-should-know",
   dateDisplay: "Dec 15, 2025",
-  dateISO: "2025-15-14",
+  dateISO: "2025-12-15",
   objectPosition: "object-center",
 },
    {
@@ -371,14 +371,18 @@ export default function Blog() {
 
   // DATE FILTER
   const handleFilter = (e) => {
-    const selectedDate = new Date(e.target.value);
-    setFilterDate(e.target.value);
-    const filtered = blogs.filter(
-      (post) =>
-        new Date(post.dateISO).toDateString() === selectedDate.toDateString()
-    );
-    setFilteredPosts(filtered);
-  };
+  const selectedDate = e.target.value;
+  setFilterDate(selectedDate);
+
+  const filtered = blogs.filter(
+    (post) => post.dateISO === selectedDate
+  );
+
+  setFilteredPosts(filtered);
+  setCurrentPage(1); // ✅ THIS LINE FIXES IT
+};
+
+
 
   // PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
@@ -470,7 +474,7 @@ export default function Blog() {
           <input
             type="date"
             min="2025-11-01"
-            max="2025-12-12"
+            max="2028-12-31"
             onChange={handleFilter}
             value={filterDate}
             className="border border-[#ccc] rounded-lg px-4 py-2 w-[230px]"
