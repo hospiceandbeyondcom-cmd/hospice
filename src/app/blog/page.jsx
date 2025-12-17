@@ -18,6 +18,8 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+
+    
       {
   title: "Delirium vs dementia vs. terminal agitation: how to tell the difference",
   image: "/blog45.png",
@@ -30,8 +32,8 @@ export default function Blog() {
   title: "Repositioning for comfort not just prevention",
   image: "/blog43.png",
   link: "/Repositioning-for-comfort-not-just-prevention",
-  dateDisplay: "Dec 15, 2025",
-  dateISO: "2025-12-15",
+  dateDisplay: "Dec 16, 2025",
+  dateISO: "2025-12-16",
   objectPosition: "object-center",
 },
 
