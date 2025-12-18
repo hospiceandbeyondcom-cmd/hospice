@@ -47,7 +47,7 @@ export default function HolidayTraditionsInHospice() {
           className="w-full md:w-1/2 h-[40vh] md:h-[70vh] relative"
         >
           <Image
-            src="/blog46.png"
+            src="/blog47.png"
             alt="Celebrating holidays in hospice care"
             fill
             priority
@@ -83,17 +83,17 @@ export default function HolidayTraditionsInHospice() {
         <ul className="list-disc ml-6 mb-6 text-lg space-y-3">
           <li><strong>Scent:</strong> Bring a sprig of fresh evergreen, a bowl of cinnamon sticks, or bake a small batch of a family favorite cookie just for the aroma to fill the home.</li>
           <li><strong>Sound:</strong> Create a playlist of their favorite carols or holiday hymns. Music often reaches parts of the brain that words cannot, offering deep comfort.</li>
-          <li><strong>Touch:</strong> Using a holiday-themed soft blanket or even just holding hands while watching a classic film can be a powerful tradition in itself.</li>
+          <li><strong>Touch:</strong> Using a holiday themed soft blanket or even just holding hands while watching a classic film can be a powerful tradition in itself.</li>
         </ul>
 
         <h2 className="text-2xl font-bold mb-4 text-[#006D66]">Creating "Legacy" Traditions</h2>
         <p className="text-lg leading-relaxed mb-6 text-justify">
-          This is a beautiful time to engage in "story-catching." Ask your loved one about their favorite holiday memory from childhood. If they are able, record these stories on your phone. If they are no longer verbal, look through old photo albums together. The act of remembering is a tradition that honors their life and creates a bridge for future generations.
+          This is a beautiful time to engage in "story catching." Ask your loved one about their favorite holiday memory from childhood. If they are able, record these stories on your phone. If they are no longer verbal, look through old photo albums together. The act of remembering is a tradition that honors their life and creates a bridge for future generations.
         </p>
 
         <h2 className="text-2xl font-bold mb-4 text-[#006D66]">Decorating for Peace, Not Perfection</h2>
         <p className="text-lg leading-relaxed mb-6 text-justify">
-          You don't need a ten-foot tree to capture the spirit of the season. A small tabletop decoration, a few meaningful ornaments hung within their line of sight, or a simple string of warm lights can transform a clinical space into a sanctuary of warmth.
+          You don't need a ten foot tree to capture the spirit of the season. A small tabletop decoration, a few meaningful ornaments hung within their line of sight, or a simple string of warm lights can transform a clinical space into a sanctuary of warmth.
         </p>
 
         <h2 className="text-2xl font-bold mb-4 text-[#006D66]">Permission to Be Different</h2>
@@ -101,7 +101,7 @@ export default function HolidayTraditionsInHospice() {
           Perhaps the most important tradition to embrace this year is the tradition of grace. 
         </p>
         <p className="text-lg leading-relaxed mb-6 text-justify">
-          Give yourself permission to skip the cards, the elaborate gifts, or the stressful obligations. Focus instead on the "Big Memories" found in "Small Moments"—the quiet smile during a song, the shared prayer, or the simple peace of being together. These are the gifts that will truly endure.
+          Give yourself permission to skip the cards, the elaborate gifts, or the stressful obligations. Focus instead on the "Big Memories" found in "Small Moments" the quiet smile during a song, the shared prayer, or the simple peace of being together. These are the gifts that will truly endure.
         </p>
 
         <div className="p-6 bg-[#F7F5EF] rounded-xl border-l-4 border-[#006D66] mt-10">

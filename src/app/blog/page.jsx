@@ -19,7 +19,14 @@ export default function Blog() {
 
     // ⭐ NEW POST ADDED HERE ⭐
 
-    
+      {
+  title: "Small Moments, Big Memories: Holiday Traditions You Can Still Enjoy in Hospice Care",
+  image: "/blog47.png",
+  link: "/Small-Moments-big-memories-holiday-traditions-you-can-still-enjoy-in-hospice-care",
+  dateDisplay: "Dec 18, 2025",
+  dateISO: "2025-12-18",
+  objectPosition: "object-center",
+},
       {
   title: "Delirium vs dementia vs. terminal agitation: how to tell the difference",
   image: "/blog45.png",
@@ -32,8 +39,8 @@ export default function Blog() {
   title: "Repositioning for comfort not just prevention",
   image: "/blog43.png",
   link: "/Repositioning-for-comfort-not-just-prevention",
-  dateDisplay: "Dec 16, 2025",
-  dateISO: "2025-12-16",
+  dateDisplay: "Dec 15, 2025",
+  dateISO: "2025-12-15",
   objectPosition: "object-center",
 },
 
