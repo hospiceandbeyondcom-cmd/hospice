@@ -20,7 +20,7 @@ export default function Blog() {
     // ⭐ NEW POST ADDED HERE ⭐
        {
   title: "Spiritual distress and the role of chaplain support",
-  image: "/blog48.png",
+  image: "/blog49.png",
   link: "/spiritual-distress-and-the-role-of-chaplain-support",
   dateDisplay: "Dec 19, 2025",
   dateISO: "2025-12-19",
