@@ -18,7 +18,14 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
-
+       {
+  title: "Spiritual distress and the role of chaplain support",
+  image: "/blog48.png",
+  link: "/spiritual-distress-and-the-role-of-chaplain-support",
+  dateDisplay: "Dec 19, 2025",
+  dateISO: "2025-12-19",
+  objectPosition: "object-center",
+},
       {
   title: "Small Moments, Big Memories: Holiday Traditions You Can Still Enjoy in Hospice Care",
   image: "/blog47.png",
