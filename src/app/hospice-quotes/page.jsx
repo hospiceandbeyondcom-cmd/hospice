@@ -115,12 +115,12 @@ export default function NotableHospiceQuotes() {
       {/* ===== Call to Action Section ===== */}
       <section className="bg-white py-20 px-6 text-center rounded-t-[3rem]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-serif text-[#012419] mb-6">Explore the Mechanics of Peace</h2>
+          <h2 className="text-3xl font-serif text-[#012419] mb-6">Read More Unique Concepts</h2>
           <p className="text-gray-600 mb-10 text-lg">
           </p>
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href="https://hospiceandbeyond.com/b,og"
+            href="https://hospiceandbeyond.com/blog"
             className="inline-block bg-[#012419] text-[#e1c16e] px-10 py-4 rounded-full font-bold tracking-widest uppercase text-sm shadow-xl"
           >
             Explore Our Blog
