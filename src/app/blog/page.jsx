@@ -18,6 +18,15 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+
+       {
+  title: "Hospice Quotes: Voices of Peace",
+  image: "/blog50.png",
+  link: "/hospice-quotes",
+  dateDisplay: "Dec 20, 2025",
+  dateISO: "2025-12-20",
+  objectPosition: "object-center",
+},
        {
   title: "Spiritual distress and the role of chaplain support",
   image: "/blog49.png",
