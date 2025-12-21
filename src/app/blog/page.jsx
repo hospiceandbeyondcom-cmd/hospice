@@ -18,6 +18,14 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+        {
+  title: "Fear of Dying: How Hospice Teams Provide Reassurance",
+  image: "/blog52.png",
+  link: "/fear-of-dying-how-hospice-teams-provide-reassurance",
+  dateDisplay: "Dec 21, 2025",
+  dateISO: "2025-12-21",
+  objectPosition: "object-center",
+},
 
        {
   title: "Hospice Quotes: Voices of Peace",
