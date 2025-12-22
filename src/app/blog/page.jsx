@@ -18,6 +18,60 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+
+  
+
+    {
+  title: "Inspirational Quotes",
+  image: "/blog58.png",
+  llink: "/inspirational-quotes",
+  dateDisplay: "Dec 27, 2025",
+  dateISO: "2025-12-27",
+  objectPosition: "object-center",
+},
+
+    {
+  title: "⁠Constipation in hospice patients: prevention and relief",
+  image: "/blog57.png",
+  link: "/constipation-in-hospice-patients-prevention-and-relief",
+  dateDisplay: "Dec 26, 2025",
+  dateISO: "2025-12-26",
+  objectPosition: "object-center",
+},
+
+    {
+  title: "⁠Managing swelling (edema) in hospice patients",
+  image: "/blog56.png",
+  link: "/managing-swelling-edema-in-hospice-patients",
+  dateDisplay: "Dec 25, 2025",
+  dateISO: "2025-12-25",
+  objectPosition: "object-center",
+},
+
+    {
+  title: "Small Moments, Big Memories: Holiday Traditions You Can Still Enjoy in Hospice Care",
+  image: "/blog55.png",
+  link: "/small-moments-big-memories-holiday-traditions-you-can-still-enjoy-in-hospice-care",
+  dateDisplay: "Dec 24, 2025",
+  dateISO: "2025-12-24",
+  objectPosition: "object-center",
+},
+        {
+  title: "Changes in sleep patterns near the end of life",
+  image: "/blog54.png",
+  link: "/changes-in-sleep-patterns-near-the-end-of-life",
+  dateDisplay: "Dec 23, 2025",
+  dateISO: "2025-12-23",
+  objectPosition: "object-center",
+},
+        {
+  title: "Common Physical changes in the last weeks of life",
+  image: "/blog53.png",
+  link: "/common-physical-changes-in-the-last-week-of-life",
+  dateDisplay: "Dec 22, 2025",
+  dateISO: "2025-12-22",
+  objectPosition: "object-center",
+},
         {
   title: "Fear of Dying: How Hospice Teams Provide Reassurance",
   image: "/blog52.png",
@@ -402,18 +456,36 @@ export default function Blog() {
     },
   ];
 
-  // DATE FILTER
-  const handleFilter = (e) => {
+  // TODAY (ISO FORMAT)
+const todayISO = new Date().toISOString().split("T")[0];
+
+// ONLY SHOW POSTS UP TO TODAY
+const visibleBlogs = blogs.filter(
+  (post) => post.dateISO <= todayISO
+);
+
+
+ const handleFilter = (e) => {
   const selectedDate = e.target.value;
+
+  // CLEAR → HARD RESET
+  if (!selectedDate) {
+    window.location.reload();
+    return;
+  }
+
   setFilterDate(selectedDate);
 
   const filtered = blogs.filter(
-    (post) => post.dateISO === selectedDate
-  );
+  (post) => post.dateISO === selectedDate
+);
+
 
   setFilteredPosts(filtered);
-  setCurrentPage(1); // ✅ THIS LINE FIXES IT
+  setCurrentPage(1);
 };
+
+
 
 
 
@@ -432,7 +504,7 @@ export default function Blog() {
       window.removeEventListener("resize", updatePostsPerPage);
   }, []);
 
-  const list = filterDate ? filteredPosts : blogs;
+const list = filterDate ? filteredPosts : visibleBlogs;
 
   const totalPages = Math.ceil(list.length / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
