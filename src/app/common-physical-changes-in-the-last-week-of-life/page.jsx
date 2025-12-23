@@ -38,7 +38,6 @@ export default function PhysicalChangesBlog() {
       <meta name="description" content={metadata.description} />
       <meta name="keywords" content={metadata.keywords.join(", ")} />
 
-      <Header />
 
       {/* ===== Hero Section ===== */}
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white shadow-sm border-b border-gray-50 rounded-b-[2rem]">
