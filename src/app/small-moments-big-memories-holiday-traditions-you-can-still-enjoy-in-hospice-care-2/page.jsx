@@ -78,7 +78,7 @@ export default function HolidayTraditionsBlog() {
               The holidays often carry a heavy weight when a loved one is in hospice care. We worry that the joy of the season is out of reach, or that traditions are a thing of the past.
             </p>
             <p className="text-lg leading-relaxed mb-0 text-[#012419] text-justify">
-              At Hospice & Beyond, we believe that the holidays aren't about the grand gestures or the elaborate parties—they are about the sacred thread of connection. While the "how" of your traditions may change, the "why" remains the same. By scaling down the physical demands and scaling up the emotional presence, families can discover that the smallest moments often create the biggest memories.
+              At Hospice & Beyond, we believe that the holidays aren't about the grand gestures or the elaborate parties they are about the sacred thread of connection. While the "how" of your traditions may change, the "why" remains the same. By scaling down the physical demands and scaling up the emotional presence, families can discover that the smallest moments often create the biggest memories.
             </p>
           </div>
         </FadeIn>
@@ -87,10 +87,10 @@ export default function HolidayTraditionsBlog() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-6 text-[#012419] border-b-2 border-[#E1C16E] pb-2 inline-block">Refining the Tradition</h2>
             <p className="text-lg leading-relaxed mb-6 text-[#012419] text-justify">
-              Hospice care is about meeting a person where they are. If a five-course holiday dinner is too taxing, consider a "tasting menu" of favorite treats by the bedside. Traditions are flexible vessels; they can be poured into smaller containers without losing their essence. 
+              Hospice care is about meeting a person where they are. If a five course holiday dinner is too taxing, consider a "tasting menu" of favorite treats by the bedside. Traditions are flexible vessels; they can be poured into smaller containers without losing their essence. 
             </p>
             <p className="text-lg leading-relaxed mb-8 text-[#012419] text-justify font-light">
-              Instead of traveling to see lights, bring the glow to the room. Use warm LED candles or a small, decorated tabletop tree. The goal is to stimulate the senses—the smell of cinnamon, the sound of a favorite hymn, or the soft texture of a holiday blanket—to bring the spirit of the season into the space of rest.
+              Instead of traveling to see lights, bring the glow to the room. Use warm LED candles or a small, decorated tabletop tree. The goal is to stimulate the senses the smell of cinnamon, the sound of a favorite hymn, or the soft texture of a holiday blanket to bring the spirit of the season into the space of rest.
             </p>
           </div>
         </FadeIn>
@@ -102,7 +102,7 @@ export default function HolidayTraditionsBlog() {
               One of the most powerful traditions to embrace in hospice is the "Legacy of Story." Use this time to record favorite holiday memories. Ask about the best gift they ever received, or the funniest thing that happened during a past celebration. 
             </p>
             <p className="text-lg leading-relaxed text-justify opacity-90">
-              These recordings or written notes become priceless heirlooms. They shift the focus from the grief of the present to the celebration of a life well-lived. This tradition doesn't require physical strength—only the willingness to listen and the heart to remember.
+              These recordings or written notes become priceless heirlooms. They shift the focus from the grief of the present to the celebration of a life well lived. This tradition doesn't require physical strength only the willingness to listen and the heart to remember.
             </p>
           </div>
         </FadeIn>

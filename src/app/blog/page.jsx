@@ -51,7 +51,7 @@ export default function Blog() {
     {
   title: "Small Moments, Big Memories: Holiday Traditions You Can Still Enjoy in Hospice Care",
   image: "/blog55.png",
-  link: "/small-moments-big-memories-holiday-traditions-you-can-still-enjoy-in-hospice-care",
+  link: "/small-moments-big-memories-holiday-traditions-you-can-still-enjoy-in-hospice-care-2",
   dateDisplay: "Dec 24, 2025",
   dateISO: "2025-12-24",
   objectPosition: "object-center",
