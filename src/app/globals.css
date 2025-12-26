@@ -1,7 +1,7 @@
 /* app/globals.css */
 
 /* ✅ Keep all @imports at the top for Next.js compatibility */
-@import url('https://fonts.googleapis.com/css2?family=Cooper+Hewitt:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* ------------------ Theme Vars (yours) ------------------ */
@@ -13,7 +13,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Cooper Hewitt', sans-serif; /* Updated font variable (optional but good practice) */
+  --font-sans: 'Poppins', sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -24,9 +24,9 @@
   }
 }
 
-/* ------------------ Base (using Cooper Hewitt throughout) ------------------ */
+/* ------------------ Base (using Poppins throughout) ------------------ */
 body {
-  font-family: 'Cooper Hewitt', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #f5f8ff;
   margin: 0;
   padding: 0;
@@ -35,9 +35,9 @@ body {
   font-weight: 300;
 }
 
-/* Headings (same Cooper Hewitt font, just heavier weight) */
+/* Headings (same Poppins font, just heavier weight) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cooper Hewitt', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
 
@@ -117,7 +117,6 @@ select {
   100% { transform: rotate(360deg); }
 }
 
-
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -162,8 +161,6 @@ select {
 .animate-fade-right {
   animation: fadeInRight 1s ease-out both;
 }
-
-
 
 /* Use these classes directly in JSX */
 .animate-pulse-light { animation: pulse-light 2s ease-in-out infinite; }
