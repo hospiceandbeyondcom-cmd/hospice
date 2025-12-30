@@ -19,12 +19,68 @@ export default function Blog() {
 
     // ⭐ NEW POST ADDED HERE ⭐
 
-  
+    {
+  title: "How Hospice Helps Patients Stay Comfortable at Home",
+  image: "/blog65.png",
+  link: "/how-hospice-helps-patients-stay-comfortable-at-home",
+  dateDisplay: "Jan 3, 2026",
+  dateISO: "2026-01-03",
+  objectPosition: "object-center",
+},
+{
+  title: "What Happens in the First 72 Hours of Hospice Care",
+  image: "/blog64.png",
+  link: "/what-happens-in-the-first-72-hours-of-hospice-care",
+  dateDisplay: "Jan 2, 2026",
+  dateISO: "2026-01-02",
+  objectPosition: "object-center",
+},
+{
+  title: "Why Appetite Changes in Hospice — and Why It’s Okay",
+  image: "/blog63.png",
+  link: "/why-appetite-changes-in-hospice-and-why-its-okay",
+  dateDisplay: "Jan 1, 2026",
+  dateISO: "2026-01-01",
+  objectPosition: "object-center",
+},
+{
+  title: "Inclusive Festivities: Celebrating Cultural and Faith Traditions in Hospice",
+  image: "/blog62.png",
+  link: "/inclusive-festivities-celebrating-cultural-and-faith-traditions-in-hospice",
+  dateDisplay: "Dec 31, 2025",
+  dateISO: "2025-12-31",
+  objectPosition: "object-center",
+},
+{
+  title: "Weight Loss in Hospice: What’s Normal and What’s Not",
+  image: "/blog61.png",
+  link: "/weight-loss-in-hospice-whats-normal-and-whats-not",
+  dateDisplay: "Dec 30, 2025",
+  dateISO: "2025-12-30",
+  objectPosition: "object-center",
+},
+{
+  title: "Signs Pain May Be Uncontrolled in Non-Verbal Hospice Patients",
+  image: "/blog60.png",
+  link: "/signs-pain-may-be-uncontrolled-in-non-verbal-patients",
+  dateDisplay: "Dec 29, 2025",
+  dateISO: "2025-12-29",
+  objectPosition: "object-center",
+},
+{
+  title: "Managing Terminal Secretions (“The Death Rattle”) with Dignity",
+  image: "/blog59.png",
+  link: "/managing-terminal-secretions-with-dignity",
+  dateDisplay: "Dec 28, 2025",
+  dateISO: "2025-12-28",
+  objectPosition: "object-center",
+},
+
 
     {
   title: "Inspirational Quotes",
   image: "/blog58.png",
-  llink: "/inspirational-quotes",
+  link: "/inspirational-quotes-hospice",
   dateDisplay: "Dec 27, 2025",
   dateISO: "2025-12-27",
   objectPosition: "object-center",
