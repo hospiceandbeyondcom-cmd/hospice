@@ -18,7 +18,14 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
-
+     {
+  title: "How Long Can Someone Be On Hospice",
+  image: "/blog66.png",
+  link: "/how-long-can-someone-be-on-hospice",
+  dateDisplay: "Jan 4, 2026",
+  dateISO: "2026-01-04",
+  objectPosition: "object-center",
+},
     {
   title: "How Hospice Helps Patients Stay Comfortable at Home",
   image: "/blog65.png",
