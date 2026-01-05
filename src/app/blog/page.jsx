@@ -18,6 +18,56 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+
+     {
+  title: "What Hospice Care Looks Like Day-to-Day",
+  image: "/blog72.png",
+  link: "/what-hospice-care-looks-like-day-to-day",
+  dateDisplay: "Jan 10, 2026",
+  dateISO: "2026-01-10",
+  objectPosition: "object-center",
+},
+{
+  title: "What Families Should Expect During the Final Days of Life",
+  image: "/blog71.png",
+  link: "/what-families-should-expect-during-the-final-days-of-life",
+  dateDisplay: "Jan 9, 2026",
+  dateISO: "2026-01-09",
+  objectPosition: "object-center",
+},
+{
+  title: "Private Pay Hospice Options Explained",
+  image: "/blog70.png",
+  link: "/private-pay-hospice-options-explained",
+  dateDisplay: "Jan 8, 2026",
+  dateISO: "2026-01-08",
+  objectPosition: "object-center",
+},
+{
+  title: "Hospice Care and Medicaid: What Families Should Know",
+  image: "/blog69.png",
+  link: "/hospice-care-and-medicaid-what-families-should-know",
+  dateDisplay: "Jan 7, 2026",
+  dateISO: "2026-01-07",
+  objectPosition: "object-center",
+},
+{
+  title: "When Is Hospice Covered by Medicare?",
+  image: "/blog68.png",
+  link: "/when-is-hospice-covered-by-medicare",
+  dateDisplay: "Jan 6, 2026",
+  dateISO: "2026-01-06",
+  objectPosition: "object-center",
+},
+{
+  title: "Can Hospice Be Stopped or Reversed?",
+  image: "/blog667.png",
+  link: "/can-hospice-be-stopped-or-reversed",
+  dateDisplay: "Jan 5, 2026",
+  dateISO: "2026-01-05",
+  objectPosition: "object-center",
+},
+
      {
   title: "How Long Can Someone Be On Hospice",
   image: "/blog66.png",
