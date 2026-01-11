@@ -18,7 +18,14 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
-
+     {
+  title: "How Often Does Hospice Visit a Patient",
+  image: "/blog73.png",
+  link: "/how-often-does-hospice-visit-a-patient",
+  dateDisplay: "Jan 11, 2026",
+  dateISO: "2026-01-11",
+  objectPosition: "object-center",
+},
      {
   title: "What Hospice Care Looks Like Day-to-Day",
   image: "/blog72.png",
