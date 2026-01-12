@@ -18,6 +18,56 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+
+     {
+  title: "Hospice Admission Process Step-by-Step",
+  image: "/blog79.png",
+  link: "/hospice-admission-process-step-by-step",
+  dateDisplay: "Jan 17, 2026",
+  dateISO: "2026-01-17",
+  objectPosition: "object-center",
+},
+{
+  title: "Hospice Care in the Home vs Inpatient Hospice",
+  image: "/blog78.png",
+  link: "/hospice-care-in-the-home-vs-inpatient-hospice",
+  dateDisplay: "Jan 16, 2026",
+  dateISO: "2026-01-16",
+  objectPosition: "object-center",
+},
+{
+  title: "What to Ask a Hospice Provider Before Choosing One",
+  image: "/blog77.png",
+  link: "/what-to-ask-a-hospice-provider-before-choosing-one",
+  dateDisplay: "Jan 15, 2026",
+  dateISO: "2026-01-15",
+  objectPosition: "object-center",
+},
+{
+  title: "Hospice Care for Patients With Multiple Conditions",
+  image: "/blog76.png",
+  link: "/hospice-care-for-patients-with-multiple-conditions",
+  dateDisplay: "Jan 14, 2026",
+  dateISO: "2026-01-14",
+  objectPosition: "object-center",
+},
+{
+  title: "Hospice Care for Patients Who Live Alone",
+  image: "/blog75.png",
+  link: "/hospice-care-for-patients-who-live-alone",
+  dateDisplay: "Jan 13, 2026",
+  dateISO: "2026-01-13",
+  objectPosition: "object-center",
+},
+{
+  title: "What Happens If Symptoms Worsen on Hospice?",
+  image: "/blog74.png",
+  link: "/what-happens-if-symptoms-worsen-on-hospice",
+  dateDisplay: "Jan 12, 2026",
+  dateISO: "2026-01-12",
+  objectPosition: "object-center",
+},
+
      {
   title: "How Often Does Hospice Visit a Patient",
   image: "/blog73.png",
