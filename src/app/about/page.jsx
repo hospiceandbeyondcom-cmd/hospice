@@ -8,7 +8,7 @@ export const metadata = {
   title: "About | Hospice and Beyond Palliative Care",
   description: "A Legacy of Compassion Honoring Every Life Every Moment.",
   alternates: {
-    canonical: "https://www.hospiceandbeyond.com/about", 
+    canonical: "https://hospiceandbeyond.com/about", 
   },
 };
 
