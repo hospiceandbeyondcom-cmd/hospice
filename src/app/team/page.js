@@ -1,34 +1,17 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-
 import Header from "../Header";
 import Footer from "../Footer";
 import Image from "next/image";
 
+// This is the SEO fix for your "No Canonical" report
+export const metadata = {
+  title: "Our Team | Hospice and Beyond",
+  description: "Meet our dedicated team of professionals providing compassionate care.",
+  alternates: {
+    canonical: "https://hospiceandbeyond.com/team",
+  },
+};
+
 export default function Team() {
-  const videoRef = useRef(null);
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
-  };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      const playVideo = async () => {
-        try {
-          await video.play();
-        } catch (err) {
-          console.warn("Autoplay blocked:", err);
-        }
-      };
-      playVideo();
-    }
-  }, []);
-
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Header />
@@ -37,12 +20,7 @@ export default function Team() {
       <section className="flex flex-col md:flex-row items-center justify-between overflow-hidden bg-white/70 backdrop-blur-sm shadow-sm rounded-b-[2rem]">
         
         {/* LEFT TEXT */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="w-full md:w-1/2 p-10 md:p-20 text-center md:text-left"
-        >
+        <div className="w-full md:w-1/2 p-10 md:p-20 text-center md:text-left">
           <h1
             className="text-4xl md:text-5xl font-bold mb-6 leading-snug"
             style={{
@@ -58,41 +36,30 @@ export default function Team() {
             A family of professionals and caregivers working together to bring comfort,
             dignity, and love to every patient we serve.
           </p>
-        </motion.div>
+        </div>
 
         {/* RIGHT VIDEO */}
-        <motion.div
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full md:w-1/2 h-[40vh] md:h-[70vh]"
-        >
+        <div className="relative w-full md:w-1/2 h-[40vh] md:h-[70vh]">
+          {/* Server-side compatible video: uses autoPlay/muted attributes instead of useEffect */}
           <video
-            ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover rounded-bl-[2rem] md:rounded-none"
+            autoPlay
             muted
             loop
             playsInline
-            preload="none"
-            decoding="async"
+            preload="auto"
           >
             <source src="/teams.mp4" type="video/mp4" />
           </video>
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent md:hidden"></div>
-        </motion.div>
+        </div>
       </section>
 
       {/* ===== FOUNDER SECTION ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center gap-10">
 
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="w-full md:w-1/2 flex justify-center md:justify-start"
-        >
+        <div className="w-full md:w-1/2 flex justify-center md:justify-start">
           <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg border-4 border-[#006D66]/20">
             <Image
               src="/team1.png"
@@ -101,15 +68,9 @@ export default function Team() {
               className="object-cover object-top rounded-full"
             />
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="w-full md:w-1/2 text-center md:text-left"
-        >
+        <div className="w-full md:w-1/2 text-center md:text-left">
           <h2
             className="text-3xl md:text-4xl font-semibold mb-4"
             style={{ color: "#006D66" }}
@@ -124,20 +85,14 @@ export default function Team() {
             Through her guidance, Hospice and Beyond has become a home of hope, healing, and
             heartfelt compassion.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* ===== EXTENDED TEAM SECTION ===== */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="w-full md:w-1/2 text-center md:text-left"
-          >
+          <div className="w-full md:w-1/2 text-center md:text-left">
             <h2
               className="text-3xl md:text-4xl font-semibold mb-6"
               style={{ color: "#006D66" }}
@@ -155,15 +110,9 @@ export default function Team() {
               From physicians and nurses to chaplains and therapists, every member plays a vital
               role in creating comfort and connection when it matters most.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="w-full md:w-1/2 flex justify-center md:justify-end"
-          >
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
             <Image
               src="/teamsdetails.png"
               alt="Hospice and Beyond Extended Family of Care"
@@ -171,65 +120,32 @@ export default function Team() {
               height={600}
               className="object-contain w-[95%] sm:w-[90%] md:w-full h-auto max-w-[650px]"
             />
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ===== ROLES GRID ===== */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <h2
           className="text-3xl md:text-4xl font-semibold text-center mb-12"
           style={{ color: "#006D66" }}
         >
           Our Professional Team
-        </motion.h2>
+        </h2>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
           {[
-            {
-              title: "Medical Director",
-              text: "Provides clinical leadership and ensures every patient receives safe, thoughtful, and effective care."
-            },
-            {
-              title: "Registered Nurse",
-              text: "Delivers expert nursing care, monitors patient needs, and supports families with compassion and skill."
-            },
-            {
-              title: "Nurse Practitioner",
-              text: "Provides advanced patient care, evaluates needs, and supports treatment with clinical expertise."
-            },
-            {
-              title: "Chaplain",
-              text: "Provides spiritual comfort and emotional support to patients and their families."
-            },
-            {
-              // 🐛 FIX: Replaced unescaped single quote (') with &apos;
-              title: "Social Worker",
-              text: "Supports families with counseling, resources, and assistance to navigate care with confidence."
-            },
-            {
-              title: "Physical Therapist",
-              text: "Enhances comfort and mobility through personalized movement and strength support."
-            },
-            {
-              title: "Occupational Therapist",
-              text: "Helps patients maintain independence through practical daily living support."
-            },
-            {
-              title: "Speech Therapist",
-              text: "Assists patients with communication and swallowing needs to improve comfort and quality of life."
-            }
+            { title: "Medical Director", text: "Provides clinical leadership and ensures every patient receives safe, thoughtful, and effective care." },
+            { title: "Registered Nurse", text: "Delivers expert nursing care, monitors patient needs, and supports families with compassion and skill." },
+            { title: "Nurse Practitioner", text: "Provides advanced patient care, evaluates needs, and supports treatment with clinical expertise." },
+            { title: "Chaplain", text: "Provides spiritual comfort and emotional support to patients and their families." },
+            { title: "Social Worker", text: "Supports families with counseling, resources, and assistance to navigate care with confidence." },
+            { title: "Physical Therapist", text: "Enhances comfort and mobility through personalized movement and strength support." },
+            { title: "Occupational Therapist", text: "Helps patients maintain independence through practical daily living support." },
+            { title: "Speech Therapist", text: "Assists patients with communication and swallowing needs to improve comfort and quality of life." }
           ].map((role, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
               className="p-6 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 bg-white"
             >
               <h3 className="text-xl font-semibold mb-2" style={{ color: "#7D5F42" }}>
@@ -238,7 +154,7 @@ export default function Team() {
               <p className="text-gray-700 text-base leading-relaxed text-justify">
                 {role.text}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
@@ -248,36 +164,20 @@ export default function Team() {
         className="py-16 text-center"
         style={{ background: "linear-gradient(90deg, #006D66, #7D5F42)" }}
       >
-        <motion.h3
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-white text-2xl md:text-3xl font-semibold mb-4"
-        >
+        <h3 className="text-white text-2xl md:text-3xl font-semibold mb-4">
           Together, We Are Hospice and Beyond
-        </motion.h3>
+        </h3>
 
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-white mb-6 text-lg max-w-2xl mx-auto text-justify"
-        >
+        <p className="text-white mb-6 text-lg max-w-2xl mx-auto text-justify px-4">
           Every heart that serves here is part of a shared purpose to make every moment matter.
-        </motion.p>
+        </p>
 
-        <motion.a
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <a
           href="/contact"
           className="inline-block px-8 py-3 bg-white text-[#006D66] font-semibold rounded-full shadow-md hover:bg-gray-100 transition"
         >
           Contact Our Team
-        </motion.a>
+        </a>
       </section>
 
       <Footer />
