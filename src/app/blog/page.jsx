@@ -18,6 +18,63 @@ export default function Blog() {
   const blogs = [
 
     // ⭐ NEW POST ADDED HERE ⭐
+    {
+  title: "Swallowing Difficulties at End of Life",
+  image: "/hospiceandbeyond7.png",
+  link: "/swallowing-difficulties-at-end-of-life",
+  dateDisplay: "Jan 25, 2026",
+  dateISO: "2026-01-25",
+  objectPosition: "object-center",
+},
+{
+  title: "When to Call Hospice for Symptoms",
+  image: "/hospiceandbeyond6.png",
+  link: "/when-to-call-hospice-for-symptoms",
+  dateDisplay: "Jan 24, 2026",
+  dateISO: "2026-01-24",
+  objectPosition: "object-center",
+},
+{
+  title: "What Is Terminal Agitation?",
+  image: "/hospiceandbeyond5.png",
+  link: "/what-is-terminal-agitation",
+  dateDisplay: "Jan 22, 2026",
+  dateISO: "2026-01-22",
+  objectPosition: "object-center",
+},
+{
+  title: "Managing Restlessness and Agitation in Hospice",
+  image: "/hospiceandbeyond4.png",
+  link: "/managing-restlessness-and-agitation-in-hospice",
+  dateDisplay: "Jan 21, 2026",
+  dateISO: "2026-01-21",
+  objectPosition: "object-center",
+},
+{
+  title: "Managing Anxiety at End of Life",
+  image: "/hospiceandbeyond3.png",
+  link: "/managing-anxiety-at-end-of-life",
+  dateDisplay: "Jan 20, 2026",
+  dateISO: "2026-01-20",
+  objectPosition: "object-center",
+},
+{
+  title: "Managing Shortness of Breath in Hospice Patients",
+  image: "/hospiceandbeyond2.png",
+  link: "/managing-shortness-of-breath-in-hospice-patients",
+  dateDisplay: "Jan 19, 2026",
+  dateISO: "2026-01-19",
+  objectPosition: "object-center",
+},
+{
+  title: "How Hospice Manages Pain Without Hastening Death",
+  image: "/hospiceandbeyond1.png",
+  link: "/how-hospice-manages-pain-without-hastening-death",
+  dateDisplay: "Jan 18, 2026",
+  dateISO: "2026-01-18",
+  objectPosition: "object-center",
+},
+
 
      {
   title: "Hospice Admission Process Step-by-Step",
