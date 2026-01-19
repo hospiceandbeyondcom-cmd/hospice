@@ -3,18 +3,19 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { Heart, Star, Compass } from "lucide-react";
 
-// Metadata for SSR - Includes Unique Title and Canonical Link
+// Metadata for SSR - This handles the <title> and <link rel="canonical"> in the <head>
 export const metadata = {
   title: "About | Hospice and Beyond Palliative Care",
   description: "A Legacy of Compassion Honoring Every Life Every Moment.",
   alternates: {
-    canonical: "https://www.hospiceandbeyond.com/about", // Replace with your actual domain
+    canonical: "https://www.hospiceandbeyond.com/about", 
   },
 };
 
 export default function AboutPage() {
   return (
     <>
+      {/* Server-side CSS Animations */}
       <style>
         {`
           @keyframes fadeUp {
