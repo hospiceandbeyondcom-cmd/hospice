@@ -3,10 +3,13 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { Heart, Star, Compass } from "lucide-react";
 
-// Metadata for SSR - Unique Title
+// Metadata for SSR - Includes Unique Title and Canonical Link
 export const metadata = {
   title: "About | Hospice and Beyond Palliative Care",
   description: "A Legacy of Compassion Honoring Every Life Every Moment.",
+  alternates: {
+    canonical: "https://www.hospiceandbeyond.com/about", // Replace with your actual domain
+  },
 };
 
 export default function AboutPage() {
